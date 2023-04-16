@@ -1,0 +1,9 @@
+{
+    tag: 'inner',
+    attributes: { attribute: 'val', attributes: 'vals' },
+    children: [
+        { tag: 'child', attributes: {}, text: 'Inner Text' },
+        { __text: 'More Text' },
+        { tag: 'grandchild', attributes: {}, children: [] }
+    ]
+}

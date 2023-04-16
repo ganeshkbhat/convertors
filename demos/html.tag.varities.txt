@@ -1,0 +1,58 @@
+
+
+// // HTML ELEMENT NODE TAGS
+
+// <ElementNode/>
+// <ElementNode>
+// <ElementNode></ElementNode>
+
+
+
+// // HTML ATTRIBUTE IN ELEMENT NODE TAGS
+
+// <ElementNode ATTRIBUTES ATTIBUTESTWO="VALUE" ATTIBUTESTHREE="VALUE" />
+// <ElementNode ATTRIBUTES ATTIBUTESTWO="VALUE" ATTIBUTESTHREE="VALUE" >
+// <ElementNode ATTRIBUTES ATTIBUTESTWO="VALUE" ATTIBUTESTHREE="VALUE" ></ElementNode>
+
+
+Can you write a regex to identify all the tags and the text from a string to return a array of TEXT and ElementNode like this [ "TEXT", "TEXT", "TEXT  COMMENT TEXT      ", "ElementNode", "ElementNode", "" ] 
+
+Following is the ElementNode examples. The fourth option which has <ElementNode> start and </ElementNode> close example may have TEXT or ElementNode's on the left or right or in between two nodes
+
+// // HTML ELEMENT NODE TAGS
+
+1. <ElementNode/>
+2. <ElementNode>
+3. <!-- COMMENT TEXT      -->
+4. <ElementNode></ElementNode>
+5. <!ElementNode>
+6. <?ElementNode>
+
+
+Any of the ElementNode and Each of the ElementNode can contain no ATTRIBUTE, one or many ATTRIBUTES with or without value like below:
+
+a. <ElementNode></ElementNode>
+b. <ElementNode ATRRIBUTE ATTRIBUTE="VALUE"></ElementNode>
+
+
+// HTML NODES STRUCTURE USAGE
+
+
+<ElementNode>
+<ElementNode><ElementNode>
+<ElementNode/>
+<ElementNode/><ElementNode/>
+<ElementNode></ElementNode>
+<ElementNode></ElementNode><ElementNode></ElementNode>
+
+
+TEXT NODE HERE<ElementNode>TEXT NODE HERE</ElementNode>TEXT NODE HERE
+TEXT NODE HERE<ElementNode/>TEXT NODE HERE
+TEXT NODE HERE<ElementNode/>TEXT NODE HERE<ElementNode/>TEXT NODE HERE
+TEXT NODE HERE<ElementNode/>TEXT NODE HERE
+TEXT NODE HERE<ElementNode/>TEXT NODE HERE<ElementNode/>TEXT NODE HERE
+TEXT NODE HERE<ElementNode>TEXT NODE HERE
+TEXT NODE HERE<ElementNode>TEXT NODE HERE<ElementNode>TEXT NODE HERE
+TEXT NODE HERE<ElementNode>TEXT NODE HERE</ElementNode>TEXT NODE HERE
+TEXT NODE HERE<ElementNode>TEXT NODE HERE</ElementNode>TEXT NODE HERE<ElementNode>TEXT NODE HERE</ElementNode>TEXT NODE HERE
+
