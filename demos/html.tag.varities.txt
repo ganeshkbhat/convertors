@@ -27,6 +27,7 @@ Following is the ElementNode examples. The fourth option which has <ElementNode>
 4. <ElementNode></ElementNode>
 5. <!ElementNode>
 6. <?ElementNode>
+6. <?ElementNode?>
 
 
 Any of the ElementNode and Each of the ElementNode can contain no ATTRIBUTE, one or many ATTRIBUTES with or without value like below:
