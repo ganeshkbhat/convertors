@@ -32,6 +32,18 @@ function extractTagAttributes(tag) {
     return attributes;
 }
 
+function commentNodes() {
+
+}
+
+function textNodes() {
+
+}
+
+function elementNodes() {
+
+}
+
 function createNodes(html) {
     var domArray = extractTagsAndContent(html);
 
@@ -42,6 +54,9 @@ function createNodes(html) {
 
 module.exports.DOMNodes = createNodes;
 module.exports.createNodes = createNodes;
+module.exports.commentNodes = commentNodes;
+module.exports.textNodes = textNodes;
+module.exports.elementNodes = elementNodes;
 module.exports.extractTags = extractTagsAndContent;
 module.exports.extractTagAttributes = extractTagAttributes;
 
