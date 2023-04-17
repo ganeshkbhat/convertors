@@ -1,7 +1,7 @@
 {
   "name": "jsparsers",
   "version": "0.0.2",
-  "description": "file format to format convertors",
+  "description": "npm jsparsers module for file format to format convertors for ini, yaml, json, xml, html, css",
   "main": "index.js",
   "exports": {
     "require": "./index.js",

@@ -1,18 +1,16 @@
 # jsparsers
-file format to format convertors for ini, yaml, json, xml, html, css
 
+npm jsparsers module for file format to format convertors for ini, yaml, json, xml, html, css, less, sass.
 
 ### DEMOS
 
 Find the demos in the [demo folder](https://github.com/ganeshkbhat/convertors/tree/main/demos)
-
 
 ### INSTALLATION
 
 `npm install jsparsers --save`
 
 npm Package: [jsparsers](https://www.npmjs.com/package/jsparsers)
-
 
 ### USAGE
 
@@ -21,7 +19,6 @@ npm Package: [jsparsers](https://www.npmjs.com/package/jsparsers)
 let jsparsers = require("jsparsers");
 
 ```
-
 
 ### parseIni
 
@@ -74,7 +71,6 @@ console.log(iniString);
 
 ```
 
-
 ### parseYaml
 
 #### yaml2json
@@ -102,7 +98,6 @@ console.log(jsonString);
 
 ```
 
-
 #### json2yaml
 
 `require("jsparsers").json2yaml(jsonObject)`
@@ -121,16 +116,15 @@ const jsonObject = {
       key3: 'value4'
     }
   };
-  
+
   const yamlString = jsonToYaml(jsonObject);
   console.log(yamlString);
 
 
 ```
 
-
+<!-- 
 ### Yaml to Ini OR Ini to Yaml
-
 
 #### yaml2ini
 
@@ -142,7 +136,6 @@ const jsonObject = {
 
 ```
 
-
 #### ini2yaml
 
 `require("jsparsers").ini2yaml(str)`
@@ -153,9 +146,7 @@ const jsonObject = {
 
 ```
 
-
 ### parseObjectKey
-
 
 #### setKey
 
@@ -175,9 +166,9 @@ const jsonObject = {
 
 
 
-```
+``` -->
 
-<!-- 
+<!--
 ### parseDom
 
 
@@ -324,14 +315,10 @@ const jsonObject = {
 
 ``` -->
 
-
 ## TODO
-
 
 - parseDom, parseHtml
 - parseXml
 - parseCss
 - parseSass
 - parseLess
-
-
