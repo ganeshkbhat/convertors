@@ -18,8 +18,8 @@ function extractElementNodesText(input) {
     const regex = /<\?[\w\s]*>|<!?[\w\s]*>|<\/?(\w+)(?:\s+\w+(?:\s*=\s*(?:"[^"]*"|'[^']*')))*\s*\/?>|<!--[\s\S]*?-->|([^<]*)/gs;
     const matches = Array.from(input.matchAll(regex), m => m[0].trim());
     return matches.filter(match => match !== '' && !match.startsWith('<?') && !match.startsWith('<!'));
-  }
-  
+}
+
 
 console.log(extractElementNodesText(htmlString));
 
