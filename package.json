@@ -1,18 +1,25 @@
 {
-  "name": "convertors",
-  "version": "1.0.0",
-  "description": "",
+  "name": "jsparsers",
+  "version": "0.0.1",
+  "description": "file format to format convertors",
   "main": "index.js",
-  "directories": {
-    "test": "tests"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "jsdom": "^21.1.1"
+  "author": "Ganesh B",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ganeshkbhat/convertors.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ganeshkbhat/convertors/issues"
+  },
+  "homepage": "https://github.com/ganeshkbhat/convertors#readme",
+  "devDependencies": {
+    "chai": "^4.3.7",
+    "mocha": "^10.2.0",
+    "sinon": "^15.0.3"
   }
 }
