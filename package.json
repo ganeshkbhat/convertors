@@ -1,20 +1,46 @@
 {
   "name": "jsparsers",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "file format to format convertors",
   "main": "index.js",
+  "exports": {
+    "require": "./index.js",
+    "import": "./index.mjs"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "Ganesh B",
+  "keywords": [
+    "ini",
+    "yaml",
+    "json",
+    "xml",
+    "dom",
+    "html",
+    "css",
+    "sass",
+    "less",
+    "env",
+    ".ini",
+    ".yaml",
+    ".json",
+    ".xml",
+    "dom",
+    ".html",
+    ".css",
+    ".sass",
+    ".less",
+    ".env"
+  ],
+  "author": "Ganesh Bhat <ganeshsurfs@gmail.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ganeshkbhat/convertors.git"
   },
   "bugs": {
-    "url": "https://github.com/ganeshkbhat/convertors/issues"
+    "url": "https://github.com/ganeshkbhat/convertors/issues",
+    "email": "desktopcgi@gmail.com"
   },
   "homepage": "https://github.com/ganeshkbhat/convertors#readme",
   "devDependencies": {

@@ -11,7 +11,6 @@ timeout = 5000
 `;
 
 const result = iniToJson(iniString);
-
 console.log(result);
 // Output: 
 // {

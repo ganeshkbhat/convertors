@@ -13,7 +13,6 @@ const nestedObj = {
 };
 
 const iniString = jsonToIni(nestedObj);
-
 console.log(iniString);
 
 // [section1]
