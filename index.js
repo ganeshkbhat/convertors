@@ -40,3 +40,8 @@ module.exports.parseXml2Json = parseXml2Json;
 
 module.exports.parseObject = parseObject;
 
+module.exports = {
+    parseIni2Json, parseJson2Ini, parseYaml2Json, parseJson2Yaml, 
+    parseIni2Yaml, parseYaml2Ini, parseEnv2Json, parseJson2Env,
+    parseJson2Xml, parseXml2Json, parseObject
+}
