@@ -1,3 +1,11 @@
+
+
+/**
+ *
+ *
+ * @param {*} iniString
+ * @return {*} 
+ */
 function iniToJson(iniString) {
   const result = {};
   let currentSection = result;
@@ -48,3 +56,5 @@ function iniToJson(iniString) {
 
   return result;
 }
+
+module.exports = iniToJson;

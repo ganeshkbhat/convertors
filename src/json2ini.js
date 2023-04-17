@@ -1,3 +1,11 @@
+
+
+/**
+ *
+ *
+ * @param {*} obj
+ * @return {*} 
+ */
 function jsonToIni(obj) {
     const sections = [];
 
@@ -30,3 +38,5 @@ function jsonToIni(obj) {
     }
     return sections.join('');
 }
+
+module.exports = jsonToIni;

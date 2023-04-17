@@ -1,4 +1,5 @@
 
+
 /**
  * 
  * ELEMENT, COMMENT, AND TEXT NODE TYPES extractTagsAndContent CAN PARSE:
@@ -41,6 +42,12 @@ function extractTagsAndContent(htmlString) {
 }
 
 
+/**
+ *
+ *
+ * @param {*} tag
+ * @return {*} 
+ */
 function extractTagAttributes(tag) {
     const regex = /([\w-]+)=(?:"([^"]*)"|'([^']*)')/g;
     const matches = tag.matchAll(regex);
@@ -56,6 +63,12 @@ function extractTagAttributes(tag) {
 }
 
 
+/**
+ *
+ *
+ * @param {*} htmlString
+ * @return {*} 
+ */
 function extractNodes(htmlString) {
     let match;
     const regex = /<(.*?)>|<!--(.*?)-->|<(?:!.*?)>/g;
@@ -90,6 +103,14 @@ function extractNodes(htmlString) {
 }
 
 
+/**
+ *
+ *
+ * @param {*} htmlString
+ * @param {boolean} [indexes=true]
+ * @param {string} [returns="array"]
+ * @return {*} 
+ */
 function extractNodesWithIndexes(htmlString, indexes = true, returns = "array") {
     const nodes = [];
     let pos = 0;
@@ -155,6 +176,14 @@ function extractNodesWithIndexes(htmlString, indexes = true, returns = "array") 
 }
 
 
+/**
+ *
+ *
+ * @param {*} htmlString
+ * @param {boolean} [indexes=true]
+ * @param {string} [returns="array"]
+ * @return {*} 
+ */
 function extractElementTags(htmlString, indexes = true, returns = "array") {
     let elementNodes = [];
     let commentNodes = [];
@@ -189,35 +218,68 @@ function extractElementTags(htmlString, indexes = true, returns = "array") {
 }
 
 
-function commentNodes() {
+/**
+ *
+ *
+ * @param {string} [lang="js"] Options are js, html, css
+ */
+function commentNodes(str, lang = "js") {
+    var result
 
+    return result;
+}
+
+/**
+ *
+ *
+ * @param {*} str
+ * @return {*} 
+ */
+function textNodes(str) {
+    var result
+
+    return result;
+}
+
+/**
+ *
+ *
+ * @param {*} str
+ * @return {*} 
+ */
+function elementNodes(str) {
+    var result
+
+    return result;
 }
 
 
-function textNodes() {
+/**
+ *
+ *
+ * @param {*} htmlstr
+ * @return {*} 
+ */
+function createNodes(htmlstr) {
+    var result = extractTagsAndContent(htmlstr);
 
+
+    return result;
 }
-
-
-function elementNodes() {
-
-}
-
-
-function createNodes(html) {
-    var domArray = extractTagsAndContent(html);
-
-
-    return domArray;
-}
-
 
 
 module.exports.DOMNodes = createNodes;
 module.exports.createNodes = createNodes;
+
+module.exports.extractTagsAndContent = extractTagsAndContent;
+module.exports.extractTagAttributes = extractTagAttributes;
+
+module.exports.extractNodes = extractNodes;
+module.exports.extractNodesWithIndexes = extractNodesWithIndexes;
+module.exports.extractElementTags = extractElementTags;
+
 module.exports.commentNodes = commentNodes;
 module.exports.textNodes = textNodes;
 module.exports.elementNodes = elementNodes;
-module.exports.extractTags = extractTagsAndContent;
-module.exports.extractTagAttributes = extractTagAttributes;
+module.exports.createNodes = createNodes;
 

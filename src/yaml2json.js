@@ -1,3 +1,10 @@
+
+/**
+ *
+ *
+ * @param {*} yamlString
+ * @return {*} 
+ */
 function yamlToJson(yamlString) {
   // Split the input string into lines
   const lines = yamlString.trim().split('\n');
@@ -53,3 +60,5 @@ function yamlToJson(yamlString) {
   // Convert the output object to JSON and return it
   return JSON.stringify(output);
 }
+
+module.exports = yamlToJson;

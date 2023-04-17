@@ -1,3 +1,10 @@
+
+/**
+ *
+ *
+ * @param {*} xmlString
+ * @return {*} 
+ */
 function xml2json(xmlString) {
   const xmlDoc = new DOMParser().parseFromString(xmlString, 'text/xml');
   const rootNode = xmlDoc.documentElement;
@@ -7,6 +14,14 @@ function xml2json(xmlString) {
   return result;
 }
 
+
+/**
+ *
+ *
+ * @param {*} node
+ * @param {*} parent
+ * @param {*} lineNum
+ */
 function parseNode(node, parent, lineNum) {
   if (node.nodeType === Node.ELEMENT_NODE) {
     const element = {};
