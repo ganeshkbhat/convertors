@@ -2,27 +2,12 @@
 /**
  * 
  * ELEMENT, COMMENT, AND TEXT NODE TYPES extractTagsAndContent CAN PARSE:
- * 
- * [ 
- * '<ElementNode/>',
- * '<?ElementNode ATTTRIBUTE ATTr="val" ?>',
- * '<ElementNode>', 
- * '</ElementNode>', 
- * '<!-- COMMENT TEXT      -->', 
- * '<ElementNode ATRRIBUTE ATTRIBUTE="VALUE">', 
- * '</ElementNode>', 
- * '<!ElementNode>', 
- * '<?ElementNode>', 
- * 'TEXT NODE etc'
- * ]
+ * [ '<ElementNode/>', '<?ElementNode ATTTRIBUTE ATTr="val" ?>', '<ElementNode>', '</ElementNode>',  '<!-- COMMENT TEXT      -->', '<ElementNode ATRRIBUTE ATTRIBUTE="VALUE">', '</ElementNode>',  '<!ElementNode>', '<?ElementNode>',  'TEXT NODE etc' ]
  * 
  * STRING SAMPLE IS:
- * 
  * 'some text <ElementNode/> more text <?ElementNode ATTTRIBUTE ATTr="val" ?><ElementNode>some text</ElementNode><!-- COMMENT TEXT      --> <ElementNode ATRRIBUTE ATTRIBUTE="VALUE"></ElementNode> <!ElementNode> <?ElementNode> ';
  * 
- * 
  * RESULT IS AN ARRAY LIKE BELOW: 
- * 
  * [ 
  *      'some text', '<ElementNode/>', 'more text', '<?ElementNode ATTTRIBUTE ATTr="val" ?>', 
  *      '<ElementNode>', 'some text', '</ElementNode>', '<!-- COMMENT TEXT      -->', '', 
@@ -182,7 +167,7 @@ function extractElementTags(htmlString, indexes = true, returns = "array") {
         }
         const end = htmlString.indexOf(">", start) + 1;
         const nodeString = htmlString.slice(start, end);
-        const item = (returns === "array") ? (!!indexes) ? [nodeString, start, end] : [nodeString] : (!!indexes) ? {nodeString, start, end} : {nodeString}
+        const item = (returns === "array") ? (!!indexes) ? [nodeString, start, end] : [nodeString] : (!!indexes) ? { nodeString, start, end } : { nodeString }
         if (nodeString.startsWith("<!--")) {
             // ignore comments
             commentNodes.push(item);

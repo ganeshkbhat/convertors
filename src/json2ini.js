@@ -28,6 +28,5 @@ function jsonToIni(obj) {
             sections.push(`${key}=${value}\n`);
         }
     }
-
     return sections.join('');
 }
