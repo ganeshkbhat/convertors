@@ -84,7 +84,7 @@ function cssElementID(rule) {
 }
   
 
-function cssStar(cssString) {
+function starSeperated(cssString) {
   // ` * { KEY: VALUE, KEYTWO: VALUE }`
   // /\s*\*\s*{\s*([^{}]+)\s*}/g
 
@@ -109,7 +109,7 @@ function cssStar(cssString) {
 }
 
 
-function cssSpaceSeperated(cssString) {
+function spaceSeperated(cssString) {
   // `#TAGNAME TAGNAME .CLASSNAME { KEY: VALUE, KEYTWO: VALUE }`
   // /#\w+\s+\w+(?:\.\w+)?\s*\{[^{}]+\}/
 
@@ -142,7 +142,7 @@ function cssSpaceSeperated(cssString) {
 //   // ]
 
 
-function cssArrowSeperated(cssString) {
+function arrowSeperated(cssString) {
   // `#TAGNAME > TAGNAME >  .CLASSNAME { KEY: VALUE, KEYTWO: VALUE }`
   // /^#\w+\s*>*\s*\w+\s*>*\s*\.\w+\s*\{\s*[\w-]+\s*:\s*[^;}]+(;[\w-]+\s*:\s*[^;}]+)*\s*\}/
 
@@ -176,7 +176,7 @@ function cssArrowSeperated(cssString) {
 }
   
 
-function cssCommaSpaceArrowSeperated(cssString) {
+function commaSpaceArrowSeperated(cssString) {
   // `#TAGNAME TAGNAME .CLASSNAME,  #TAGNAME > TAGNAME > .CLASSNAME  { KEY: VALUE, KEYTWO: VALUE }`
   // /(?:^|\s*)([#\.\w\s>,]+)\s*\{([^}]+)\}/g
 
@@ -194,7 +194,7 @@ function cssCommaSpaceArrowSeperated(cssString) {
 }
 
   
-function cssCommaSpaceArrowSeperatedTwo(cssString) {
+function commaSpaceArrowSeperated(cssString) {
   // `#TAGNAME, TAGNAME, .CLASSNAME, #TAGNAME TAGNAME .CLASSNAME,  #TAGNAME > TAGNAME > .CLASSNAME  { KEY: VALUE, KEYTWO: VALUE }`
   // /([#.\w\s,>+]+)\s*\{([^}]*)\}/g
 
@@ -248,7 +248,7 @@ function cssCommaSpaceArrowSeperatedTwo(cssString) {
 // }
   
 
-function cssClassCommaSeperated(cssString) {
+function commaSeperatedClasses(cssString) {
   //  `*, TAGNAME, TAGNAME, TAGNAME  { KEY: VALUE, KEYTWO: VALUE }`
   // /^(\s*\*\s*|[a-zA-Z][a-zA-Z0-9-]*)(\s*,\s*[a-zA-Z][a-zA-Z0-9-]*)*\s*\{\s*[^{}]*\s*\}/
 
@@ -262,7 +262,7 @@ function cssClassCommaSeperated(cssString) {
 }
   
 
-function cssCommaSeperatedElementID(cssString) {
+function commaSeperatedElementID(cssString) {
   // `*, #TAGNAME, #TAGNAME, #TAGNAME  { KEY: VALUE, KEYTWO: VALUE }`
   // /^\s*(?:\*|#\w+|\.\w+|\w+)(?:\s*(?:,\s*)\s*(?:\*|#\w+|\.\w+|\w+))*\s*\{[\s\S]*?\}/gm
 
@@ -321,7 +321,7 @@ function cssCommaSeperatedElementID(cssString) {
 //   // ]
   
 
-function cssSelectors(cssString) {
+function selectors(cssString) {
   // `@MEDIATAGNAME  { .CLASSNAME { KEY: VALUE, KEYTWO: VALUE }, #TAGNAME { KEY: VALUE, KEYTWO: VALUE }, TAGNAME { KEY: VALUE, KEYTWO: VALUE } }` the structure for @MEDIATAGNAME is not a nested structure
   // /@media\s*[^\{\}]*\s*\{(?:\s*[\.\#]?[\w-]+\s*\{[^{}]*\}\s*,?)+\s*\}/g
 
@@ -331,7 +331,7 @@ function cssSelectors(cssString) {
 }
 
 
-function cssSelectors(cssString) {
+function selectors(cssString) {
   // `@MEDIATAGNAME SCREENTAG CSSSELECTOR and ( hover: hover )    { .CLASSNAME { KEY: VALUE, KEYTWO: VALUE }, #TAGNAME { KEY: VALUE, KEYTWO: VALUE }, TAGNAME { KEY: VALUE, KEYTWO: VALUE } }` the structure for @MEDIATAGNAME is not a nested structure
   // /@\w+\s+\w+\s+\w+\s+\([^)]*\)\s*{\s*((?:\s*[.#]?[\w-]+\s*{[^{}]*}\s*,?\s*)+)\s*}/g
 
@@ -360,7 +360,7 @@ function cssSelectors(cssString) {
   
 /** PARSER */
 
-function cssSelectors(cssString) {
+function selectors(cssString) {
   // `@MEDIATAGNAME SCREENTAG and ( hover: hover )    { .CLASSNAME { KEY: VALUE, KEYTWO: VALUE }, #TAGNAME { KEY: VALUE, KEYTWO: VALUE }, TAGNAME { KEY: VALUE, KEYTWO: VALUE } *, #TAGNAME, #TAGNAME, #TAGNAME  { KEY: VALUE, KEYTWO: VALUE } #TAGNAME, TAGNAME, .CLASSNAME, #TAGNAME TAGNAME .CLASSNAME,  #TAGNAME > TAGNAME > .CLASSNAME,   { KEY: VALUE, KEYTWO: VALUE }, * { KEY: VALUE, KEYTWO: VALUE } #TAGNAME { KEY: VALUE, KEYTWO: VALUE } , TAGNAME { KEY: VALUE, KEYTWO: VALUE }  .CLASSNAME { KEY: VALUE, KEYTWO: VALUE }  }`
   // /@media\s+([^{]+)\s*\{((?:[^{}]*\{[^{}]*\}[^{}]*)+)\}/g
 
@@ -378,6 +378,7 @@ function cssSelectors(cssString) {
   return mediaQueries;
 }
   
+
 function parseStyles(stylesString) {
   const regex = /([^{]+)\{([^}]+)\}/g;
   const styles = [];
@@ -401,7 +402,7 @@ function parseStyles(stylesString) {
   /** PARSER */
 
 
-function cssSelectors(cssString) {
+function selectors(cssString) {
   // `@MEDIATAGNAME SCREENTAG and ( hover: hover )    { .CLASSNAME { KEY: VALUE, KEYTWO: VALUE }, #TAGNAME { KEY: VALUE, KEYTWO: VALUE }, TAGNAME { KEY: VALUE, KEYTWO: VALUE } }`
   // /@([a-zA-Z][\w-]*)\s+([\w-]+)\s+and\s*\(\s*([\w-]+)\s*:\s*([\w-]+)\s*\)\s*\{\s*((?:\s*(?:#|\.)[\w-]+\s*\{\s*[\w-]+\s*:\s*[\w-]+\s*,?\s*\})+)\s*\}/gs
 
@@ -453,7 +454,7 @@ function cssSelectors(cssString) {
 //   console.log(parsedCSS);
 
 
-function cssSelectors(cssString) {
+function selectors(cssString) {
   // `@MEDIATAGNAME SCREENTAG and ( hover: hover )    { .CLASSNAME { KEY: VALUE, KEYTWO: VALUE }, #TAGNAME { KEY: VALUE, KEYTWO: VALUE }, TAGNAME { KEY: VALUE, KEYTWO: VALUE } *, #TAGNAME, #TAGNAME, #TAGNAME  { KEY: VALUE, KEYTWO: VALUE } #TAGNAME, TAGNAME, .CLASSNAME, #TAGNAME TAGNAME .CLASSNAME,  #TAGNAME > TAGNAME > .CLASSNAME,   { KEY: VALUE, KEYTWO: VALUE }, * { KEY: VALUE, KEYTWO: VALUE } #TAGNAME { KEY: VALUE, KEYTWO: VALUE } , TAGNAME { KEY: VALUE, KEYTWO: VALUE }  .CLASSNAME { KEY: VALUE, KEYTWO: VALUE }  }`
   // /@\w+\s+\w+\s+and\s*\(\s*[\w-]+\s*:\s*[\w-]+\s*\)\s*{(?:\s*[\w.#-]+\s*\{\s*\w+\s*:\s*[\w.#%]+(?:\s*!important)?\s*,?\s*)+\s*}/g
 
@@ -505,7 +506,7 @@ function cssSelectors(cssString) {
 // console.log(parsedCSS);
 
 
-function cssSelectors(cssString) {
+function selectors(cssString) {
   // `@SOMETAGNAME SCREENTAG and ( hover: hover )    { .CLASSNAME { KEY: VALUE, KEYTWO: VALUE }, #TAGNAME { KEY: VALUE, KEYTWO: VALUE }, TAGNAME { KEY: VALUE, KEYTWO: VALUE } }`
   // /@\w+\s+\w+\s+and\s*\([^)]*\)\s*{(?:\s*[.#]?[\w-]+\s*(?:[>,+\s~]+[.#]?[\w-]+)*\s*{(?:\s*[\w-]+\s*:\s*[^;{}]+;\s*)*}\s*,?\s*)*}/g
 
