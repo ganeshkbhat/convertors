@@ -1,6 +1,6 @@
 
 
-function cssClass(ruleString) {
+function rulesClass(ruleString) {
   // .CLASSNAME { KEY: VALUE, KEYTWO: VALUE }
   // const cssRuleRegex = /^\.([a-zA-Z][\w-]*)\s*\{\s*((?:[a-zA-Z-]+:\s*(?:\\[{}]|[^{}])+;\s*)*)\s*\}$/;
 
@@ -27,7 +27,7 @@ function cssClass(ruleString) {
 // console.log(cssRule); // { className: 'my-class', properties: [{ key: 'font-size', value: '14px' }, { key: 'color', value: '#333' }] }
 
 
-function cssHTMLTag(ruleString) {
+function rulesHTMLTag(ruleString) {
   // `TAGNAME { KEY: VALUE, KEYTWO: VALUE }`
   // /^([a-zA-Z][\w-]*)\s*\{\s*((?:[a-zA-Z-]+:\s*(?:\\[{}]|[^{}])+;\s*)*)\s*\}$/
 
@@ -58,7 +58,7 @@ function cssHTMLTag(ruleString) {
 // }
 
 
-function cssElementID(rule) {
+function rulesElementID(rule) {
   // `#TAGNAME { KEY: VALUE, KEYTWO: VALUE }`
   // /#([^\s\{\}]+)\s*\{\s*([^{}]+)\s*\}/g
 
@@ -84,7 +84,7 @@ function cssElementID(rule) {
 }
   
 
-function starSeperated(cssString) {
+function rulesStar(cssString) {
   // ` * { KEY: VALUE, KEYTWO: VALUE }`
   // /\s*\*\s*{\s*([^{}]+)\s*}/g
 
