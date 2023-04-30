@@ -9,4 +9,4 @@ function jsonToXml(jsonObject) {
 
 }
 
-module.exports = jsonToXml;
+module.exports.jsonToXml = jsonToXml;

@@ -34,4 +34,4 @@ function jsonToYaml(jsonObject, indentLevel = 0) {
   return result;
 }
 
-module.exports = jsonToYaml;
+module.exports.jsonToYaml = jsonToYaml;

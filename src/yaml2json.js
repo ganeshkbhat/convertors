@@ -61,4 +61,4 @@ function yamlToJson(yamlString) {
   return JSON.stringify(output);
 }
 
-module.exports = yamlToJson;
+module.exports.yamlToJson = yamlToJson;

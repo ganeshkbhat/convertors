@@ -57,4 +57,4 @@ function iniToJson(iniString) {
   return result;
 }
 
-module.exports = iniToJson;
+module.exports.iniToJson = iniToJson;

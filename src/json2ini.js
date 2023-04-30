@@ -39,4 +39,4 @@ function jsonToIni(obj) {
     return sections.join('');
 }
 
-module.exports = jsonToIni;
+module.exports.jsonToIni = jsonToIni;

@@ -10,4 +10,4 @@ function xmlToJson(xmlStr) {
 }
 
 
-module.exports = xmlToJson;
+module.exports.xmlToJson = xmlToJson;

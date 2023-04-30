@@ -12,4 +12,4 @@ function parseLess(lessStr) {
     return result;
 }
 
-module.exports = parseLess;
+module.exports.parseLess = parseLess;

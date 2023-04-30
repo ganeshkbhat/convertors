@@ -9,4 +9,4 @@ function parseSass(sassStr) {
 
 }
 
-module.exports = parseSass;
+module.exports.parseSass = parseSass;
