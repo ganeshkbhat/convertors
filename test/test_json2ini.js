@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
 
-const { jsonToIni } = require('./json2ini');
+const { jsonToIni } = require('../src/json2ini');
 
 describe('jsonToIni', () => {
     it('should convert a simple JSON object to an INI file', () => {

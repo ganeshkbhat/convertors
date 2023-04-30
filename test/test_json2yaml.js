@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 const sinon = require('sinon');
 
-const { yamlToJson } = require('./yaml2json');
+const { yamlToJson } = require('../src/json2yaml');
 
 describe('yamlToJson', () => {
     it('should convert a simple YAML string to a JSON object', () => {

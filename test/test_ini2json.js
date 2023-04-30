@@ -3,7 +3,7 @@ const chai = require('chai');
 const sinon = require('sinon');
 const expect = chai.expect;
 
-const { iniToJson } = require('./ini2json');
+const { iniToJson } = require('../src/ini2json');
 
 describe('iniToJson', () => {
   let consoleSpy;
@@ -16,7 +16,7 @@ describe('iniToJson', () => {
     consoleSpy.restore();
   });
 
-  it('should convert a simple INI file with one section to a JSON object', function() {
+  it('should convert a simple INI file with one section to a JSON object', function () {
     const ini = '[node]\ncompressiontype=zip\nurl=https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip\ntmp=./\ndest=./extract\n';
     const expected = { node: { compressiontype: 'zip', url: 'https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip', tmp: './', dest: './extract' } };
 
@@ -24,20 +24,20 @@ describe('iniToJson', () => {
     expect(result).to.deep.equal(expected);
   });
 
-  it('should convert an INI file with multiple sections and key-value pairs to a JSON object', function() {
+  it('should convert an INI file with multiple sections and key-value pairs to a JSON object', function () {
     const ini = '[node]\ncompressiontype=zip\nurl=https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip\ntmp=./\ndest=./extract\n[secondnode]\ncompressiontype=zip\nurl=https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip\ntmp=./\ndest=./extract\n';
-    const expected = { 
-      node: { 
-        compressiontype: 'zip', 
-        url: 'https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip', 
-        tmp: './', 
-        dest: './extract' 
+    const expected = {
+      node: {
+        compressiontype: 'zip',
+        url: 'https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip',
+        tmp: './',
+        dest: './extract'
       },
       secondnode: {
-        compressiontype: 'zip', 
-        url: 'https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip', 
-        tmp: './', 
-        dest: './extract' 
+        compressiontype: 'zip',
+        url: 'https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip',
+        tmp: './',
+        dest: './extract'
       }
     };
 
@@ -45,14 +45,14 @@ describe('iniToJson', () => {
     expect(result).to.deep.equal(expected);
   });
 
-  it('should throw an error if the input is not a string', function() {
+  it('should throw an error if the input is not a string', function () {
     const ini = 123;
     const expectedError = 'Input is not a string';
 
     expect(() => iniToJson(ini)).to.throw(expectedError);
   });
 
-  it('should call console.warn with a warning message if the input is an empty string', function() {
+  it('should call console.warn with a warning message if the input is an empty string', function () {
     const ini = '';
     const consoleWarnStub = sinon.stub(console, 'warn');
     const expectedWarning = 'Input INI file is empty';
