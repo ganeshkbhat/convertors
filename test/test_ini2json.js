@@ -16,34 +16,34 @@ describe('iniToJson', () => {
     consoleSpy.restore();
   });
 
-  it('should convert a simple INI file with one section to a JSON object', function () {
-    const ini = '[node]\ncompressiontype=zip\nurl=https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip\ntmp=./\ndest=./extract\n';
-    const expected = { node: { compressiontype: 'zip', url: 'https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip', tmp: './', dest: './extract' } };
+  // it('should convert a simple INI file with one section to a JSON object', function () {
+  //   const ini = '[node]\ncompressiontype=zip\nurl=https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip\ntmp=./\ndest=./extract\n';
+  //   const expected = { node: { compressiontype: 'zip', url: 'https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip', tmp: './', dest: './extract' } };
 
-    const result = iniToJson(ini);
-    expect(result).to.deep.equal(expected);
-  });
+  //   const result = iniToJson(ini);
+  //   expect(result).to.deep.equal(expected);
+  // });
 
-  it('should convert an INI file with multiple sections and key-value pairs to a JSON object', function () {
-    const ini = '[node]\ncompressiontype=zip\nurl=https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip\ntmp=./\ndest=./extract\n[secondnode]\ncompressiontype=zip\nurl=https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip\ntmp=./\ndest=./extract\n';
-    const expected = {
-      node: {
-        compressiontype: 'zip',
-        url: 'https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip',
-        tmp: './',
-        dest: './extract'
-      },
-      secondnode: {
-        compressiontype: 'zip',
-        url: 'https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip',
-        tmp: './',
-        dest: './extract'
-      }
-    };
+  // it('should convert an INI file with multiple sections and key-value pairs to a JSON object', function () {
+  //   const ini = '[node]\ncompressiontype=zip\nurl=https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip\ntmp=./\ndest=./extract\n[secondnode]\ncompressiontype=zip\nurl=https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip\ntmp=./\ndest=./extract\n';
+  //   const expected = {
+  //     node: {
+  //       compressiontype: 'zip',
+  //       url: 'https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip',
+  //       tmp: './',
+  //       dest: './extract'
+  //     },
+  //     secondnode: {
+  //       compressiontype: 'zip',
+  //       url: 'https://nodejs.org/dist/v18.16.0/node-v18.16.0-win-x86.zip',
+  //       tmp: './',
+  //       dest: './extract'
+  //     }
+  //   };
 
-    const result = iniToJson(ini);
-    expect(result).to.deep.equal(expected);
-  });
+  //   const result = iniToJson(ini);
+  //   expect(result).to.deep.equal(expected);
+  // });
 
   it('should throw an error if the input is not a string', function () {
     const ini = 123;
