@@ -1,3 +1,6 @@
+
+var iniToJson = require("../index").parseIni2Json.iniToJson;
+
 const iniString = `
 ; This is a comment
 [database]
@@ -64,7 +67,7 @@ password = mypassword
 timeout = 5000
 
 [databaseconfig]
-timeout = { test: "value", tester: "value" }
+timeout = { "test": "value", "tester": "value" }
 `;
 
 const result3 = iniToJson(iniString3);

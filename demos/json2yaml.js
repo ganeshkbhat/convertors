@@ -1,3 +1,8 @@
+
+
+var jsonToYaml = require("../index").parseJson2Yaml.jsonToYaml;
+
+
 const jsonObject = {
     section1: {
       key1: 'value1',

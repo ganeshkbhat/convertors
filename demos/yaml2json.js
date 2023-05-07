@@ -1,3 +1,8 @@
+
+
+var yamlToJson = require("../index").parseYaml2Json.yamlToJson;
+
+
 const yamlString = `
 # Example YAML file
 section1:
