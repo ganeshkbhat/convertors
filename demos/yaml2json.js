@@ -32,4 +32,59 @@ console.log(jsonString);
 //       "key3": "value3"
 //     }
 //   }
-  
+
+
+yamlString = `
+person:
+  name: John
+  age: 30
+car:
+  make: Tesla
+  model: Model S
+`;
+
+jsonString = yamlToJson(yamlString);
+console.log(jsonString);
+
+yamlString = `
+      person:
+        name: John
+        bio: |
+          John is a software engineer
+          with 5 years of experience.
+    `
+
+jsonString = yamlToJson(yamlString);
+console.log(jsonString);
+
+yamlString =  `
+    person:
+      name: John
+      age: 30
+      address:
+        street: 123 Main St.
+        city: New York
+        state: NY
+  `
+
+jsonString = yamlToJson(yamlString);
+console.log(jsonString);
+
+yamlString = `
+  person:
+    name: John
+    age: 30
+    city: New York
+`
+
+jsonString = yamlToJson(yamlString);
+console.log(jsonString);
+
+yamlString = `
+      name: John
+      age: 30
+      city: New York
+    `
+
+jsonString = yamlToJson(yamlString);
+console.log(jsonString);
