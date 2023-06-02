@@ -24,6 +24,10 @@ function js2Format(jsObject) {
 
     }
 
+    this.dotenv = function () {
+
+    }
+
     this.yaml = function () {
 
     }
@@ -70,6 +74,10 @@ function format2js() {
     InterfaceJSObjectParser.call(this, jsObject);
 
     this.ini = function () {
+
+    }
+
+    this.dotenv = function () {
 
     }
 
