@@ -2,9 +2,13 @@
 
 npm jsparsers module for file format to format convertors for ini, yaml, json, xml, html, css, less, sass.
 
+
+
 ### DEMOS
 
 Find the demos in the [demo folder](https://github.com/ganeshkbhat/convertors/tree/main/demos)
+
+
 
 ### INSTALLATION
 
@@ -12,14 +16,83 @@ Find the demos in the [demo folder](https://github.com/ganeshkbhat/convertors/tr
 
 npm Package: [jsparsers](https://www.npmjs.com/package/jsparsers)
 
+
+
 ### USAGE
 
 ```
 
-let jsparsers = require("jsparsers");
+let jsp = require("jsparsers");
 
 ```
 
+
+## ini
+
+```
+
+let jsp = require("jsparsers");
+
+```
+
+## xml
+
+```
+
+let jsp = require("jsparsers");
+
+```
+
+## dotenv
+
+```
+
+let jsp = require("jsparsers");
+
+```
+
+## yaml
+
+```
+
+let jsp = require("jsparsers");
+
+```
+
+## css
+
+```
+
+let jsp = require("jsparsers");
+
+```
+
+## scss
+
+```
+
+let jsp = require("jsparsers");
+
+```
+
+## sass
+
+```
+
+let jsp = require("jsparsers");
+
+```
+
+## less
+
+```
+
+let jsp = require("jsparsers");
+
+```
+
+
+<!-- 
 ### parseIni
 
 #### ini2json
@@ -121,7 +194,7 @@ const jsonObject = {
   console.log(yamlString);
 
 
-```
+``` -->
 
 <!-- 
 ### Yaml to Ini OR Ini to Yaml
