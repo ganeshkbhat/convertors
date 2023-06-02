@@ -50,12 +50,92 @@ function ScssConvertors() {
 
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
 
+    this.ini = function () {
+
+    }
+
+    this.dotenv = function () {
+
+    }
+
+    this.yaml = function () {
+
+    }
+
+    this.yml = function () {
+
+    }
+
+    this.xml = function () {
+
+    }
+
+    this.json = function () {
+
+    }
+
+    this.css = function () {
+
+    }
+
+    this.less = function () {
+
+    }
+
+    this.scss = function () {
+
+    }
+
+    this.sass = function () {
+
+    }
+
 }
 
 
 function ScssParsers() {
     
     interfaces.InterfaceJSObjectParserCSS.call(this, object);
+
+    this.ini = function () {
+
+    }
+
+    this.dotenv = function () {
+
+    }
+
+    this.yaml = function () {
+
+    }
+
+    this.yml = function () {
+
+    }
+
+    this.xml = function () {
+
+    }
+
+    this.json = function () {
+
+    }
+
+    this.css = function () {
+
+    }
+
+    this.less = function () {
+
+    }
+
+    this.scss = function () {
+
+    }
+
+    this.sass = function () {
+
+    }
     
 }
 

@@ -89,7 +89,6 @@ function YamlParsers() {
 
     interfaces.InterfaceJSObjectParser.call(this, object);
     
-    
     this.ini = function () {
 
     }

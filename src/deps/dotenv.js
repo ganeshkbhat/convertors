@@ -42,15 +42,14 @@ function Dotenv() {
     this.write = function (file, object, options, writeOptions) {
         return
     }
-
 }
 
 
 function DotenvConvertors() {
-    
+
     interfaces.InterfaceJSObjectConvertor.call(this, object);
 
-    
+
     this.ini = function () {
 
     }
@@ -80,8 +79,8 @@ function DotenvConvertors() {
 function DotenvParsers() {
 
     interfaces.InterfaceJSObjectParser.call(this, object);
-    
-    
+
+
     this.ini = function () {
 
     }

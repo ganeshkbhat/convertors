@@ -152,7 +152,6 @@ function IniParsers() {
     
     interfaces.InterfaceJSObjectParser.call(this, object);
     
-    
     this.ini = function () {
 
     }

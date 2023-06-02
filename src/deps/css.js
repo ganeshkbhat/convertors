@@ -88,12 +88,46 @@ function Css() {
 function CssConvertors() {
     
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
+
+
+    this.css = function () {
+
+    }
+
+    this.less = function () {
+
+    }
+
+    this.scss = function () {
+
+    }
+
+    this.sass = function () {
+
+    }
 }
 
 
 function CssParsers() {
 
     interfaces.InterfaceJSObjectParserCSS.call(this, object);
+
+
+    this.css = function () {
+
+    }
+
+    this.less = function () {
+
+    }
+
+    this.scss = function () {
+
+    }
+
+    this.sass = function () {
+
+    }
 }
 
 
