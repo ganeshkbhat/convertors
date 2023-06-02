@@ -12,12 +12,20 @@ function Dotenv() {
 
     interfaces.InterfaceReader.call(this);
 
-    this.parse = function () {
-        return 
+    this.load = function (file, options, readOptions) {
+        return
     }
 
-    this.serialize = function () {
-        return 
+    this.parse = function (lines, options) {
+        return
+    }
+
+    this.serialize = function (object, options) {
+        return
+    }
+
+    this.write = function (file, object, options, writeOptions) {
+        return
     }
 
 }
