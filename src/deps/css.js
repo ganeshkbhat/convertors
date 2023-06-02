@@ -86,11 +86,13 @@ function Css() {
 
 
 function CssConvertors() {
+    
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
 }
 
 
 function CssParsers() {
+
     interfaces.InterfaceJSObjectParserCSS.call(this, object);
 }
 

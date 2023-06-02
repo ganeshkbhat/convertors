@@ -47,12 +47,14 @@ function Scss() {
 
 
 function ScssConvertors() {
+
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
 
 }
 
 
 function ScssParsers() {
+    
     interfaces.InterfaceJSObjectParserCSS.call(this, object);
     
 }

@@ -47,14 +47,64 @@ function Dotenv() {
 
 
 function DotenvConvertors() {
+    
     interfaces.InterfaceJSObjectConvertor.call(this, object);
 
+    
+    this.ini = function () {
+
+    }
+
+    this.dotenv = function () {
+
+    }
+
+    this.yaml = function () {
+
+    }
+
+    this.yml = function () {
+
+    }
+
+    this.xml = function () {
+
+    }
+
+    this.json = function () {
+
+    }
 }
 
 
 function DotenvParsers() {
+
     interfaces.InterfaceJSObjectParser.call(this, object);
     
+    
+    this.ini = function () {
+
+    }
+
+    this.dotenv = function () {
+
+    }
+
+    this.yaml = function () {
+
+    }
+
+    this.yml = function () {
+
+    }
+
+    this.xml = function () {
+
+    }
+
+    this.json = function () {
+
+    }
 }
 
 

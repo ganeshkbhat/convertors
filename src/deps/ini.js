@@ -118,14 +118,64 @@ function Ini() {
 
 
 function IniConvertors() {
+
     interfaces.InterfaceJSObjectConvertor.call(this, object);
 
+    
+    this.ini = function () {
+
+    }
+
+    this.dotenv = function () {
+
+    }
+
+    this.yaml = function () {
+
+    }
+
+    this.yml = function () {
+
+    }
+
+    this.xml = function () {
+
+    }
+
+    this.json = function () {
+
+    }
 }
 
 
 function IniParsers() {
+    
     interfaces.InterfaceJSObjectParser.call(this, object);
     
+    
+    this.ini = function () {
+
+    }
+
+    this.dotenv = function () {
+
+    }
+
+    this.yaml = function () {
+
+    }
+
+    this.yml = function () {
+
+    }
+
+    this.xml = function () {
+
+    }
+
+    this.json = function () {
+
+    }
 }
 
 
