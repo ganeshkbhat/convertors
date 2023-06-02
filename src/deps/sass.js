@@ -12,7 +12,7 @@ function Sass() {
 
     interfaces.InterfaceReader.call(this);
 
-    this.load = function (file, options) {
+    this.load = function (file, options, readOptions) {
         return 
     }
 
@@ -24,7 +24,7 @@ function Sass() {
         return 
     }
 
-    this.write = function (file, options) {
+    this.write = function (file, object, options, writeOptions) {
         return 
     }
 

@@ -1,22 +1,70 @@
-
+/**
+ * 
+ */
 
 function InterfaceReader() {
 
-    this.load = function () {
-        return new Error("InterfaceReader: ");
-    }
-
-    this.parse = function () {
-        return new Error("InterfaceReader: ");
-    }
-    this.serialize = function () {
-        return new Error("InterfaceReader: ");
-    }
-
-    this.write = function () {
-        return new Error("InterfaceReader: ");
+    /**
+     *
+     *
+     * @param {*} file
+     * @param {*} readOptions
+     * @return {*} 
+     */
+    this.readFile = function (file, readOptions) {
+        var fs = require("fs");
+        return fs.readFileSync(file, readOptions);
     }
     
+    /**
+     *
+     *
+     * @param {*} file
+     * @param {*} object
+     * @param {*} writeOptions
+     * @return {*} 
+     */
+    this.writeFile = function (file, object, writeOptions) {
+        var fs = require("fs");
+        return fs.writeFileSync(file, object, writeOptions);
+    }
+
+    /**
+     *
+     *
+     * @param {*} file
+     * @param {*} options
+     * @param {*} readOptions
+     * @return {*} 
+     */
+    this.load = function (file, options, readOptions) {
+        let str = readFile(file, readOptions);
+        return this.parse(str, options);
+    }
+
+    /**
+     *
+     *
+     * @param {*} file
+     * @param {*} object
+     * @param {*} options
+     * @param {*} writeOptions
+     * @return {*} 
+     */
+    this.write = function (file, object, options, writeOptions) {
+        let str = this.serialize(object, options);
+        return writeFile(file, str, writeOptions);
+    }
+
+    this.parse = function (str, options) {
+        return new Error("InterfaceReader: ");
+    }
+
+    this.serialize = function (object, options) {
+        return new Error("InterfaceReader: ");
+    }
+
+
 }
 
 

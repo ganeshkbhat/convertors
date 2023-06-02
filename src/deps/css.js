@@ -15,15 +15,31 @@ function Css() {
     /**
      *
      *
+     * @param {*} file
+     * @param {*} options
+     * @param {*} readOptions
+     * @return {*} 
+     * 
+     * https://www.npmjs.com/package/css
+     * 
+     */
+    this.load = function (file, options, readOptions) {
+        let str = this.readFile(file, readOptions);
+        return this.parse(str, options);
+    }
+
+    /**
+     *
+     *
      * @param {*} str
      * @param {*} options
      * options: 
      *      silent: silently fail on parse errors
      *      source: the path to the file containing css. Makes errors and source maps more helpful, by letting them know where code comes from.
      * 
-     * https://www.npmjs.com/package/css
-     * 
      * @return {*} 
+     * 
+     * https://www.npmjs.com/package/css
      * 
      */
     this.parse = function (str, options) {
@@ -42,6 +58,7 @@ function Css() {
      *          Specify sourcemap: 'generator' to return the SourceMapGenerator object instead of serializing the source map.
      *      inputSourcemaps: (enabled by default, specify false to disable) reads any source maps referenced by the input files when generating the output source map. 
      *          When enabled, file system access may be required for reading the referenced source maps.
+     * @return {*} 
      * 
      * https://www.npmjs.com/package/css
      * 
