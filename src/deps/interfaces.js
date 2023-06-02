@@ -1,6 +1,39 @@
 /**
  * 
- */
+ * Package: jsparsers
+ * Author: Ganesh B
+ * Description: 
+ * Install: npm i jsparsers --save
+ * Github: https://github.com/ganeshkbhat/
+ * npmjs Link: https://www.npmjs.com/package/jsparsers
+ * File: .js
+ * File Description: 
+ * 
+ * 
+*/
+
+/* eslint no-console: 0 */
+
+'use strict';
+
+
+var getProperties = require("./implementInterface").getProperties;
+
+const BaseReader = {
+    "readFile": "function",
+    "writeFile": "function",
+    "load": "function",
+    "serialiser": "function",
+    "write": "function"
+}
+
+const BaseCSSReader = {
+    "css": "function",
+    "less": "function",
+    "scss": "function",
+    "sass": "function"
+}
+
 
 function InterfaceReader() {
 
@@ -15,7 +48,7 @@ function InterfaceReader() {
         var fs = require("fs");
         return fs.readFileSync(file, readOptions);
     }
-    
+
     /**
      *
      *
@@ -38,7 +71,7 @@ function InterfaceReader() {
      * @return {*} 
      */
     this.load = function (file, options, readOptions) {
-        let str = readFile(file, readOptions);
+        let str = this.readFile(file, readOptions);
         return this.parse(str, options);
     }
 
@@ -53,7 +86,7 @@ function InterfaceReader() {
      */
     this.write = function (file, object, options, writeOptions) {
         let str = this.serialize(object, options);
-        return writeFile(file, str, writeOptions);
+        return this.writeFile(file, str, writeOptions);
     }
 
     this.parse = function (str, options) {
@@ -66,7 +99,6 @@ function InterfaceReader() {
 
 
 }
-
 
 function InterfaceJSObjectParser(jsObject) {
     this.ini = function () {
@@ -90,7 +122,6 @@ function InterfaceJSObjectParser(jsObject) {
     }
 }
 
-
 function InterfaceJSObjectParserCSS(jsObject) {
     InterfaceJSObjectParser.call(this, jsObject)
 
@@ -111,8 +142,6 @@ function InterfaceJSObjectParserCSS(jsObject) {
     }
 
 }
-
-
 
 function InterfaceJSObjectConvertor(jsObject) {
     this.ini = function () {
@@ -136,7 +165,6 @@ function InterfaceJSObjectConvertor(jsObject) {
     }
 }
 
-
 function InterfaceJSObjectConvertorCSS(jsObject) {
     InterfaceJSObjectConvertor.call(this, jsObject)
 
@@ -158,9 +186,9 @@ function InterfaceJSObjectConvertorCSS(jsObject) {
 
 }
 
-module.exports.InterfaceReader = InterfaceReader;
-module.exports.InterfaceJSObjectConvertor = InterfaceJSObjectConvertor;
-module.exports.InterfaceJSObjectParser = InterfaceJSObjectParser;
-module.exports.InterfaceJSObjectConvertorCSS = InterfaceJSObjectConvertorCSS;
-module.exports.InterfaceJSObjectParserCSS = InterfaceJSObjectParserCSS;
 
+module.exports.InterfaceReader = InterfaceReader;
+module.exports.InterfaceJSObjectParser = InterfaceJSObjectParser;
+module.exports.InterfaceJSObjectParserCSS = InterfaceJSObjectParserCSS;
+module.exports.InterfaceJSObjectConvertor = InterfaceJSObjectConvertor;
+module.exports.InterfaceJSObjectConvertorCSS = InterfaceJSObjectConvertorCSS;

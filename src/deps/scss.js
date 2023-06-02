@@ -23,7 +23,7 @@ var interfaces = require("./interfaces");
  *
  *
  */
-function Sass() {
+function Scss() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -45,5 +45,5 @@ function Sass() {
 
 }
 
-module.exports = Sass;
+module.exports = Scss;
 
