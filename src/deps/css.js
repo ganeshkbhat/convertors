@@ -86,8 +86,14 @@ function Css() {
 
 
 function CssConvertors() {
-
+    interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
 }
+
+
+function CssParsers() {
+    interfaces.InterfaceJSObjectParserCSS.call(this, object);
+}
+
 
 module.exports.Css = Css;
 module.exports.CssConvertors = CssConvertors;

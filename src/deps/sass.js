@@ -47,6 +47,13 @@ function Sass() {
 
 
 function SassConvertors() {
+    interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
+    
+}
+
+
+function SassParsers() {
+    interfaces.InterfaceJSObjectParserCSS.call(this, object);
 
 }
 

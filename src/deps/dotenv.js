@@ -45,8 +45,16 @@ function Dotenv() {
 
 }
 
-function DotenvConvertors() {
 
+function DotenvConvertors() {
+    interfaces.InterfaceJSObjectConvertor.call(this, object);
+
+}
+
+
+function DotenvParsers() {
+    interfaces.InterfaceJSObjectParser.call(this, object);
+    
 }
 
 

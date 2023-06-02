@@ -26,7 +26,7 @@ var interfaces = require("./interfaces");
 function Yaml() {
 
     interfaces.InterfaceReader.call(this);
-    
+
     /**
      *
      *
@@ -53,8 +53,16 @@ function Yaml() {
 
 }
 
-function YamlConvertors() {
 
+function YamlConvertors() {
+    interfaces.InterfaceJSObjectConvertor.call(this, object);
+
+}
+
+
+function YamlParsers() {
+    interfaces.InterfaceJSObjectParser.call(this, object);
+    
 }
 
 

@@ -118,7 +118,14 @@ function Ini() {
 
 
 function IniConvertors() {
+    interfaces.InterfaceJSObjectConvertor.call(this, object);
 
+}
+
+
+function IniParsers() {
+    interfaces.InterfaceJSObjectParser.call(this, object);
+    
 }
 
 

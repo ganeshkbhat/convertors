@@ -46,6 +46,13 @@ function Xml() {
 }
 
 function XmlConvertors() {
+    interfaces.InterfaceJSObjectConvertor.call(this, object);
+    
+}
+
+
+function XmlParsers() {
+    interfaces.InterfaceJSObjectParser.call(this, object);
 
 }
 

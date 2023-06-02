@@ -45,10 +45,17 @@ function Scss() {
 
 }
 
+
 function ScssConvertors() {
+    interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
 
 }
 
+
+function ScssParsers() {
+    interfaces.InterfaceJSObjectParserCSS.call(this, object);
+    
+}
 
 module.exports.Scss = Scss;
 module.exports.ScssConvertors = ScssConvertors;

@@ -47,7 +47,14 @@ function Less() {
 
 
 function LessConvertors() {
+    interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
 
+}
+
+
+function LessParsers() {
+    interfaces.InterfaceJSObjectParserCSS.call(this, object);
+    
 }
 
 
