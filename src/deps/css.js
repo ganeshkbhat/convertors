@@ -84,5 +84,11 @@ function Css() {
 
 }
 
-module.exports = Css;
+
+function CssConvertors() {
+
+}
+
+module.exports.Css = Css;
+module.exports.CssConvertors = CssConvertors;
 

@@ -45,5 +45,13 @@ function Sass() {
 
 }
 
-module.exports = Sass;
+
+function SassConvertors() {
+
+}
+
+
+module.exports.Sass = Sass;
+module.exports.SassConvertors = SassConvertors;
+
 

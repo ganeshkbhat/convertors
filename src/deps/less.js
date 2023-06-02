@@ -45,5 +45,12 @@ function Less() {
 
 }
 
-module.exports = Less;
+
+function LessConvertors() {
+
+}
+
+
+module.exports.Less = Less;
+module.exports.LessConvertors = LessConvertors;
 

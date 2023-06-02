@@ -116,5 +116,12 @@ function Ini() {
 
 }
 
-module.exports = Ini;
+
+function IniConvertors() {
+
+}
+
+
+module.exports.Ini = Ini;
+module.exports.IniConvertors = IniConvertors;
 

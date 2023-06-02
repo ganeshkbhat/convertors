@@ -45,5 +45,12 @@ function Xml() {
 
 }
 
-module.exports = Xml;
+function XmlConvertors() {
+
+}
+
+
+module.exports.Xml = Xml;
+module.exports.XmlConvertors = XmlConvertors;
+
 

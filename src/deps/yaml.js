@@ -53,5 +53,12 @@ function Yaml() {
 
 }
 
-module.exports = Yaml;
+function YamlConvertors() {
+
+}
+
+
+module.exports.Yaml = Yaml;
+module.exports.YamlConvertors = YamlConvertors;
+
 

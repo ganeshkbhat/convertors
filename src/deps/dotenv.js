@@ -45,5 +45,12 @@ function Dotenv() {
 
 }
 
-module.exports = Dotenv;
+function DotenvConvertors() {
+
+}
+
+
+module.exports.Dotenv = Dotenv;
+module.exports.DotenvConvertors = DotenvConvertors;
+
 

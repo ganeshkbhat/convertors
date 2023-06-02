@@ -19,6 +19,7 @@
 
 var getProperties = require("./implementInterface").getProperties;
 
+
 const BaseReader = {
     "readFile": "function",
     "writeFile": "function",
@@ -26,6 +27,7 @@ const BaseReader = {
     "serialiser": "function",
     "write": "function"
 }
+
 
 const BaseCSSReader = {
     "css": "function",
@@ -100,7 +102,9 @@ function InterfaceReader() {
 
 }
 
+
 function InterfaceJSObjectParser(jsObject) {
+
     this.ini = function () {
         return new Error("InterfaceJSObjectConvertor: ")
     }
@@ -122,7 +126,9 @@ function InterfaceJSObjectParser(jsObject) {
     }
 }
 
+
 function InterfaceJSObjectParserCSS(jsObject) {
+
     InterfaceJSObjectParser.call(this, jsObject)
 
     this.css = function () {
@@ -143,7 +149,9 @@ function InterfaceJSObjectParserCSS(jsObject) {
 
 }
 
+
 function InterfaceJSObjectConvertor(jsObject) {
+
     this.ini = function () {
         return new Error("InterfaceJSObjectConvertor: ")
     }
@@ -165,7 +173,9 @@ function InterfaceJSObjectConvertor(jsObject) {
     }
 }
 
+
 function InterfaceJSObjectConvertorCSS(jsObject) {
+
     InterfaceJSObjectConvertor.call(this, jsObject)
 
     this.css = function () {

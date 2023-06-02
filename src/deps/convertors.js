@@ -17,10 +17,7 @@
 'use strict';
 
 
-var InterfaceJSObjectConvertor = require("./interfaces").InterfaceJSObjectConvertor;
-var InterfaceJSObjectParser = require("./interfaces").InterfaceJSObjectParser;
-var InterfaceJSObjectConvertorCSS = require("./interfaces").InterfaceJSObjectConvertorCSS;
-var InterfaceJSObjectParserCSS = require("./interfaces").InterfaceJSObjectParserCSS;
+var Interfaces = require("./interfaces");
 
 var ini = require("./ini.js");
 var env = require("./env.js");
@@ -33,7 +30,7 @@ var css = require("./css.js");
 
 function js2Format(jsObject) {
 
-    InterfaceJSObjectConvertor.call(this, jsObject);
+    Interfaces.InterfaceJSObjectConvertor.call(this, jsObject);
 
     this.ini = function () {
 
@@ -64,7 +61,7 @@ function js2Format(jsObject) {
 
 function js2FormatCss(jsObject) {
 
-    InterfaceJSObjectConvertorCSS.call(this, jsObject);
+    Interfaces.InterfaceJSObjectConvertorCSS.call(this, jsObject);
 
     this.css = function () {
 
@@ -86,7 +83,7 @@ function js2FormatCss(jsObject) {
 
 function format2js() {
 
-    InterfaceJSObjectParser.call(this, jsObject);
+    Interfaces.InterfaceJSObjectParser.call(this, jsObject);
 
     this.ini = function () {
 
@@ -116,7 +113,7 @@ function format2js() {
 
 function formatCss2js() {
 
-    InterfaceJSObjectParserCSS.call(this, jsObject);
+    Interfaces.InterfaceJSObjectParserCSS.call(this, jsObject);
 
     this.css = function () {
 

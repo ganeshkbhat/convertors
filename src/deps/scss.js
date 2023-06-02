@@ -45,5 +45,12 @@ function Scss() {
 
 }
 
-module.exports = Scss;
+function ScssConvertors() {
+
+}
+
+
+module.exports.Scss = Scss;
+module.exports.ScssConvertors = ScssConvertors;
+
 
