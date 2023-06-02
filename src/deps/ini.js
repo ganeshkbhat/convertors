@@ -15,20 +15,9 @@ function Ini() {
 
     interfaces.InterfaceReader.call(this);
 
-    /**
-     *
-     *
-     * @param {*} file
-     * @param {*} options
-     * @param {*} readOptions
-     * @return {*} 
-     * 
-     * https://www.npmjs.com/package/multi-ini
-     * 
-     */
-    this.parse = function (file, options, readOptions) {
+    this.load = function (file, options, readOptions) {
         let ini = require("multi-ini");
-        let parser = new ini.Class(options || {})
+        let parser = new ini.Class(options || {});
         return parser.read(file, readOptions || { encoding: 'utf8' });
     }
 
@@ -36,6 +25,20 @@ function Ini() {
      *
      *
      * @param {*} lines
+     * @return {*} 
+     * 
+     * https://www.npmjs.com/package/multi-ini
+     * 
+     */
+    this.parse = function (lines) {
+        lines = lines.split("\n");
+        return this.parseLines(lines);
+    }
+
+    /**
+     *
+     *
+     * @param {*} lines : lines array
      * @return {*} 
      * 
      * https://www.npmjs.com/package/multi-ini

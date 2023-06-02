@@ -1,12 +1,22 @@
 
 
 function InterfaceReader() {
+
+    this.load = function () {
+        return new Error("InterfaceReader: ");
+    }
+
     this.parse = function () {
-        return new Error("InterfaceReader: ")
+        return new Error("InterfaceReader: ");
     }
     this.serialize = function () {
-        return new Error("InterfaceReader: ")
+        return new Error("InterfaceReader: ");
     }
+
+    this.write = function () {
+        return new Error("InterfaceReader: ");
+    }
+    
 }
 
 
@@ -37,19 +47,19 @@ function InterfaceJSObjectParserCSS(jsObject) {
     InterfaceJSObjectParser.call(this, jsObject)
 
     this.css = function () {
-        return new Error("InterfaceJSObjectConvertorCSS: ")
+        return new Error("InterfaceJSObjectParserCSS: ")
     }
 
     this.less = function () {
-        return new Error("InterfaceJSObjectConvertorCSS: ")
+        return new Error("InterfaceJSObjectParserCSS: ")
     }
 
     this.scss = function () {
-        return new Error("InterfaceJSObjectConvertorCSS: ")
+        return new Error("InterfaceJSObjectParserCSS: ")
     }
 
     this.sass = function () {
-        return new Error("InterfaceJSObjectConvertorCSS: ")
+        return new Error("InterfaceJSObjectParserCSS: ")
     }
 
 }

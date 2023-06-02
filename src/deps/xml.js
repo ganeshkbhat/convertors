@@ -12,11 +12,19 @@ function Xml() {
 
     interfaces.InterfaceReader.call(this);
 
-    this.parse = function () {
+    this.load = function (file, options) {
         return 
     }
 
-    this.serialize = function () {
+    this.parse = function (lines) {
+        return 
+    }
+
+    this.serialize = function (object) {
+        return 
+    }
+
+    this.write = function (file, options) {
         return 
     }
 
