@@ -109,5 +109,5 @@ function DotenvParsers() {
 
 module.exports.Dotenv = Dotenv;
 module.exports.DotenvConvertors = DotenvConvertors;
-
+module.exports.Dotenv = Dotenv;
 

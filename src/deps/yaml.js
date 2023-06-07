@@ -50,7 +50,6 @@ function Yaml() {
         const yaml = require('js-yaml');
         return yaml.dump(object, options);
     }
-
 }
 
 
@@ -118,5 +117,5 @@ function YamlParsers() {
 
 module.exports.Yaml = Yaml;
 module.exports.YamlConvertors = YamlConvertors;
-
+module.exports.YamlParsers = YamlParsers;
 

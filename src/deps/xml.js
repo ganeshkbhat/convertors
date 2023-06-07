@@ -42,7 +42,6 @@ function Xml() {
     this.write = function (file, object, options, writeOptions) {
         return
     }
-
 }
 
 function XmlConvertors() {
@@ -109,5 +108,5 @@ function XmlParsers() {
 
 module.exports.Xml = Xml;
 module.exports.XmlConvertors = XmlConvertors;
-
+module.exports.XmlParsers = XmlParsers;
 

@@ -42,7 +42,6 @@ function Sass() {
     this.write = function (file, object, options, writeOptions) {
         return
     }
-
 }
 
 
@@ -143,5 +142,5 @@ function SassParsers() {
 
 module.exports.Sass = Sass;
 module.exports.SassConvertors = SassConvertors;
-
+module.exports.SassParsers = SassParsers;
 

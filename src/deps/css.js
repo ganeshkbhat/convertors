@@ -81,7 +81,6 @@ function Css() {
     this.serialize = function (object, options) {
         return require("css").stringify(object, options || { sourcemap: true });
     }
-
 }
 
 
@@ -133,4 +132,5 @@ function CssParsers() {
 
 module.exports.Css = Css;
 module.exports.CssConvertors = CssConvertors;
+module.exports.CssParsers = CssParsers;
 

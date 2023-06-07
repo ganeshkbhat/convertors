@@ -181,4 +181,4 @@ function IniParsers() {
 
 module.exports.Ini = Ini;
 module.exports.IniConvertors = IniConvertors;
-
+module.exports.IniParsers = IniParsers;
