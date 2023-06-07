@@ -88,7 +88,7 @@ function Css() {
 function CssConvertors() {
     
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
-
+    Css.call(this, object);
 
     this.css = function () {
 
@@ -111,7 +111,7 @@ function CssConvertors() {
 function CssParsers() {
 
     interfaces.InterfaceJSObjectParserCSS.call(this, object);
-
+    Css.call(this, object);
 
     this.css = function () {
 

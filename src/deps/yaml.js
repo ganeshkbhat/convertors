@@ -57,7 +57,7 @@ function Yaml() {
 function YamlConvertors() {
     
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-
+    Yaml.call(this, object);
     
     this.ini = function () {
 
@@ -88,7 +88,8 @@ function YamlConvertors() {
 function YamlParsers() {
 
     interfaces.InterfaceJSObjectParser.call(this, object);
-    
+    Yaml.call(this, object);
+
     this.ini = function () {
 
     }

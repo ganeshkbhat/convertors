@@ -48,7 +48,8 @@ function Xml() {
 function XmlConvertors() {
     
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    
+    Xml.call(this, object);
+
     this.ini = function () {
 
     }
@@ -78,6 +79,7 @@ function XmlConvertors() {
 function XmlParsers() {
 
     interfaces.InterfaceJSObjectParser.call(this, object);
+    Xml.call(this, object);
 
     this.ini = function () {
 

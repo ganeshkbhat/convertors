@@ -49,6 +49,7 @@ function Sass() {
 function SassConvertors() {
 
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
+    Sass.call(this, object);
 
     this.ini = function () {
 
@@ -96,6 +97,7 @@ function SassConvertors() {
 function SassParsers() {
     
     interfaces.InterfaceJSObjectParserCSS.call(this, object);
+    Sass.call(this, object);
 
     this.ini = function () {
 

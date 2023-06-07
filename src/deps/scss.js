@@ -49,6 +49,7 @@ function Scss() {
 function ScssConvertors() {
 
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
+    Ini.call(this, object);
 
     this.ini = function () {
 
@@ -96,6 +97,7 @@ function ScssConvertors() {
 function ScssParsers() {
     
     interfaces.InterfaceJSObjectParserCSS.call(this, object);
+    Scss.call(this, object);
 
     this.ini = function () {
 

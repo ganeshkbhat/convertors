@@ -48,7 +48,7 @@ function Dotenv() {
 function DotenvConvertors() {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-
+    Dotenv.call(this, object);
 
     this.ini = function () {
 
@@ -79,7 +79,7 @@ function DotenvConvertors() {
 function DotenvParsers() {
 
     interfaces.InterfaceJSObjectParser.call(this, object);
-
+    Dotenv.call(this, object);
 
     this.ini = function () {
 

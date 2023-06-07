@@ -50,6 +50,7 @@ function Less() {
 function LessConvertors(object) {
 
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
+    Less.call(this, object);
 
     this.ini = function () {
 
@@ -96,7 +97,8 @@ function LessConvertors(object) {
 function LessParsers() {
 
     interfaces.InterfaceJSObjectParserCSS.call(this, object);
-
+    Less.call(this, object);
+    
     this.ini = function () {
 
     }

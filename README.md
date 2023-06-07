@@ -57,11 +57,12 @@ function InterfaceJSObjectParser(jsObject) {
 ```
 
 function InterfaceJSObjectParserCSS(jsObject) {
+    InterfaceJSObjectParser
+
     this.css
     this.less
     this.scss
     this.sass
-
 }
 
 ```
@@ -104,11 +105,55 @@ function InterfaceJSObjectConvertorCSS(jsObject) {
 
 ```
 
+Both the `parsers and convertors` `will have` the following `final Interface structure`.
+
+```
+
+InterfaceFileFormat() {
+    this.readFile
+    this.writeFile
+    this.load
+    this.write
+    this.parse
+    this.serialize
+    this.ini
+    this.yaml
+    this.yml
+    this.xml
+    this.json
+    this.css
+    this.less
+    this.scss
+    this.sass
+}
+
+// ini: InterfaceFileFormat
+
+```
+
 ## ini
 
 ```
 
 let jsp = require("jsparsers");
+let ini = jsp.ini();
+
+ini.readFile()
+ini.writeFile()
+ini.load()
+ini.write()
+ini.parse()
+ini.serialize()
+ini.ini()
+ini.yaml()
+ini.yml()
+ini.xml()
+ini.json()
+ini.css()
+ini.less()
+ini.scss()
+ini.sass()
+
 
 ```
 
