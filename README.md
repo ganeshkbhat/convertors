@@ -163,7 +163,7 @@ ini.sass()
 ```
 
 let jsp = require("jsparsers");
-let ini = jsp.xml();
+let xml = jsp.xml();
 
 ```
 
@@ -173,7 +173,7 @@ let ini = jsp.xml();
 ```
 
 let jsp = require("jsparsers");
-let ini = jsp.dotenv();
+let dotenv = jsp.dotenv();
 
 ```
 
@@ -183,7 +183,7 @@ let ini = jsp.dotenv();
 ```
 
 let jsp = require("jsparsers");
-let ini = jsp.yaml();
+let yaml = jsp.yaml();
 
 ```
 
@@ -193,7 +193,7 @@ let ini = jsp.yaml();
 ```
 
 let jsp = require("jsparsers");
-let ini = jsp.css();
+let css = jsp.css();
 
 ```
 
@@ -203,7 +203,7 @@ let ini = jsp.css();
 ```
 
 let jsp = require("jsparsers");
-let ini = jsp.scss();
+let scss = jsp.scss();
 
 ```
 
@@ -213,7 +213,7 @@ let ini = jsp.scss();
 ```
 
 let jsp = require("jsparsers");
-let ini = jsp.sass();
+let sass = jsp.sass();
 
 ```
 
@@ -223,7 +223,7 @@ let ini = jsp.sass();
 ```
 
 let jsp = require("jsparsers");
-let ini = jsp.less();
+let less = jsp.less();
 
 ```
 
