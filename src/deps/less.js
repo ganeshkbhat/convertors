@@ -19,6 +19,7 @@
 
 var interfaces = require("./interfaces");
 
+
 /**
  *
  *
@@ -46,7 +47,7 @@ function Less() {
 }
 
 
-function LessConvertors() {
+function LessConvertors(object) {
 
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
 
@@ -93,7 +94,7 @@ function LessConvertors() {
 
 
 function LessParsers() {
-    
+
     interfaces.InterfaceJSObjectParserCSS.call(this, object);
 
     this.ini = function () {

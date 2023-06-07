@@ -1,6 +1,6 @@
 # jsparsers
 
-npm jsparsers module for file format to format convertors for ini, yaml, json, xml, html, css, less, sass.
+npm `jsparsers` module for file format to format convertors for `ini`, `yaml`, `json`, `xml`, `html`, `css`, `less`, `sass` to `json` and `json back to specific file formats`.
 
 
 
@@ -26,6 +26,83 @@ let jsp = require("jsparsers");
 
 ```
 
+Each of the parsers follow the following `interfaces` namely `InterfaceReader` and the parser follows `InterfaceJSObjectParser` for all formats and `InterfaceJSObjectParserCSS` for all css based parser formats
+
+
+```
+
+function InterfaceReader() {
+    this.readFile
+    this.writeFile
+    this.load
+    this.write
+    this.parse
+    this.serialize
+}
+
+```
+
+```
+
+function InterfaceJSObjectParser(jsObject) {
+    this.ini
+    this.yaml
+    this.yml
+    this.xml
+    this.json
+}
+
+```
+
+```
+
+function InterfaceJSObjectParserCSS(jsObject) {
+    this.css
+    this.less
+    this.scss
+    this.sass
+
+}
+
+```
+
+
+Each of the convertors follow the following `interfaces` `InterfaceReader` for each of the file format and the convertors follow `InterfaceJSObjectConvertor` for all normal formats and `InterfaceJSObjectConvertorCSS` for css based string convertors 
+
+
+```
+
+function InterfaceReader() {
+    this.readFile
+    this.writeFile
+    this.load
+    this.write
+    this.parse
+    this.serialize
+}
+
+```
+
+```
+
+function InterfaceJSObjectConvertor(jsObject) {
+    this.ini
+    this.yaml
+    this.yml
+    this.xml
+    this.json
+}
+
+function InterfaceJSObjectConvertorCSS(jsObject) {
+    InterfaceJSObjectConvertor
+
+    this.css
+    this.less
+    this.scss
+    this.sass
+}
+
+```
 
 ## ini
 
