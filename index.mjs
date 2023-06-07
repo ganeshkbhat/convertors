@@ -16,3 +16,7 @@
 
 'use strict';
 
+import {default as convertors} from "./src/deps/convertors";
+
+export default convertors;
+

@@ -16,3 +16,12 @@
 
 'use strict';
 
+const convertors = require("./src/deps/convertors");
+
+module.exports = {
+    ...convertors
+}
+
+module.exports.default = {
+    ...convertors
+}
