@@ -117,10 +117,10 @@ function Ini() {
 }
 
 
-function IniConvertors() {
+function IniConvertors(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Ini.call(this, object);
+    Ini.call(this);
     
     this.ini = function () {
 
@@ -148,10 +148,10 @@ function IniConvertors() {
 }
 
 
-function IniParsers() {
+function IniParsers(object) {
     
     interfaces.InterfaceJSObjectParser.call(this, object);
-    Ini.call(this, object);
+    Ini.call(this);
     
     this.ini = function () {
 
