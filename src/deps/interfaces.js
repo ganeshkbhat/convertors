@@ -105,6 +105,17 @@ function InterfaceReader() {
 
 function InterfaceJSObjectParser(jsObject) {
 
+    var jsobject = jsObject;
+
+    this.set = function (jsObject) {
+        jsobject = jsObject;
+        return true
+    }
+
+    this.get = function () {
+        return jsobject;
+    }
+
     this.ini = function () {
         return new Error("InterfaceJSObjectConvertor: ")
     }
@@ -152,6 +163,17 @@ function InterfaceJSObjectParserCSS(jsObject) {
 
 function InterfaceJSObjectConvertor(jsObject) {
 
+    var jsobject = jsObject;
+    
+    this.set = function (jsObject) {
+        jsobject = jsObject;
+        return true
+    }
+    
+    this.get = function () {
+        return jsobject;
+    }
+    
     this.ini = function () {
         return new Error("InterfaceJSObjectConvertor: ")
     }
