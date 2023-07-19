@@ -57,12 +57,16 @@ function Ini() {
      * 
      */
     this.parse = function (lines) {
+        if (!typeof lines === "string") throw new Error("lines is not a string object");
+        
         if (v.endsWith("\r\n")) {
             lines = lines.split("\r\n");
         } else if (v.endsWith("\n")) {
             lines = lines.split("\n");
-        } else {
+        } else if (!!Array.isArray(lines)) {
             lines = lines;
+        } else {
+            lines = [lines];
         }
         return this.parseLines(lines);
     }
