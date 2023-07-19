@@ -108,7 +108,7 @@ function InterfaceJSObjectParser(jsObject = "") {
     var jsobject = jsObject;
 
     this.set = function (jsObject) {
-        jsobject = jsObject;
+        jsobject = !!jsObject ? jsObject : jsobject;
         return true;
     }
 
@@ -138,7 +138,7 @@ function InterfaceJSObjectParser(jsObject = "") {
 }
 
 
-function InterfaceJSObjectParserCSS(jsObject = "") {
+function InterfaceJSObjectParserCSS(jsObject) {
 
     InterfaceJSObjectParser.call(this, jsObject)
 
@@ -166,7 +166,7 @@ function InterfaceJSObjectConvertor(jsObject = "") {
     var jsobject = jsObject;
     
     this.set = function (jsObject) {
-        jsobject = jsObject;
+        jsobject = !!jsObject ? jsObject : jsobject;
         return true;
     }
     
@@ -196,7 +196,7 @@ function InterfaceJSObjectConvertor(jsObject = "") {
 }
 
 
-function InterfaceJSObjectConvertorCSS(jsObject = "") {
+function InterfaceJSObjectConvertorCSS(jsObject) {
 
     InterfaceJSObjectConvertor.call(this, jsObject)
 
