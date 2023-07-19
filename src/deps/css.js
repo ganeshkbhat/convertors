@@ -30,22 +30,6 @@ function Css() {
     /**
      *
      *
-     * @param {*} file
-     * @param {*} options
-     * @param {*} readOptions
-     * @return {*} 
-     * 
-     * https://www.npmjs.com/package/css
-     * 
-     */
-    this.load = function (file, options, readOptions) {
-        let str = this.readFile(file, readOptions);
-        return this.parse(str, options);
-    }
-
-    /**
-     *
-     *
      * @param {*} str
      * @param {*} options
      * options: 
