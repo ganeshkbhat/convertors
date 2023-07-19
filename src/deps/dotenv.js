@@ -27,10 +27,6 @@ function Dotenv() {
 
     interfaces.InterfaceReader.call(this);
 
-    this.load = function (file, options, readOptions) {
-        return
-    }
-
     this.parse = function (lines, options) {
         return
     }
@@ -39,16 +35,13 @@ function Dotenv() {
         return
     }
 
-    this.write = function (file, object, options, writeOptions) {
-        return
-    }
 }
 
 
-function DotenvConvertors() {
+function DotenvConvertors(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Dotenv.call(this, object);
+    Dotenv.call(this);
 
     this.ini = function () {
 
@@ -76,10 +69,10 @@ function DotenvConvertors() {
 }
 
 
-function DotenvParsers() {
+function DotenvParsers(object) {
 
     interfaces.InterfaceJSObjectParser.call(this, object);
-    Dotenv.call(this, object);
+    Dotenv.call(this);
 
     this.ini = function () {
 
