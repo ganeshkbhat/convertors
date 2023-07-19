@@ -103,13 +103,13 @@ function InterfaceReader() {
 }
 
 
-function InterfaceJSObjectParser(jsObject) {
+function InterfaceJSObjectParser(jsObject = "") {
 
     var jsobject = jsObject;
 
     this.set = function (jsObject) {
         jsobject = jsObject;
-        return true
+        return true;
     }
 
     this.get = function () {
@@ -138,7 +138,7 @@ function InterfaceJSObjectParser(jsObject) {
 }
 
 
-function InterfaceJSObjectParserCSS(jsObject) {
+function InterfaceJSObjectParserCSS(jsObject = "") {
 
     InterfaceJSObjectParser.call(this, jsObject)
 
@@ -161,13 +161,13 @@ function InterfaceJSObjectParserCSS(jsObject) {
 }
 
 
-function InterfaceJSObjectConvertor(jsObject) {
+function InterfaceJSObjectConvertor(jsObject = "") {
 
     var jsobject = jsObject;
     
     this.set = function (jsObject) {
         jsobject = jsObject;
-        return true
+        return true;
     }
     
     this.get = function () {
@@ -196,7 +196,7 @@ function InterfaceJSObjectConvertor(jsObject) {
 }
 
 
-function InterfaceJSObjectConvertorCSS(jsObject) {
+function InterfaceJSObjectConvertorCSS(jsObject = "") {
 
     InterfaceJSObjectConvertor.call(this, jsObject)
 
