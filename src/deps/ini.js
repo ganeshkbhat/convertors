@@ -41,7 +41,7 @@ function Ini() {
      * https://www.npmjs.com/package/multi-ini
      * 
      */
-    this.load = function (file, options, readOptions) {
+    this.loadWithFilters = function (file, options, readOptions) {
         let ini = require("multi-ini");
         let parser = new ini.Class(options || {});
         return parser.read(file, readOptions || { encoding: 'utf8' });
@@ -108,7 +108,7 @@ function Ini() {
      * https://www.npmjs.com/package/multi-ini
      * 
      */
-    this.write = function (file, object, options) {
+    this.writeWithFilters = function (file, object, options) {
         let ini = require('multi-ini');
         ini.write(file, object, options || { encoding: 'utf8' });
         return true;
