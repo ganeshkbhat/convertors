@@ -68,19 +68,7 @@ function Ini() {
         } else {
             lines = [lines];
         }
-        return this.parseLines(lines);
-    }
-
-    /**
-     *
-     *
-     * @param {*} lines : lines array
-     * @return {*} 
-     * 
-     * https://www.npmjs.com/package/multi-ini
-     * 
-     */
-    this.parseLines = function (lines) {
+        
         let ini = require("multi-ini");
         let parser = new ini.Parser();
         return parser.parse(lines);
