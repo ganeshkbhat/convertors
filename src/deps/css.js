@@ -68,10 +68,10 @@ function Css() {
 }
 
 
-function CssConvertors() {
+function CssConvertors(object) {
     
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
-    Css.call(this, object);
+    Css.call(this);
 
     this.css = function () {
 
@@ -91,10 +91,10 @@ function CssConvertors() {
 }
 
 
-function CssParsers() {
+function CssParsers(object) {
 
     interfaces.InterfaceJSObjectParserCSS.call(this, object);
-    Css.call(this, object);
+    Css.call(this);
 
     this.css = function () {
 
