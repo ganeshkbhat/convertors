@@ -19,6 +19,15 @@
 
 var interfaces = require("./interfaces");
 
+const css = require("./css");
+const ini = require("./ini");
+const less = require("./less");
+const sass = require("./sass");
+const scss = require("./scss");
+const xml = require("./xml");
+const yaml = require("./yaml");
+
+
 /**
  *
  *

@@ -19,6 +19,14 @@
 
 var interfaces = require("./interfaces");
 
+const dotenv = require("./dotenv");
+const ini = require("./ini");
+const less = require("./less");
+const sass = require("./sass");
+const scss = require("./scss");
+const xml = require("./xml");
+const yaml = require("./yaml");
+
 /**
  *
  *
@@ -72,6 +80,15 @@ function CssConvertors(object) {
     
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
     Css.call(this);
+        
+    const dotenv = require("./dotenv");
+    const ini = require("./ini");
+    const less = require("./less");
+    const sass = require("./sass");
+    const scss = require("./scss");
+    const xml = require("./xml");
+    const yaml = require("./yaml");
+
 
     this.css = function () {
 
