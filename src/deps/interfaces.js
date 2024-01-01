@@ -99,7 +99,6 @@ function InterfaceReader() {
         return new Error("InterfaceReader: ");
     }
 
-
 }
 
 
@@ -138,6 +137,17 @@ function InterfaceJSObjectParser(jsObject = "") {
 }
 
 
+function InterfaceJSObjectParserHTML(jsObject) {
+
+    InterfaceJSObjectParser.call(this, jsObject)
+
+    this.html = function () {
+        return new Error("InterfaceJSObjectConvertor: ")
+    }
+
+}
+
+
 function InterfaceJSObjectParserCSS(jsObject) {
 
     InterfaceJSObjectParser.call(this, jsObject)
@@ -164,16 +174,16 @@ function InterfaceJSObjectParserCSS(jsObject) {
 function InterfaceJSObjectConvertor(jsObject = "") {
 
     var jsobject = jsObject;
-    
+
     this.set = function (jsObject) {
         jsobject = !!jsObject ? jsObject : jsobject;
         return true;
     }
-    
+
     this.get = function () {
         return jsobject;
     }
-    
+
     this.ini = function () {
         return new Error("InterfaceJSObjectConvertor: ")
     }
@@ -190,15 +200,30 @@ function InterfaceJSObjectConvertor(jsObject = "") {
         return new Error("InterfaceJSObjectConvertor: ")
     }
 
+    this.html = function () {
+        return new Error("InterfaceJSObjectConvertor: ")
+    }
+
     this.json = function () {
         return new Error("InterfaceJSObjectConvertor: ")
     }
 }
 
 
+function InterfaceJSObjectConvertorHTML(jsObject = "") {
+
+    InterfaceJSObjectConvertor.call(this, jsObject);
+
+    this.html = function () {
+        return new Error("InterfaceJSObjectConvertor: ")
+    }
+
+}
+
+
 function InterfaceJSObjectConvertorCSS(jsObject) {
 
-    InterfaceJSObjectConvertor.call(this, jsObject)
+    InterfaceJSObjectConvertor.call(this, jsObject);
 
     this.css = function () {
         return new Error("InterfaceJSObjectConvertorCSS: ")
@@ -221,6 +246,8 @@ function InterfaceJSObjectConvertorCSS(jsObject) {
 
 module.exports.InterfaceReader = InterfaceReader;
 module.exports.InterfaceJSObjectParser = InterfaceJSObjectParser;
+module.exports.InterfaceJSObjectParserHTML = InterfaceJSObjectParserHTML;
 module.exports.InterfaceJSObjectParserCSS = InterfaceJSObjectParserCSS;
 module.exports.InterfaceJSObjectConvertor = InterfaceJSObjectConvertor;
+module.exports.InterfaceJSObjectConvertorHTML = InterfaceJSObjectConvertorHTML;
 module.exports.InterfaceJSObjectConvertorCSS = InterfaceJSObjectConvertorCSS;
