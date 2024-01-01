@@ -23,12 +23,14 @@ var xml = require("./xml.js");
 var less = require("./less.js");
 var sass = require("./sass.js");
 var css = require("./css.js");
+var html = require("./html.js");
 
 module.exports = {
     ini,
     env,
     yaml,
     xml,
+    html,
     less,
     sass,
     css
