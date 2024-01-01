@@ -358,8 +358,12 @@ const jsonObject = {
 
 ## TODO
 
-- parseDom, parseHtml
-<!-- - parseXml
+- Seperate DOM and HTML parser Interface to be seperate from others.
+
+<!-- 
+- parseHtml
+- parseDom
+- parseXml
 - parseCss
 - parseSass
 - parseLess -->
