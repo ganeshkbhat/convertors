@@ -1,6 +1,6 @@
 # jsparsers
 
-npm `jsparsers` module for file format to format convertors for `ini`, `yaml`, `json`, `xml`, `html`, `css`, `less`, `sass` to `json` and `json back to specific file formats`.
+npm `jsparsers` module for file format to format convertors for `ini`, `yaml`, `.dotenv`, `json`, `xml`, `html`, `css`, `less`, `sass` to `json` and `json back to specific file formats`.
 
 
 
@@ -43,7 +43,7 @@ ini.sass()
 
 ```
 
-All the file format parsers will have the same functions as above in almost all instances with same usages. The file formats applicable are for `ini`, `yaml`, `xml`, `css`, `scss`, `sass`, `less`, `html`.
+All the file format parsers will have the same functions as above in almost all instances with same usages. The file formats applicable are for `ini`, `yaml`, `xml`, `.dotenv`, `css`, `scss`, `sass`, `less`, `html`.
 
 Each of the parsers follow the following `interfaces` namely `InterfaceReader` and the parser follows `InterfaceJSObjectParser` for all formats and `InterfaceJSObjectParserCSS` for all css based parser formats
 
