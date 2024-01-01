@@ -1,7 +1,7 @@
 {
   "name": "jsparsers",
   "version": "0.0.3",
-  "description": "npm `jsparsers` module for file format to format convertors for `ini`, `yaml`, `.dotenv`, `json`, `xml`, `html`, `css`, `less`, `sass` to `json` and `json back to specific file formats`",
+  "description": "npm `jsparsers` module for file format to format convertors for `ini`, `yaml`, `dotenv`, `json`, `xml`, `html`, `css`, `less`, `sass` to `json` and `json back to specific file formats`",
   "main": "index.js",
   "exports": {
     "require": "./index.js",

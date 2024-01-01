@@ -1,6 +1,6 @@
 # jsparsers
 
-npm `jsparsers` module for file format to format convertors for `ini`, `yaml`, `.dotenv`, `json`, `xml`, `html`, `css`, `less`, `sass` to `json` and `json back to specific file formats`.
+npm `jsparsers` module for file format to format convertors for `ini`, `yaml`, `dotenv`, `json`, `xml`, `html`, `css`, `less`, `sass` to `json` and `json back to specific file formats`.
 
 
 
