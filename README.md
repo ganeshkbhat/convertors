@@ -23,8 +23,27 @@ npm Package: [jsparsers](https://www.npmjs.com/package/jsparsers)
 ```
 
 let jsp = require("jsparsers");
+let ini = jsp.ini();
+
+ini.readFile()
+ini.writeFile()
+ini.load()
+ini.write()
+ini.parse()
+ini.serialize()
+ini.ini()
+ini.yaml()
+ini.yml()
+ini.xml()
+ini.json()
+ini.css()
+ini.less()
+ini.scss()
+ini.sass()
 
 ```
+
+All the file format parsers will have the same functions as above in almost all instances with same usages. The file formats applicable are for `ini`, `yaml`, `xml`, `css`, `scss`, `sass`, `less`, `html`.
 
 Each of the parsers follow the following `interfaces` namely `InterfaceReader` and the parser follows `InterfaceJSObjectParser` for all formats and `InterfaceJSObjectParserCSS` for all css based parser formats
 
