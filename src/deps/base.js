@@ -15,13 +15,13 @@ function stringifyToCssAST(ast, options) {
 }
 
 function parseCss(str) {
-  var converter = require('cssobj')
-  return converter(str, "css", {keepVendor: true, format: "css"});
+  var converter = require('cssobj');
+  return converter(str, "css", { keepVendor: true, format: "css" });
 }
 
 function stringifyToCss(str) {
-  var converter = require('cssobj')
-  return converter(str, "css", {keepVendor: true, format: "css"});
+  var converter = require('cssobj');
+  return converter(str, "css", { keepVendor: true, format: "css" });
 }
 
 // function cssParse(str) {
