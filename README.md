@@ -43,7 +43,7 @@ ini.sass()
 
 ```
 
-All the file format parsers will have the same functions as above in almost all instances with same usages. The file formats applicable are for `ini`, `yaml`, `xml`, `.dotenv`, `css`, `scss`, `sass`, `less`, `html`.
+All the file format parsers will have the same functions as above in almost all instances with same usages. The file formats applicable are for `ini`, `yaml`, `xml`, `dotenv`, `css`, `scss`, `sass`, `less`, `html`.
 
 Each of the parsers follow the following `interfaces` namely `InterfaceReader` and the parser follows `InterfaceJSObjectParser` for all formats and `InterfaceJSObjectParserCSS` for all css based parser formats
 
