@@ -1,88 +1,165 @@
 
 
+/**
+ *
+ *
+ * @param {*} str
+ * @param {*} options
+ * @return {*} 
+ */
 function parseCssAST(str, options) {
   var css = require('css');
   // str = 'body { font-size: 12px; }'
-  var obj = css.parse(str, options || { silent: false });
-  return obj;
+  return css.parse(str, options || { silent: false });
 }
 
-function stringifyToCssAST(ast, options) {
+/**
+ *
+ *
+ * @param {*} astObj
+ * @param {*} options
+ * @return {*} 
+ */
+function stringifyToCssAST(astObj, options) {
   var css = require('css');
   // str = 'body { font-size: 12px; }'
-  var obj = css.parse(ast, options || { sourcemap: true });
-  return obj;
+  return css.stringify(astObj, options || { sourcemap: true });
 }
 
-function parseCss(str) {
-  var converter = require('cssobj');
-  return converter(str, "css", { keepVendor: true, format: "css" });
+/**
+ *
+ *
+ * @param {*} str
+ * @return {*} 
+ */
+function parseCss(str, options) {
+  // import * as v8 from 'v8'
+  // import postcss, { Declaration, Input, Root, Rule } from '../lib/postcss.js'
+  // import { parse, stringify } from '../lib/postcss.js'
+  let css = require('postcss');
+  let v8 = require("v8");
+  // let root = css.Parser(str, options);
+  let root = css.parser(str, options);
+  let json = root.toJSON();
+  let serialized = v8.serialize(json);
+  let deserialized = v8.deserialize(serialized);
+  return deserialized;
 }
 
-function stringifyToCss(str) {
-  var converter = require('cssobj');
-  return converter(str, "css", { keepVendor: true, format: "css" });
+/**
+ *
+ *
+ * @param {*} str
+ * @return {*} 
+ */
+function stringifyToCss(obj, options) {
+  let css = require('postcss');
+  // let v8 = require("v8");
+  // // import { parse, stringify } from '../lib/postcss.js'
+  // let result = '';
+  // stringify(str, i => {
+  //   result += i
+  // })
+  return css.fromJSON(JSON.stringify(obj));
 }
 
-// function cssParse(str) {
-//   var converter = require('cssobj-converter')
-//   return converter(str, "css", {keepVendor: true, format: "css"});
-// }
-
-function parseXML() {
-
+/**
+ *
+ *
+ * @param {*} str
+ * @returns {*} Promise
+ */
+function parseXML(str, options) {
+  let xml = require('xml2js');
+  let parser = new xml2js.Parser(options);
+  return parser.parseStringPromise(str);
 }
 
-function stringifyToXML() {
-
+/**
+ *
+ *
+ * @param {*} obj
+ */
+function stringifyToXML(obj, options) {
+  let xml = require('xml2js');
+  let builder = new xml.Builder(options);
+  return builder.buildObject(obj);
 }
 
-function parseHTML() {
 
-}
-
-function stringifyToHTML() {
-
-}
-
-function parseINI() {
-
-}
-
-function stringifyToINI() {
-
-}
-
-function parseSASS() {
-
-}
-
-function stringifyToSASS() {
-
-}
-
-function parseSCSS() {
-
-}
-
-function stringifyToSCSS() {
-
-}
-
-function parseYAML() {
-
-}
-
-function stringifyToYAML() {
-
-}
-
-function parseJSON() {
+function parseHTML(str) {
 
 }
 
-function stringifyToJSON() {
 
+function stringifyToHTML(obj) {
+
+}
+
+function parseINI(str) {
+
+}
+
+function stringifyToINI(obj) {
+
+}
+
+function parseSASS(str) {
+
+}
+
+function stringifyToSASS(obj) {
+
+}
+
+function parseSCSS(str) {
+
+}
+
+function stringifyToSCSS(obj) {
+
+}
+
+/**
+ * parse YAML string: nativeObject 
+ *
+ * @param {*} str
+ * @return {*} 
+ */
+function parseYAML(str) {
+  let yaml = require("yamljs");
+  return yaml.parse(str);
+}
+
+/**
+ * Generate YAML: yamlString 
+ *
+ * @param {*} obj
+ * @return {*} 
+ */
+function stringifyToYAML(obj) {
+  let yaml = require("yamljs");
+  return yaml.stringify(obj, 4);
+}
+
+/**
+ *
+ *
+ * @param {*} obj
+ * @return {*} 
+ */
+function parseJSON(obj) {
+  return JSON.parse(obj);
+}
+
+/**
+ *
+ *
+ * @param {*} obj
+ * @return {*} 
+ */
+function stringifyToJSON(obj) {
+  return JSON.stringify(obj);
 }
 
 function parseSASS() {
