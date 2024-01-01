@@ -1,25 +1,25 @@
 
 
-function parseCssObjAST(str, options) {
+function parseCssAST(str, options) {
   var css = require('css');
   // str = 'body { font-size: 12px; }'
   var obj = css.parse(str, options || { silent: false });
   return obj;
 }
 
-function stringifyObjCssAST(ast, options) {
+function stringifyToCssAST(ast, options) {
   var css = require('css');
   // str = 'body { font-size: 12px; }'
   var obj = css.parse(ast, options || { sourcemap: true });
   return obj;
 }
 
-function parseCssObj(str) {
+function parseCss(str) {
   var converter = require('cssobj')
   return converter(str, "css", {keepVendor: true, format: "css"});
 }
 
-function stringifyObjCss(str) {
+function stringifyToCss(str) {
   var converter = require('cssobj')
   return converter(str, "css", {keepVendor: true, format: "css"});
 }
@@ -29,50 +29,84 @@ function stringifyObjCss(str) {
 //   return converter(str, "css", {keepVendor: true, format: "css"});
 // }
 
-function parseXMLObj() {
+function parseXML() {
 
 }
 
-function stringifyObjXML() {
+function stringifyToXML() {
 
 }
 
-function parseXMLObj() {
+function parseHTML() {
 
 }
 
-function stringifyObjXML() {
+function stringifyToHTML() {
 
 }
 
-function parseINIObj() {
+function parseINI() {
 
 }
 
-function stringifyObjINI() {
+function stringifyToINI() {
 
 }
 
-function parseSASSObj() {
+function parseSASS() {
 
 }
 
-function stringifyObjSASS() {
+function stringifyToSASS() {
 
 }
 
-function parseSCSSObj() {
+function parseSCSS() {
 
 }
 
-function stringifyObjSCSS() {
+function stringifyToSCSS() {
 
 }
 
-function parseYAMLObj() {
+function parseYAML() {
 
 }
 
-function stringifyObjYAML() {
+function stringifyToYAML() {
 
 }
+
+function parseJSON() {
+
+}
+
+function stringifyToJSON() {
+
+}
+
+function parseSASS() {
+
+}
+
+function stringifyToSASS() {
+
+}
+
+function parseLess() {
+
+}
+
+function stringifyToLess() {
+
+}
+
+function parseDotenv() {
+
+}
+
+function stringifyToDotenv() {
+
+}
+
+
