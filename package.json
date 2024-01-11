@@ -48,7 +48,10 @@
     "chai": "^4.3.7",
     "grunt-less-to-sass": "^0.0.10",
     "mocha": "^10.2.0",
-    "sinon": "^15.0.3"
+    "pre-commit": "^1.2.2",
+    "pre-push": "^0.1.4",
+    "sinon": "^15.0.3",
+    "unimported": "^1.31.1"
   },
   "dependencies": {
     "autoprefixer": "^10.4.16",
