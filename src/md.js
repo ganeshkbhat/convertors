@@ -19,13 +19,18 @@
 
 var interfaces = require("./interfaces");
 
-const css = require("./css");
-const dotenv = require("./dotenv");
-const less = require("./less");
-const sass = require("./sass");
-const scss = require("./scss");
-const xml = require("./xml");
-const yaml = require("./yaml");
+var ini = require("./ini.js");
+var env = require("./env.js");
+var yaml = require("./yaml.js");
+var xml = require("./xml.js");
+var less = require("./less.js");
+var sass = require("./sass.js");
+var css = require("./css.js");
+var html = require("./html.js");
+var md = require("./md.js");
+var sys = require("./sys.js");
+var toml = require("./toml.js");
+var tsv = require("./tsv.js");
 
 
 /**
@@ -35,7 +40,7 @@ const yaml = require("./yaml");
  *
  *
  */
-function Sys() {
+function Md() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -47,13 +52,9 @@ function Sys() {
      * @param {*} readOptions
      * @return {*} 
      * 
-     * https://www.npmjs.com/package/multi-ini
-     * 
      */
     this.loadWithFilters = function (file, options, readOptions) {
-        let ini = require("multi-ini");
-        let parser = new ini.Class(options || {});
-        return parser.read(file, readOptions || { encoding: 'utf8' });
+        
     }
 
     /**
@@ -62,25 +63,9 @@ function Sys() {
      * @param {*} lines
      * @return {*} 
      * 
-     * https://www.npmjs.com/package/multi-ini
-     * 
      */
     this.parse = function (lines) {
-        if (!typeof lines === "string") throw new Error("lines is not a string object");
         
-        if (v.endsWith("\r\n")) {
-            lines = lines.split("\r\n");
-        } else if (v.endsWith("\n")) {
-            lines = lines.split("\n");
-        } else if (!!Array.isArray(lines)) {
-            lines = lines;
-        } else {
-            lines = [lines];
-        }
-        
-        let ini = require("multi-ini");
-        let parser = new ini.Parser();
-        return parser.parse(lines);
     }
 
     /**
@@ -89,13 +74,9 @@ function Sys() {
      * @param {*} object
      * @return {*} 
      * 
-     * https://www.npmjs.com/package/multi-ini
-     * 
      */
     this.serialize = function (object) {
-        let ini = require('multi-ini');
-        let str = new ini.Serializer(object);
-        return str;
+        
     }
 
     /**
@@ -106,22 +87,18 @@ function Sys() {
      * @param {*} options
      * @return {*} 
      * 
-     * https://www.npmjs.com/package/multi-ini
-     * 
      */
     this.writeWithFilters = function (file, object, options) {
-        let ini = require('multi-ini');
-        ini.write(file, object, options || { encoding: 'utf8' });
-        return true;
+        
     }
 
 }
 
 
-function SysConvertors(object) {
+function MdConvertors(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Ini.call(this);
+    Md.call(this);
     
     this.ini = function () {
 
@@ -132,10 +109,6 @@ function SysConvertors(object) {
     }
 
     this.toml = function () {
-
-    }
-
-    this.sys = function () {
 
     }
 
@@ -161,10 +134,10 @@ function SysConvertors(object) {
 }
 
 
-function SysParsers(object) {
+function MdParsers(object) {
     
     interfaces.InterfaceJSObjectParser.call(this, object);
-    Ini.call(this);
+    Md.call(this);
     
     this.ini = function () {
 
@@ -204,6 +177,6 @@ function SysParsers(object) {
 }
 
 
-module.exports.Sys = Sys;
-module.exports.SysConvertors = SysConvertors;
-module.exports.SysParsers = SysParsers;
+module.exports.Md = Md;
+module.exports.MdConvertors = MdConvertors;
+module.exports.MdParsers = MdParsers;

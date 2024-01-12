@@ -19,26 +19,27 @@
 
 var interfaces = require("./interfaces");
 
-const css = require("./css");
-const dotenv = require("./dotenv");
-const ini = require("./ini");
-const sass = require("./sass");
-const scss = require("./scss");
-const xml = require("./xml");
-const yaml = require("./yaml");
+var ini = require("./ini.js");
+var env = require("./env.js");
+var yaml = require("./yaml.js");
+var xml = require("./xml.js");
+var less = require("./less.js");
+var sass = require("./sass.js");
+var css = require("./css.js");
+var html = require("./html.js");
+var md = require("./md.js");
+var sys = require("./sys.js");
+var toml = require("./toml.js");
+var tsv = require("./tsv.js");
 
 
 /**
  *
  *
  */
-function Less() {
+function Dotenv() {
 
     interfaces.InterfaceReader.call(this);
-
-    this.load = function (file, options, readOptions) {
-        return
-    }
 
     this.parse = function (lines, options) {
         return
@@ -48,16 +49,13 @@ function Less() {
         return
     }
 
-    this.write = function (file, object, options, writeOptions) {
-        return
-    }
 }
 
 
-function LessConvertors(object) {
+function DotenvConvertors(object) {
 
-    interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
-    Less.call(this, object);
+    interfaces.InterfaceJSObjectConvertor.call(this, object);
+    Dotenv.call(this);
 
     this.ini = function () {
 
@@ -94,30 +92,14 @@ function LessConvertors(object) {
     this.json = function () {
 
     }
-
-    this.css = function () {
-
-    }
-
-    this.less = function () {
-
-    }
-
-    this.scss = function () {
-
-    }
-
-    this.sass = function () {
-
-    }
 }
 
 
-function LessParsers() {
+function DotenvParsers(object) {
 
-    interfaces.InterfaceJSObjectParserCSS.call(this, object);
-    Less.call(this, object);
-    
+    interfaces.InterfaceJSObjectParser.call(this, object);
+    Dotenv.call(this);
+
     this.ini = function () {
 
     }
@@ -153,25 +135,10 @@ function LessParsers() {
     this.json = function () {
 
     }
-
-    this.css = function () {
-
-    }
-
-    this.less = function () {
-
-    }
-
-    this.scss = function () {
-
-    }
-
-    this.sass = function () {
-
-    }
 }
 
 
-module.exports.Less = Less;
-module.exports.LessConvertors = LessConvertors;
-module.exports.LessParsers = LessParsers;
+module.exports.Dotenv = Dotenv;
+module.exports.DotenvConvertors = DotenvConvertors;
+module.exports.Dotenv = Dotenv;
+

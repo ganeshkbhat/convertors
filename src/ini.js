@@ -19,13 +19,18 @@
 
 var interfaces = require("./interfaces");
 
-const css = require("./css");
-const dotenv = require("./dotenv");
-const less = require("./less");
-const sass = require("./sass");
-const scss = require("./scss");
-const xml = require("./xml");
-const yaml = require("./yaml");
+var ini = require("./ini.js");
+var env = require("./env.js");
+var yaml = require("./yaml.js");
+var xml = require("./xml.js");
+var less = require("./less.js");
+var sass = require("./sass.js");
+var css = require("./css.js");
+var html = require("./html.js");
+var md = require("./md.js");
+var sys = require("./sys.js");
+var toml = require("./toml.js");
+var tsv = require("./tsv.js");
 
 
 /**

@@ -19,54 +19,50 @@
 
 var interfaces = require("./interfaces");
 
-const css = require("./css");
-const dotenv = require("./dotenv");
-const ini = require("./ini");
-const less = require("./less");
-const sass = require("./sass");
-const scss = require("./scss");
-const xml = require("./xml");
+var ini = require("./ini.js");
+var env = require("./env.js");
+var yaml = require("./yaml.js");
+var xml = require("./xml.js");
+var less = require("./less.js");
+var sass = require("./sass.js");
+var css = require("./css.js");
+var html = require("./html.js");
+var md = require("./md.js");
+var sys = require("./sys.js");
+var toml = require("./toml.js");
+var tsv = require("./tsv.js");
 
 
 /**
  *
  *
  */
-function Yaml() {
+function Xml() {
 
     interfaces.InterfaceReader.call(this);
 
-    /**
-     *
-     *
-     * @param {*} lines
-     * @param {*} options
-     * @return {*} 
-     */
-    this.parse = function (lines, options) {
-        const yaml = require('js-yaml');
-        return yaml.load(lines, options);
+    this.load = function (file, options, readOptions) {
+        return
     }
 
-    /**
-     *
-     *
-     * @param {*} object
-     * @param {*} options
-     * @return {*} 
-     */
+    this.parse = function (lines, options) {
+        return
+    }
+
     this.serialize = function (object, options) {
-        const yaml = require('js-yaml');
-        return yaml.dump(object, options);
+        return
+    }
+
+    this.write = function (file, object, options, writeOptions) {
+        return
     }
 }
 
-
-function YamlConvertors() {
+function XmlConvertors() {
     
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Yaml.call(this, object);
-    
+    Xml.call(this, object);
+
     this.ini = function () {
 
     }
@@ -105,10 +101,10 @@ function YamlConvertors() {
 }
 
 
-function YamlParsers() {
+function XmlParsers() {
 
     interfaces.InterfaceJSObjectParser.call(this, object);
-    Yaml.call(this, object);
+    Xml.call(this, object);
 
     this.ini = function () {
 
@@ -148,7 +144,7 @@ function YamlParsers() {
 }
 
 
-module.exports.Yaml = Yaml;
-module.exports.YamlConvertors = YamlConvertors;
-module.exports.YamlParsers = YamlParsers;
+module.exports.Xml = Xml;
+module.exports.XmlConvertors = XmlConvertors;
+module.exports.XmlParsers = XmlParsers;
 

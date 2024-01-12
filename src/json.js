@@ -19,13 +19,18 @@
 
 var interfaces = require("./interfaces");
 
-const css = require("./css");
-const dotenv = require("./dotenv");
-const ini = require("./ini");
-const sass = require("./sass");
-const scss = require("./scss");
-const xml = require("./xml");
-const yaml = require("./yaml");
+var ini = require("./ini.js");
+var env = require("./env.js");
+var yaml = require("./yaml.js");
+var xml = require("./xml.js");
+var less = require("./less.js");
+var sass = require("./sass.js");
+var css = require("./css.js");
+var html = require("./html.js");
+var md = require("./md.js");
+var sys = require("./sys.js");
+var toml = require("./toml.js");
+var tsv = require("./tsv.js");
 
 
 /**
@@ -57,7 +62,7 @@ function JSONI() {
 function JSONConvertors(object) {
 
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
-    Less.call(this, object);
+    JSONI.call(this, object);
 
     this.ini = function () {
 
@@ -116,7 +121,7 @@ function JSONConvertors(object) {
 function JSONParsers() {
 
     interfaces.InterfaceJSObjectParserCSS.call(this, object);
-    Less.call(this, object);
+    JSONI.call(this, object);
     
     this.ini = function () {
 
@@ -172,6 +177,6 @@ function JSONParsers() {
 }
 
 
-module.exports.JSON = JSON;
+module.exports.JSONI = JSONI;
 module.exports.JSONConvertors = JSONConvertors;
 module.exports.JSONParsers = JSONParsers;

@@ -19,39 +19,59 @@
 
 var interfaces = require("./interfaces");
 
-const css = require("./css");
-const ini = require("./ini");
-const less = require("./less");
-const sass = require("./sass");
-const scss = require("./scss");
-const xml = require("./xml");
-const yaml = require("./yaml");
+var ini = require("./ini.js");
+var env = require("./env.js");
+var yaml = require("./yaml.js");
+var xml = require("./xml.js");
+var less = require("./less.js");
+var sass = require("./sass.js");
+var css = require("./css.js");
+var html = require("./html.js");
+var md = require("./md.js");
+var sys = require("./sys.js");
+var toml = require("./toml.js");
+var tsv = require("./tsv.js");
 
 
 /**
  *
  *
  */
-function Dotenv() {
+function Yaml() {
 
     interfaces.InterfaceReader.call(this);
 
+    /**
+     *
+     *
+     * @param {*} lines
+     * @param {*} options
+     * @return {*} 
+     */
     this.parse = function (lines, options) {
-        return
+        const yaml = require('js-yaml');
+        return yaml.load(lines, options);
     }
 
+    /**
+     *
+     *
+     * @param {*} object
+     * @param {*} options
+     * @return {*} 
+     */
     this.serialize = function (object, options) {
-        return
+        const yaml = require('js-yaml');
+        return yaml.dump(object, options);
     }
-
 }
 
 
-function DotenvConvertors(object) {
-
+function YamlConvertors() {
+    
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Dotenv.call(this);
-
+    Yaml.call(this, object);
+    
     this.ini = function () {
 
     }
@@ -90,10 +110,10 @@ function DotenvConvertors(object) {
 }
 
 
-function DotenvParsers(object) {
+function YamlParsers() {
 
     interfaces.InterfaceJSObjectParser.call(this, object);
-    Dotenv.call(this);
+    Yaml.call(this, object);
 
     this.ini = function () {
 
@@ -133,7 +153,7 @@ function DotenvParsers(object) {
 }
 
 
-module.exports.Dotenv = Dotenv;
-module.exports.DotenvConvertors = DotenvConvertors;
-module.exports.Dotenv = Dotenv;
+module.exports.Yaml = Yaml;
+module.exports.YamlConvertors = YamlConvertors;
+module.exports.YamlParsers = YamlParsers;
 

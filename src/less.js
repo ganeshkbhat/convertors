@@ -19,19 +19,25 @@
 
 var interfaces = require("./interfaces");
 
-const css = require("./css");
-const dotenv = require("./dotenv");
-const ini = require("./ini");
-const less = require("./less");
-const scss = require("./scss");
-const xml = require("./xml");
-const yaml = require("./yaml");
+var ini = require("./ini.js");
+var env = require("./env.js");
+var yaml = require("./yaml.js");
+var xml = require("./xml.js");
+var less = require("./less.js");
+var sass = require("./sass.js");
+var css = require("./css.js");
+var html = require("./html.js");
+var md = require("./md.js");
+var sys = require("./sys.js");
+var toml = require("./toml.js");
+var tsv = require("./tsv.js");
+
 
 /**
  *
  *
  */
-function Sass() {
+function Less() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -53,10 +59,10 @@ function Sass() {
 }
 
 
-function SassConvertors() {
+function LessConvertors(object) {
 
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
-    Sass.call(this, object);
+    Less.call(this, object);
 
     this.ini = function () {
 
@@ -109,15 +115,14 @@ function SassConvertors() {
     this.sass = function () {
 
     }
-    
 }
 
 
-function SassParsers() {
-    
+function LessParsers() {
+
     interfaces.InterfaceJSObjectParserCSS.call(this, object);
-    Sass.call(this, object);
-
+    Less.call(this, object);
+    
     this.ini = function () {
 
     }
@@ -172,7 +177,6 @@ function SassParsers() {
 }
 
 
-module.exports.Sass = Sass;
-module.exports.SassConvertors = SassConvertors;
-module.exports.SassParsers = SassParsers;
-
+module.exports.Less = Less;
+module.exports.LessConvertors = LessConvertors;
+module.exports.LessParsers = LessParsers;

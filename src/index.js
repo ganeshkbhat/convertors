@@ -24,6 +24,7 @@ var less = require("./less.js");
 var sass = require("./sass.js");
 var css = require("./css.js");
 var html = require("./html.js");
+var md = require("./md.js");
 var sys = require("./sys.js");
 var toml = require("./toml.js");
 var tsv = require("./tsv.js");
@@ -35,6 +36,7 @@ module.exports = {
     yaml,
     xml,
     html,
+    md,
     less,
     sass,
     css,

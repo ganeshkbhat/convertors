@@ -19,13 +19,18 @@
 
 var interfaces = require("./interfaces");
 
-const css = require("./css");
-const dotenv = require("./dotenv");
-const less = require("./less");
-const sass = require("./sass");
-const scss = require("./scss");
-const xml = require("./xml");
-const yaml = require("./yaml");
+var ini = require("./ini.js");
+var env = require("./env.js");
+var yaml = require("./yaml.js");
+var xml = require("./xml.js");
+var less = require("./less.js");
+var sass = require("./sass.js");
+var css = require("./css.js");
+var html = require("./html.js");
+var md = require("./md.js");
+var sys = require("./sys.js");
+var toml = require("./toml.js");
+var tsv = require("./tsv.js");
 
 
 /**
@@ -35,7 +40,7 @@ const yaml = require("./yaml");
  *
  *
  */
-function Toml() {
+function Sys() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -118,10 +123,10 @@ function Toml() {
 }
 
 
-function TomlConvertors(object) {
+function SysConvertors(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Ini.call(this);
+    Sys.call(this);
     
     this.ini = function () {
 
@@ -161,10 +166,10 @@ function TomlConvertors(object) {
 }
 
 
-function TomlParsers(object) {
+function SysParsers(object) {
     
     interfaces.InterfaceJSObjectParser.call(this, object);
-    Ini.call(this);
+    Sys.call(this);
     
     this.ini = function () {
 
@@ -204,6 +209,6 @@ function TomlParsers(object) {
 }
 
 
-module.exports.Toml = Toml;
-module.exports.TomlConvertors = TomlConvertors;
-module.exports.TomlParsers = TomlParsers;
+module.exports.Sys = Sys;
+module.exports.SysConvertors = SysConvertors;
+module.exports.SysParsers = SysParsers;

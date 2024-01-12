@@ -19,19 +19,25 @@
 
 var interfaces = require("./interfaces");
 
-const css = require("./css");
-const dotenv = require("./dotenv");
-const ini = require("./ini");
-const less = require("./less");
-const sass = require("./sass");
-const scss = require("./scss");
-const yaml = require("./yaml");
+var ini = require("./ini.js");
+var env = require("./env.js");
+var yaml = require("./yaml.js");
+var xml = require("./xml.js");
+var less = require("./less.js");
+var sass = require("./sass.js");
+var css = require("./css.js");
+var html = require("./html.js");
+var md = require("./md.js");
+var sys = require("./sys.js");
+var toml = require("./toml.js");
+var tsv = require("./tsv.js");
+
 
 /**
  *
  *
  */
-function Xml() {
+function Scss() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -50,12 +56,69 @@ function Xml() {
     this.write = function (file, object, options, writeOptions) {
         return
     }
+
 }
 
-function XmlConvertors() {
+
+function ScssConvertors() {
+
+    interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
+    Scss.call(this, object);
+
+    this.ini = function () {
+
+    }
+
+    this.tsv = function () {
+
+    }
+
+    this.toml = function () {
+
+    }
+
+    this.dotenv = function () {
+
+    }
+
+    this.yaml = function () {
+
+    }
+
+    this.yml = function () {
+
+    }
+
+    this.xml = function () {
+
+    }
+
+    this.json = function () {
+
+    }
+
+    this.css = function () {
+
+    }
+
+    this.less = function () {
+
+    }
+
+    this.scss = function () {
+
+    }
+
+    this.sass = function () {
+
+    }
+}
+
+
+function ScssParsers() {
     
-    interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Xml.call(this, object);
+    interfaces.InterfaceJSObjectParserCSS.call(this, object);
+    Scss.call(this, object);
 
     this.ini = function () {
 
@@ -92,53 +155,26 @@ function XmlConvertors() {
     this.json = function () {
 
     }
+
+    this.css = function () {
+
+    }
+
+    this.less = function () {
+
+    }
+
+    this.scss = function () {
+
+    }
+
+    this.sass = function () {
+
+    }
+    
 }
 
 
-function XmlParsers() {
-
-    interfaces.InterfaceJSObjectParser.call(this, object);
-    Xml.call(this, object);
-
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
-}
-
-
-module.exports.Xml = Xml;
-module.exports.XmlConvertors = XmlConvertors;
-module.exports.XmlParsers = XmlParsers;
-
+module.exports.Scss = Scss;
+module.exports.ScssConvertors = ScssConvertors;
+module.exports.ScssParsers = ScssParsers;

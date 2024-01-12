@@ -16,7 +16,7 @@
 
 'use strict';
 
-const convertors = require("./src/deps/convertors");
+const convertors = require("./src/convertors");
 
 module.exports = {
     ...convertors
