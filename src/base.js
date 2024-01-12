@@ -158,6 +158,14 @@ function stringifyToSASS(obj) {
 
 }
 
+function parseConf(str) {
+
+}
+
+function stringifyToConf(obj) {
+
+}
+
 function parseSCSS(str) {
 
 }
