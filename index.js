@@ -16,12 +16,12 @@
 
 'use strict';
 
-const convertors = require("./src/convertors");
+const convertors = require("./src");
 
 module.exports = {
     ...convertors
 }
 
 module.exports.default = {
-    ...convertors
+    ...convertors.default
 }

@@ -16,7 +16,12 @@
 
 'use strict';
 
-import {default as convertors} from "./src/convertors";
+import * as convertor from "./src";
+import { default as convertorsd } from "./src";
 
-export default convertors;
+export default convertorsd;
+
+export const convertors = {
+  ...convertor
+};
 

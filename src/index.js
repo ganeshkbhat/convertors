@@ -45,3 +45,18 @@ module.exports = {
     tsv
 }
 
+module.exports.default = {
+    ini,
+    env,
+    yaml,
+    xml,
+    html,
+    md,
+    less,
+    sass,
+    css,
+    sys,
+    toml,
+    tsv
+}
+
