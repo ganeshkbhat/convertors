@@ -1,6 +1,6 @@
 # jsparsers
 
-npm `jsparsers` module for file format to format convertors for `ini`, `yaml`, `dotenv`, `json`, `xml`, `html`, `css`, `less`, `sass` to `json` and `json back to specific file formats`.
+npm `jsparsers` module for file format to format convertors for `ini`, `yaml`, `dotenv`, `sys`, `tsv`, `toml`, `json`, `xml`, `html`, `css`, `less`, `sass` to `json` and `json back to specific file formats`.
 
 
 
@@ -32,6 +32,9 @@ ini.write()
 ini.parse()
 ini.serialize()
 ini.ini()
+ini.toml
+ini.tsv
+ini.sys
 ini.yaml()
 ini.yml()
 ini.xml()
@@ -43,7 +46,7 @@ ini.sass()
 
 ```
 
-All the file format parsers will have the same functions as above in almost all instances with same usages. The file formats applicable are for `ini`, `yaml`, `xml`, `dotenv`, `css`, `scss`, `sass`, `less`, `html`.
+All the file format parsers will have the same functions as above in almost all instances with same usages. The file formats applicable are for `ini`, `toml`, `tsv`, `sys`, `yaml`, `xml`, `dotenv`, `css`, `scss`, `sass`, `less`, `html`.
 
 Each of the parsers follow the following `interfaces` namely `InterfaceReader` and the parser follows `InterfaceJSObjectParser` for all formats and `InterfaceJSObjectParserCSS` for all css based parser formats
 
@@ -65,6 +68,9 @@ function InterfaceReader() {
 
 function InterfaceJSObjectParser(jsObject) {
     this.ini
+    this.toml
+    this.tsv
+    this.sys
     this.yaml
     this.yml
     this.xml
@@ -107,6 +113,9 @@ function InterfaceReader() {
 
 function InterfaceJSObjectConvertor(jsObject) {
     this.ini
+    this.toml
+    this.tsv
+    this.sys
     this.yaml
     this.yml
     this.xml
@@ -136,6 +145,9 @@ InterfaceFileFormat() {
     this.parse
     this.serialize
     this.ini
+    this.toml
+    this.tsv
+    this.sys
     this.yaml
     this.yml
     this.xml
@@ -164,6 +176,9 @@ ini.write()
 ini.parse()
 ini.serialize()
 ini.ini()
+ini.toml
+ini.tsv
+ini.sys
 ini.yaml()
 ini.yml()
 ini.xml()
@@ -187,6 +202,36 @@ let xml = jsp.xml();
 ```
 
 
+## toml
+
+```
+
+let jsp = require("jsparsers");
+let toml = jsp.toml();
+
+```
+
+
+## sys
+
+```
+
+let jsp = require("jsparsers");
+let sys = jsp.sys();
+
+```
+
+
+## tsv
+
+```
+
+let jsp = require("jsparsers");
+let tsv = jsp.tsv();
+
+```
+
+
 ## dotenv
 
 ```
@@ -205,6 +250,26 @@ let jsp = require("jsparsers");
 let yaml = jsp.yaml();
 
 ```
+
+<!-- 
+## xls
+
+```
+
+let jsp = require("jsparsers");
+let xls = jsp.xls();
+
+``` -->
+
+<!-- 
+## pdf
+
+```
+
+let jsp = require("jsparsers");
+let pdf = jsp.pdf();
+
+``` -->
 
 
 ## css
