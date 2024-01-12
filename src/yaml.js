@@ -37,8 +37,7 @@ function Yaml() {
      * @return {*} 
      */
     this.parse = function (lines, options) {
-        const yaml = require('js-yaml');
-        return yaml.load(lines, options);
+        
     }
 
     /**
@@ -49,8 +48,7 @@ function Yaml() {
      * @return {*} 
      */
     this.serialize = function (object, options) {
-        const yaml = require('js-yaml');
-        return yaml.dump(object, options);
+        
     }
 }
 

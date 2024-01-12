@@ -115,11 +115,39 @@ function stringifyToHTML(obj) {
 }
 
 function parseINI(str) {
+  if (!typeof lines === "string") throw new Error("lines is not a string object");
 
+  if (v.endsWith("\r\n")) {
+    lines = lines.split("\r\n");
+  } else if (v.endsWith("\n")) {
+    lines = lines.split("\n");
+  } else if (!!Array.isArray(lines)) {
+    lines = lines;
+  } else {
+    lines = [lines];
+  }
+
+  let ini = require("multi-ini");
+  let parser = new ini.Parser();
+  return parser.parse(lines);
 }
 
 function stringifyToINI(obj) {
+  let ini = require('multi-ini');
+  let str = new ini.Serializer(object);
+  return str;
+}
 
+function loadINIWithFilters(file, options, readOptions) {
+  let ini = require("multi-ini");
+  let parser = new ini.Class(options || {});
+  return parser.read(file, readOptions || { encoding: 'utf8' });
+}
+
+function writeToINIWithFilters(file, object, options) {
+  let ini = require('multi-ini');
+  ini.write(file, object, options || { encoding: 'utf8' });
+  return true;
 }
 
 function parseSASS(str) {
@@ -145,6 +173,8 @@ function stringifyToSCSS(obj) {
  * @return {*} 
  */
 function parseYAML(str) {
+  // const yaml = require('js-yaml');
+  // return yaml.load(lines, options);
   let yaml = require("yamljs");
   return yaml.parse(str);
 }
@@ -156,6 +186,8 @@ function parseYAML(str) {
  * @return {*} 
  */
 function stringifyToYAML(obj) {
+  // const yaml = require('js-yaml');
+  // return yaml.dump(object, options);
   let yaml = require("yamljs");
   return yaml.stringify(obj, 4);
 }
