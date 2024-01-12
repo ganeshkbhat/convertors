@@ -6,7 +6,7 @@
  * Install: npm i jsparsers --save
  * Github: https://github.com/ganeshkbhat/
  * npmjs Link: https://www.npmjs.com/package/jsparsers
- * File: .js
+ * File: src/implementInterface.js
  * File Description: 
  * 
  * 

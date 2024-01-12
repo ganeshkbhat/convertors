@@ -6,7 +6,7 @@
  * Install: npm i jsparsers --save
  * Github: https://github.com/ganeshkbhat/
  * npmjs Link: https://www.npmjs.com/package/jsparsers
- * File: .js
+ * File: src/index.js
  * File Description: 
  * 
  * 
@@ -16,8 +16,12 @@
 
 'use strict';
 
+var interfaces = require("./interfaces");
+var base = require("./base");
+var interfaceValidators = require("./implementInterface.js");
+
 var ini = require("./ini.js");
-var env = require("./env.js");
+var dotenv = require("./dotenv.js");
 var yaml = require("./yaml.js");
 var xml = require("./xml.js");
 var less = require("./less.js");
@@ -31,8 +35,11 @@ var tsv = require("./tsv.js");
 
 
 module.exports = {
+    interfaces,
+    interfaceValidators,
+    base,
     ini,
-    env,
+    dotenv,
     yaml,
     xml,
     html,
@@ -46,8 +53,11 @@ module.exports = {
 }
 
 module.exports.default = {
+    interfaces,
+    interfaceValidators,
+    base,
     ini,
-    env,
+    dotenv,
     yaml,
     xml,
     html,
