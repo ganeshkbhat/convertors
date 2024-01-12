@@ -1,4 +1,4 @@
-const xmlString = `
+var xmlString = `
 <?xml version="1.0" encoding="UTF-8"?>
 <catalog>
   <!-- This is a catalog of books -->
@@ -62,7 +62,7 @@ console.log(xml2json(xmlString));
 //   }
 
 
-const xmlString = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+xmlString = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <root>
   <!-- Comment 1 -->
   <element1 attr1="value1">
@@ -77,7 +77,7 @@ const xmlString = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
   </element2>
 </root>`;
 
-const result = xml2json(xmlString);
+result = xml2json(xmlString);
 console.log(result);
 
 
@@ -105,7 +105,7 @@ console.log(result);
 //     }
 //   }
 
-const xmlString = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+xmlString = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <root>
   <!-- This is a comment -->
   <level1>
@@ -125,7 +125,7 @@ const xmlString = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
   <?processing instruction?>
 </root>`;
 
-const jsonObj = xml2json(xmlString);
+jsonObj = xml2json(xmlString);
 console.log(jsonObj);
 
 // {
@@ -158,7 +158,7 @@ console.log(jsonObj);
 //     }
 //   }
   
-const xmlString = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+xmlString = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <root>
   <level1>
     <level2>
@@ -187,6 +187,7 @@ const xmlString = `<?xml version="1.0" encoding="UTF-8" standalone="no"?>
   </level1>
   <comment>End of root</comment>
 </root>`;
+
 const json = xml2json(xmlString);
 console.log(json);
 
