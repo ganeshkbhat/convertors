@@ -69,7 +69,7 @@
     "cssobj-converter": "^2.4.3",
     "dompurify": "^3.0.8",
     "dotenv": "^16.1.3",
-    "fast-xml-parser": "^4.2.4",
+    "fast-xml-parser": "^4.2.5",
     "file-convert": "^1.1.3",
     "ghostscript-node": "^1.5.0",
     "isomorphic-dompurify": "^2.2.0",
