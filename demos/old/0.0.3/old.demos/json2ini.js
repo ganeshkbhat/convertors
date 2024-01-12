@@ -1,6 +1,6 @@
 
 
-var jsonToIni = require("../index").parseJson2Ini.jsonToIni;
+var jsonToIni = require("../../../../index").parseJson2Ini.jsonToIni;
 
 const nestedObj = {
     section1: {

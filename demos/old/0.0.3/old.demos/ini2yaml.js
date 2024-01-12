@@ -1,5 +1,5 @@
 
-var iniToYaml = require("../index").parseIni2Yaml.iniToYaml;
+var iniToYaml = require("../../../../index").parseIni2Yaml.iniToYaml;
 
 const iniString = `
 ; This is a comment

@@ -1,6 +1,6 @@
 
 
-var jsonToYaml = require("../index").parseJson2Yaml.jsonToYaml;
+var jsonToYaml = require("../../../../index").parseJson2Yaml.jsonToYaml;
 
 
 const jsonObject = {

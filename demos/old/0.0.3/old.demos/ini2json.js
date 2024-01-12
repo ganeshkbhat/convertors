@@ -1,5 +1,5 @@
 
-var iniToJson = require("../index").parseIni2Json.iniToJson;
+var iniToJson = require("../../../../index").parseIni2Json.iniToJson;
 
 const iniString = `
 ; This is a comment

@@ -1,6 +1,6 @@
 
 
-var yamlToIni = require("../index").parseYaml2Ini.yamlToIni;
+var yamlToIni = require("../../../../index").parseYaml2Ini.yamlToIni;
 
 
 const yamlString = `

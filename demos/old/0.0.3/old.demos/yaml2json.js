@@ -1,6 +1,6 @@
 
 
-var yamlToJson = require("../index").parseYaml2Json.yamlToJson;
+var yamlToJson = require("../../../../index").parseYaml2Json.yamlToJson;
 
 
 const yamlString = `
