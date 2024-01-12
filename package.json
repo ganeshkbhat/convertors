@@ -25,6 +25,7 @@
     "sass",
     "less",
     "env",
+    "dotenv",
     ".ini",
     ".toml",
     ".tsv",
