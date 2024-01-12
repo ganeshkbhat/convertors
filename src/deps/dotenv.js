@@ -56,6 +56,18 @@ function DotenvConvertors(object) {
 
     }
 
+    this.tsv = function () {
+
+    }
+
+    this.toml = function () {
+
+    }
+
+    this.sys = function () {
+
+    }
+
     this.dotenv = function () {
 
     }
@@ -84,6 +96,18 @@ function DotenvParsers(object) {
     Dotenv.call(this);
 
     this.ini = function () {
+
+    }
+
+    this.tsv = function () {
+
+    }
+
+    this.toml = function () {
+
+    }
+
+    this.sys = function () {
 
     }
 

@@ -63,6 +63,18 @@ function JSONConvertors(object) {
 
     }
 
+    this.tsv = function () {
+
+    }
+
+    this.toml = function () {
+
+    }
+
+    this.sys = function () {
+
+    }
+
     this.dotenv = function () {
 
     }
@@ -107,6 +119,18 @@ function JSONParsers() {
     Less.call(this, object);
     
     this.ini = function () {
+
+    }
+
+    this.tsv = function () {
+
+    }
+
+    this.toml = function () {
+
+    }
+
+    this.sys = function () {
 
     }
 

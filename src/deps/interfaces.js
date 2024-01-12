@@ -119,6 +119,18 @@ function InterfaceJSObjectParser(jsObject = "") {
         return new Error("InterfaceJSObjectConvertor: ")
     }
 
+    this.tsv = function () {
+        return new Error("InterfaceJSObjectConvertor: ")
+    }
+
+    this.toml = function () {
+        return new Error("InterfaceJSObjectConvertor: ")
+    }
+
+    this.sys = function () {
+        return new Error("InterfaceJSObjectConvertor: ")
+    }
+
     this.yaml = function () {
         return new Error("InterfaceJSObjectConvertor: ")
     }
@@ -185,6 +197,18 @@ function InterfaceJSObjectConvertor(jsObject = "") {
     }
 
     this.ini = function () {
+        return new Error("InterfaceJSObjectConvertor: ")
+    }
+
+    this.tsv = function () {
+        return new Error("InterfaceJSObjectConvertor: ")
+    }
+
+    this.toml = function () {
+        return new Error("InterfaceJSObjectConvertor: ")
+    }
+
+    this.sys = function () {
         return new Error("InterfaceJSObjectConvertor: ")
     }
 

@@ -127,6 +127,14 @@ function IniConvertors(object) {
 
     }
 
+    this.tsv = function () {
+
+    }
+
+    this.toml = function () {
+
+    }
+
     this.dotenv = function () {
 
     }
@@ -155,6 +163,18 @@ function IniParsers(object) {
     Ini.call(this);
     
     this.ini = function () {
+
+    }
+
+    this.tsv = function () {
+
+    }
+
+    this.toml = function () {
+
+    }
+
+    this.sys = function () {
 
     }
 
