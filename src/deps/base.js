@@ -162,6 +162,54 @@ function stringifyToJSON(obj) {
   return JSON.stringify(obj);
 }
 
+function parseSys() {
+
+}
+
+function stringifyToSys() {
+
+}
+
+function parseDotenv() {
+
+}
+
+function stringifyToDotenv() {
+
+}
+
+function parseToml() {
+
+}
+
+function stringifyToToml() {
+
+}
+
+function parseTsv() {
+
+}
+
+function stringifyToTsv() {
+
+}
+
+function parsePdf() {
+
+}
+
+function stringifyToPdf() {
+
+}
+
+function parseXls() {
+
+}
+
+function stringifyToXls() {
+
+}
+
 function parseSASS() {
 
 }
@@ -175,14 +223,6 @@ function parseLess() {
 }
 
 function stringifyToLess() {
-
-}
-
-function parseDotenv() {
-
-}
-
-function stringifyToDotenv() {
 
 }
 
