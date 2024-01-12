@@ -19,7 +19,7 @@
 const fs = require('fs');
 const { expect } = require('chai');
 
-describe('[Convertor tests] ', () => {
+describe('[Parser tests] ', () => {
   
   before(() => {
     // fs.writeFileSync('.env', envFile);
