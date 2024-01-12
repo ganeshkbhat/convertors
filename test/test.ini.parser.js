@@ -29,13 +29,13 @@ describe('[Parser tests] ', () => {
     // fs.unlinkSync('.env');
   });
 
-  it('should convert file to JSON object', () => {
+  it('should parse file to JSON object', () => {
     const expected = 0; // predefined
     const actual = 0; // do ops
     expect(actual).to.deep.equal(expected);
   });
 
-  it('should convert Converted JSON Object xxx string', () => {
+  it('should parse file to JSON Object and convert back to appropriate xxx string', () => {
     const expected = 0; // predefined
     const actual = 0; // do ops
     expect(actual).to.deep.equal(expected);
