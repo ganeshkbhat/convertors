@@ -17,9 +17,8 @@
 'use strict';
 
 import * as convertor from "./src";
-import { default as convertorsd } from "./src";
 
-export default convertorsd;
+export default convertor.default;
 
 export const convertors = {
   ...convertor
