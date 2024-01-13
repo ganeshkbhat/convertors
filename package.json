@@ -84,7 +84,7 @@
     "marked-renderer-pdf": "^0.0.5",
     "multi-ini": "^2.3.2",
     "pdf_neutralize": "^1.0.0",
-    "pdf-node": "^1.0.1",
+    "pdf-node": "^0.0.2",
     "pdf2html": "^3.1.0",
     "pdfjs-dist": "^4.0.379",
     "pdfkit": "^0.14.0",
