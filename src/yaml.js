@@ -33,22 +33,20 @@ function YamlParser() {
      *
      *
      * @param {*} lines
-     * @param {*} options
      * @return {*} 
      */
-    this.parse = function (lines, options) {
-        
+    this.parse = function (str) {
+        return  base.Parsers().yaml(str);
     }
 
     /**
      *
      *
      * @param {*} object
-     * @param {*} options
      * @return {*} 
      */
-    this.serialize = function (object, options) {
-        
+    this.serialize = function (object) {
+        return base.Convertors().yaml(object)
     }
 }
 
@@ -57,46 +55,47 @@ function YamlConvertor(object) {
     
     interfaces.InterfaceJSObjectConvertor.call(this, object);
     YamlParser.call(this);
+    base.Convertors.call(this);
     
-    this.ini = function () {
+    // this.ini = function () {
 
-    }
+    // }
 
-    this.tsv = function () {
+    // this.tsv = function () {
 
-    }
+    // }
 
-    this.toml = function () {
+    // this.toml = function () {
 
-    }
+    // }
 
-    this.sys = function () {
+    // this.sys = function () {
 
-    }
+    // }
 
-    this.dotenv = function () {
+    // this.dotenv = function () {
 
-    }
+    // }
 
-    this.yaml = function () {
+    // this.yaml = function () {
 
-    }
+    // }
 
-    this.yml = function () {
+    // this.yml = function () {
 
-    }
+    // }
 
-    this.xml = function () {
+    // this.xml = function () {
 
-    }
+    // }
 
-    this.json = function () {
+    // this.json = function () {
 
-    }
+    // }
 
-    this.conf = function () {
+    // this.conf = function () {
 
-    }
+    // }
 
 }
 

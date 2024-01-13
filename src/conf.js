@@ -29,21 +29,14 @@ function ConfParser() {
 
     interfaces.InterfaceReader.call(this);
 
-    this.load = function (file, options, readOptions) {
-        return
+    this.parse = function (str) {
+        return base.Parsers().conf(str);
     }
 
-    this.parse = function (lines, options) {
-        return
+    this.serialize = function (object) {
+        return base.Convertors().conf(object);
     }
 
-    this.serialize = function (object, options) {
-        return
-    }
-
-    this.write = function (file, object, options, writeOptions) {
-        return
-    }
 }
 
 /**
@@ -56,6 +49,47 @@ function ConfConvertor(object) {
     interfaces.InterfaceJSObjectConvertor.call(this, object);
     ConfParser.call(this);
     base.Convertors.call(this);
+    
+    // this.ini = function () {
+
+    // }
+
+    // this.tsv = function () {
+
+    // }
+
+    // this.toml = function () {
+
+    // }
+
+    // this.sys = function () {
+
+    // }
+
+    // this.dotenv = function () {
+
+    // }
+
+    // this.yaml = function () {
+
+    // }
+
+    // this.yml = function () {
+
+    // }
+
+    // this.xml = function () {
+
+    // }
+
+    // this.json = function () {
+
+    // }
+
+    // this.conf = function () {
+
+    // }
+    
 }
 
 /**

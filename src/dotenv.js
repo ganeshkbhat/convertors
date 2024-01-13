@@ -29,12 +29,12 @@ function DotenvParser() {
 
     interfaces.InterfaceReader.call(this);
 
-    this.parse = function (lines, options) {
-        return
+    this.parse = function (str) {
+        return base.Parsers().dotenv(str);
     }
 
-    this.serialize = function (object, options) {
-        return
+    this.serialize = function (object) {
+        return base.Convertors().dotenv(object);
     }
 
 }
@@ -44,46 +44,47 @@ function DotenvConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
     DotenvParser.call(this);
+    base.Convertors.call(this);
 
-    this.ini = function () {
+    // this.ini = function () {
 
-    }
+    // }
 
-    this.tsv = function () {
+    // this.tsv = function () {
 
-    }
+    // }
 
-    this.toml = function () {
+    // this.toml = function () {
 
-    }
+    // }
 
-    this.sys = function () {
+    // this.sys = function () {
 
-    }
+    // }
 
-    this.dotenv = function () {
+    // this.dotenv = function () {
 
-    }
+    // }
 
-    this.yaml = function () {
+    // this.yaml = function () {
 
-    }
+    // }
 
-    this.yml = function () {
+    // this.yml = function () {
 
-    }
+    // }
 
-    this.xml = function () {
+    // this.xml = function () {
 
-    }
+    // }
 
-    this.json = function () {
+    // this.json = function () {
 
-    }
+    // }
 
-    this.conf = function () {
+    // this.conf = function () {
 
-    }
+    // }
 }
 
 

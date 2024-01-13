@@ -35,13 +35,13 @@ function TsvParser() {
     /**
      *
      *
-     * @param {*} lines
+     * @param {*} str
      * @return {*} 
      * 
      * 
      */
-    this.parse = function (lines) {
-        
+    this.parse = function (str) {
+        return base.Parsers().tsv(str);
     }
 
     /**
@@ -53,7 +53,7 @@ function TsvParser() {
      * 
      */
     this.serialize = function (object) {
-        
+        return base.Convertors().tsv(object);
     }
 
 }
@@ -63,46 +63,47 @@ function TsvConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
     TsvParser.call(this);
+    base.Convertors.call(this);
     
-    this.ini = function () {
+    // this.ini = function () {
 
-    }
+    // }
 
-    this.tsv = function () {
+    // this.tsv = function () {
 
-    }
+    // }
 
-    this.toml = function () {
+    // this.toml = function () {
 
-    }
+    // }
 
-    this.sys = function () {
+    // this.sys = function () {
 
-    }
+    // }
 
-    this.dotenv = function () {
+    // this.dotenv = function () {
 
-    }
+    // }
 
-    this.yaml = function () {
+    // this.yaml = function () {
 
-    }
+    // }
 
-    this.yml = function () {
+    // this.yml = function () {
 
-    }
+    // }
 
-    this.xml = function () {
+    // this.xml = function () {
 
-    }
+    // }
 
-    this.json = function () {
+    // this.json = function () {
 
-    }
+    // }
 
-    this.conf = function () {
+    // this.conf = function () {
 
-    }
+    // }
 
 }
 

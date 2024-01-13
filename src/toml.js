@@ -35,14 +35,14 @@ function TomlParser() {
     /**
      *
      *
-     * @param {*} lines
+     * @param {*} str
      * @return {*} 
      * 
      * https://www.npmjs.com/package/multi-ini
      * 
      */
-    this.parse = function (lines) {
-        
+    this.parse = function (str) {
+        return base.Parser().TOML(str);
     }
 
     /**
@@ -54,7 +54,7 @@ function TomlParser() {
      * 
      */
     this.serialize = function (object) {
-        
+        return base.Convertors().TOML(object);
     }
 
 }
@@ -64,46 +64,47 @@ function TomlConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
     TomlParser.call(this);
+    base.Convertors.call(this);
     
-    this.ini = function () {
+    // this.ini = function () {
 
-    }
+    // }
 
-    this.tsv = function () {
+    // this.tsv = function () {
 
-    }
+    // }
 
-    this.toml = function () {
+    // this.toml = function () {
 
-    }
+    // }
 
-    this.sys = function () {
+    // this.sys = function () {
 
-    }
+    // }
 
-    this.dotenv = function () {
+    // this.dotenv = function () {
 
-    }
+    // }
 
-    this.yaml = function () {
+    // this.yaml = function () {
 
-    }
+    // }
 
-    this.yml = function () {
+    // this.yml = function () {
 
-    }
+    // }
 
-    this.xml = function () {
+    // this.xml = function () {
 
-    }
+    // }
 
-    this.json = function () {
+    // this.json = function () {
 
-    }
+    // }
 
-    this.conf = function () {
+    // this.conf = function () {
 
-    }
+    // }
 
 }
 

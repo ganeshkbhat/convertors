@@ -28,9 +28,7 @@ var base = require("./base");
 function CssParser() {
 
     interfaces.InterfaceReader.call(this);
-    var baseParser = base.Parsers().Css;
-    var baseConvertor = base.Convertors().Css;
-
+    
     /**
      *
      *
@@ -47,7 +45,7 @@ function CssParser() {
      */
     this.parse = function (str, options) {
         // return require("css").parse(str, options || { silent: false });
-        return baseParser(str, options);
+        return base.Parsers().Css(str, options);
     }
 
     /**
@@ -69,7 +67,7 @@ function CssParser() {
      */
     this.serialize = function (object, options) {
         // return require("css").stringify(object, options || { sourcemap: true });
-        return baseConvertor(object, options);
+        return base.Convertors().Css(object, options);
     }
 }
 
@@ -82,8 +80,47 @@ function CssConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
     CssParser.call(this);
-    base.Convertors(this);
+    base.Convertors.call(this);
 
+    // this.ini = function () {
+
+    // }
+
+    // this.tsv = function () {
+
+    // }
+
+    // this.toml = function () {
+
+    // }
+
+    // this.sys = function () {
+
+    // }
+
+    // this.dotenv = function () {
+
+    // }
+
+    // this.yaml = function () {
+
+    // }
+
+    // this.yml = function () {
+
+    // }
+
+    // this.xml = function () {
+
+    // }
+
+    // this.json = function () {
+
+    // }
+
+    // this.conf = function () {
+
+    // }
 }
 
 /**

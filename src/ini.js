@@ -59,21 +59,7 @@ function IniParser() {
      * 
      */
     this.parse = function (lines) {
-        if (!typeof lines === "string") throw new Error("lines is not a string object");
-        
-        if (v.endsWith("\r\n")) {
-            lines = lines.split("\r\n");
-        } else if (v.endsWith("\n")) {
-            lines = lines.split("\n");
-        } else if (!!Array.isArray(lines)) {
-            lines = lines;
-        } else {
-            lines = [lines];
-        }
-        
-        let ini = require("multi-ini");
-        let parser = new ini.Parser();
-        return parser.parse(lines);
+        return base.Parsers().ini(lines);
     }
 
     /**
@@ -86,9 +72,7 @@ function IniParser() {
      * 
      */
     this.serialize = function (object) {
-        let ini = require('multi-ini');
-        let str = new ini.Serializer(object);
-        return str;
+        return base.Convertors().ini(object);
     }
 
     /**
@@ -115,46 +99,48 @@ function IniConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
     IniParser.call(this);
+    base.Convertors.call(this);
+
     
-    this.ini = function () {
+    // this.ini = function () {
 
-    }
+    // }
 
-    this.tsv = function () {
+    // this.tsv = function () {
 
-    }
+    // }
 
-    this.toml = function () {
+    // this.toml = function () {
 
-    }
+    // }
 
-    this.sys = function () {
+    // this.sys = function () {
 
-    }
+    // }
 
-    this.dotenv = function () {
+    // this.dotenv = function () {
 
-    }
+    // }
 
-    this.yaml = function () {
+    // this.yaml = function () {
 
-    }
+    // }
 
-    this.yml = function () {
+    // this.yml = function () {
 
-    }
+    // }
 
-    this.xml = function () {
+    // this.xml = function () {
 
-    }
+    // }
 
-    this.json = function () {
+    // this.json = function () {
 
-    }
+    // }
 
-    this.conf = function () {
+    // this.conf = function () {
 
-    }
+    // }
 
 }
 

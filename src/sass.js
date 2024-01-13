@@ -29,21 +29,14 @@ function SassParser() {
 
     interfaces.InterfaceReader.call(this);
 
-    this.load = function (file, options, readOptions) {
-        return
+    this.parse = function (str) {
+        return base.Parsers().sass(str);
     }
 
-    this.parse = function (lines, options) {
-        return
+    this.serialize = function (object) {
+        return base.Convertors().sass(object);
     }
 
-    this.serialize = function (object, options) {
-        return
-    }
-
-    this.write = function (file, object, options, writeOptions) {
-        return
-    }
 }
 
 
@@ -51,62 +44,63 @@ function SassConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
     SassParser.call(this);
+    base.Convertors.call(this);
 
-    this.ini = function () {
+    // this.ini = function () {
 
-    }
+    // }
 
-    this.tsv = function () {
+    // this.tsv = function () {
 
-    }
+    // }
 
-    this.toml = function () {
+    // this.toml = function () {
 
-    }
+    // }
 
-    this.sys = function () {
+    // this.sys = function () {
 
-    }
+    // }
 
-    this.dotenv = function () {
+    // this.dotenv = function () {
 
-    }
+    // }
 
-    this.yaml = function () {
+    // this.yaml = function () {
 
-    }
+    // }
 
-    this.yml = function () {
+    // this.yml = function () {
 
-    }
+    // }
 
-    this.xml = function () {
+    // this.xml = function () {
 
-    }
+    // }
 
-    this.json = function () {
+    // this.json = function () {
 
-    }
+    // }
 
-    this.conf = function () {
+    // this.conf = function () {
 
-    }
+    // }
 
-    this.css = function () {
+    // this.css = function () {
 
-    }
+    // }
 
-    this.less = function () {
+    // this.less = function () {
 
-    }
+    // }
 
-    this.scss = function () {
+    // this.scss = function () {
 
-    }
+    // }
 
-    this.sass = function () {
+    // this.sass = function () {
 
-    }
+    // }
     
 }
 

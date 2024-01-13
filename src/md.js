@@ -35,25 +35,12 @@ function MdParser() {
     /**
      *
      *
-     * @param {*} file
-     * @param {*} options
-     * @param {*} readOptions
-     * @return {*} 
-     * 
-     */
-    this.loadWithFilters = function (file, options, readOptions) {
-
-    }
-
-    /**
-     *
-     *
      * @param {*} lines
      * @return {*} 
      * 
      */
-    this.parse = function (lines) {
-
+    this.parse = function (str) {
+        return base.Parsers().md(str);
     }
 
     /**
@@ -64,20 +51,7 @@ function MdParser() {
      * 
      */
     this.serialize = function (object) {
-
-    }
-
-    /**
-     *
-     *
-     * @param {*} file
-     * @param {*} object
-     * @param {*} options
-     * @return {*} 
-     * 
-     */
-    this.writeWithFilters = function (file, object, options) {
-
+        return base.Convertors().md(object);
     }
 
 }
@@ -87,62 +61,63 @@ function MdConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
     MdParser.call(this);
+    base.Convertors.call(this);
 
-    this.ini = function () {
+    // this.ini = function () {
 
-    }
+    // }
 
-    this.tsv = function () {
+    // this.tsv = function () {
 
-    }
+    // }
 
-    this.toml = function () {
+    // this.toml = function () {
 
-    }
+    // }
 
-    this.sys = function () {
+    // this.sys = function () {
 
-    }
+    // }
 
-    this.dotenv = function () {
+    // this.dotenv = function () {
 
-    }
+    // }
 
-    this.yaml = function () {
+    // this.yaml = function () {
 
-    }
+    // }
 
-    this.yml = function () {
+    // this.yml = function () {
 
-    }
+    // }
 
-    this.xml = function () {
+    // this.xml = function () {
 
-    }
+    // }
 
-    this.json = function () {
+    // this.json = function () {
 
-    }
+    // }
 
-    this.conf = function () {
+    // this.conf = function () {
 
-    }
+    // }
 
-    this.css = function () {
+    // this.css = function () {
 
-    }
+    // }
 
-    this.less = function () {
+    // this.less = function () {
 
-    }
+    // }
 
-    this.scss = function () {
+    // this.scss = function () {
 
-    }
+    // }
 
-    this.sass = function () {
+    // this.sass = function () {
 
-    }
+    // }
 }
 
 

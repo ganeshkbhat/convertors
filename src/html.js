@@ -29,21 +29,14 @@ function HTMLIParser() {
 
     interfaces.InterfaceReader.call(this);
 
-    this.load = function (file, options, readOptions) {
-        return
+    this.parse = function (str) {
+        return base.Parsers().html(str);
     }
 
-    this.parse = function (lines, options) {
-        return
+    this.serialize = function (object) {
+        return base.Convertors().html(object);
     }
 
-    this.serialize = function (object, options) {
-        return
-    }
-
-    this.write = function (file, object, options, writeOptions) {
-        return
-    }
 }
 
 function HTMLIConvertor(object) {
@@ -51,6 +44,7 @@ function HTMLIConvertor(object) {
     interfaces.InterfaceJSObjectConvertorMDHTML.call(this, object);
     HTMLIParser.call(this);
     base.Convertors.call(this);
+    
 }
 
 
