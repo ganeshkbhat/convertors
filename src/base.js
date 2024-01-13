@@ -25,7 +25,7 @@
  * @param {*} options
  * @return {*} 
  */
-function parseCssAST(str, options) {
+module.exports.parseCssAST = function parseCssAST(str, options) {
   var css = require('css');
   // str = 'body { font-size: 12px; }'
   return css.parse(str, options || { silent: false });
@@ -38,7 +38,7 @@ function parseCssAST(str, options) {
  * @param {*} options
  * @return {*} 
  */
-function stringifyToCssAST(astObj, options) {
+module.exports.stringifyCssAST = function stringifyCssAST(astObj, options) {
   var css = require('css');
   // str = 'body { font-size: 12px; }'
   return css.stringify(astObj, options || { sourcemap: true });
@@ -50,7 +50,7 @@ function stringifyToCssAST(astObj, options) {
  * @param {*} str
  * @return {*} 
  */
-function parseCss(str, options) {
+module.exports.parseCss = function parseCss(str, options) {
   // import * as v8 from 'v8'
   // import postcss, { Declaration, Input, Root, Rule } from '../lib/postcss.js'
   // import { parse, stringify } from '../lib/postcss.js'
@@ -70,7 +70,7 @@ function parseCss(str, options) {
  * @param {*} str
  * @return {*} 
  */
-function stringifyToCss(obj, options) {
+module.exports.stringifyCss = function stringifyCss(obj, options) {
   let css = require('postcss');
   // let v8 = require("v8");
   // // import { parse, stringify } from '../lib/postcss.js'
@@ -87,7 +87,7 @@ function stringifyToCss(obj, options) {
  * @param {*} str
  * @returns {*} Promise
  */
-function parseXML(str, options) {
+module.exports.parseXML = function parseXML(str, options) {
   let xml = require('xml2js');
   let parser = new xml2js.Parser(options);
   return parser.parseStringPromise(str);
@@ -98,23 +98,23 @@ function parseXML(str, options) {
  *
  * @param {*} obj
  */
-function stringifyToXML(obj, options) {
+module.exports.stringifyXML = function stringifyXML(obj, options) {
   let xml = require('xml2js');
   let builder = new xml.Builder(options);
   return builder.buildObject(obj);
 }
 
 
-function parseHTML(str) {
+module.exports.parseHTML = function parseHTML(str) {
 
 }
 
 
-function stringifyToHTML(obj) {
+module.exports.stringifyHTML = function stringifyHTML(obj) {
 
 }
 
-function parseINI(str) {
+module.exports.parseINI = function parseINI(str) {
   if (!typeof lines === "string") throw new Error("lines is not a string object");
 
   if (v.endsWith("\r\n")) {
@@ -132,45 +132,53 @@ function parseINI(str) {
   return parser.parse(lines);
 }
 
-function stringifyToINI(obj) {
+module.exports.stringifyINI = function stringifyINI(obj) {
   let ini = require('multi-ini');
   let str = new ini.Serializer(object);
   return str;
 }
 
-function loadINIWithFilters(file, options, readOptions) {
+module.exports.loadINIWithFilters = function loadINIWithFilters(file, options, readOptions) {
   let ini = require("multi-ini");
   let parser = new ini.Class(options || {});
   return parser.read(file, readOptions || { encoding: 'utf8' });
 }
 
-function writeToINIWithFilters(file, object, options) {
+module.exports.writeToINIWithFilters = function writeToINIWithFilters(file, object, options) {
   let ini = require('multi-ini');
   ini.write(file, object, options || { encoding: 'utf8' });
   return true;
 }
 
-function parseSASS(str) {
+module.exports.parseSASS = function parseSASS(str) {
 
 }
 
-function stringifyToSASS(obj) {
+module.exports.stringifySASS = function stringifySASS(obj) {
 
 }
 
-function parseConf(str) {
+module.exports.sass2less = function SASS2LESS(obj) {
 
 }
 
-function stringifyToConf(obj) {
+module.exports.less2sass = function less2sass(obj) {
 
 }
 
-function parseSCSS(str) {
+module.exports.parseConf = function parseConf(str) {
 
 }
 
-function stringifyToSCSS(obj) {
+module.exports.stringifyConf = function stringifyConf(obj) {
+
+}
+
+module.exports.parseSCSS = function parseSCSS(str) {
+
+}
+
+module.exports.stringifySCSS = function stringifySCSS(obj) {
 
 }
 
@@ -180,7 +188,7 @@ function stringifyToSCSS(obj) {
  * @param {*} str
  * @return {*} 
  */
-function parseYAML(str) {
+module.exports.parseYAML = function parseYAML(str) {
   // const yaml = require('js-yaml');
   // return yaml.load(lines, options);
   let yaml = require("yamljs");
@@ -193,7 +201,7 @@ function parseYAML(str) {
  * @param {*} obj
  * @return {*} 
  */
-function stringifyToYAML(obj) {
+module.exports.stringifyYAML = function stringifyYAML(obj) {
   // const yaml = require('js-yaml');
   // return yaml.dump(object, options);
   let yaml = require("yamljs");
@@ -206,7 +214,7 @@ function stringifyToYAML(obj) {
  * @param {*} obj
  * @return {*} 
  */
-function parseJSON(obj) {
+module.exports.parseJSON = function parseJSON(obj) {
   return JSON.parse(obj);
 }
 
@@ -216,72 +224,235 @@ function parseJSON(obj) {
  * @param {*} obj
  * @return {*} 
  */
-function stringifyToJSON(obj) {
+module.exports.stringifyJSON = function stringifyJSON(obj) {
   return JSON.stringify(obj);
 }
 
-function parseSys() {
+module.exports.parseSys = function parseSys(str) {
 
 }
 
-function stringifyToSys() {
+module.exports.stringifySys = function stringifySys(obj) {
 
 }
 
-function parseDotenv() {
+module.exports.parseDotenv = function parseDotenv(str) {
 
 }
 
-function stringifyToDotenv() {
+module.exports.stringifyDotenv = function stringifyDotenv(obj) {
 
 }
 
-function parseToml() {
+module.exports.parseToml = function parseToml(str) {
 
 }
 
-function stringifyToToml() {
+module.exports.stringifyml = function stringifyml(obj) {
 
 }
 
-function parseTsv() {
+module.exports.parseTsv = function parseTsv(str) {
 
 }
 
-function stringifyToTsv() {
+module.exports.stringifyTsv = function stringifyTsv(obj) {
 
 }
 
-function parsePdf() {
+module.exports.parsePdf = function parsePdf(str) {
 
 }
 
-function stringifyToPdf() {
+module.exports.stringifyPdf = function stringifyPdf(obj) {
 
 }
 
-function parseXls() {
+module.exports.parseXls = function parseXls(str) {
 
 }
 
-function stringifyToXls() {
+module.exports.stringifyXls = function stringifyXls(obj) {
 
 }
 
-function parseSASS() {
+module.exports.parseSASS = function parseSASS(str) {
 
 }
 
-function stringifyToSASS() {
+module.exports.stringifySASS = function stringifySASS(obj) {
 
 }
 
-function parseLess() {
-
+/**
+ *
+ *
+ * @param {*} str
+ * @param {*} callback
+ * @param {string} [options={
+ *     env: "production",
+ *     logLevel: 2,
+ *     errorReporting: "console",
+ *     async: false,
+ *     fileAsync: false,
+ *     poll: 1000,
+ *     functions: {},
+ *     dumpLineNumbers: "comments",
+ *     relativeUrls: false,
+ *     useFileCache: true,
+ *     paths: [], // include paths ['PATH1', 'PATH2']
+ *     rewriteUrls: 'all',
+ *     urlArgs: '',
+ *     globalVars: {
+ *       var1: '"quoted value"',
+ *       var2: 'regular value'
+ *     },
+ *     modifyVars: null,
+ *     rootpath: "", // ":/a.com/"
+ *     math: 1,
+ *     javascriptEnabled: false,
+ *     depends: false,
+ *     color: true,
+ *     strictUnits: true,
+ *     lint: true,
+ *     compress: true,
+ *     insecure: false,
+ *     plugins: [],
+ *     sourceMap: {
+ *       outputFilename: 'file.map',
+ *       sourceMapRootpath: 'dist/',
+ *       sourceMapBasepath: 'less-files/',
+ *       sourceMapFileInline: false,
+ *       outputSourceFiles: true
+ *     }
+ *   }]
+ * @return {*} 
+ */
+module.exports.parseLess = function parseLess(str, callback,
+  options = {
+    env: "production",
+    logLevel: 2,
+    errorReporting: "console",
+    async: false,
+    fileAsync: false,
+    poll: 1000,
+    functions: {},
+    dumpLineNumbers: "comments",
+    relativeUrls: false,
+    useFileCache: true,
+    paths: [], // include paths ['PATH1', 'PATH2']
+    rewriteUrls: 'all',
+    urlArgs: '',
+    globalVars: {
+      var1: '"quoted value"',
+      var2: 'regular value'
+    },
+    modifyVars: null,
+    rootpath: "", // ":/a.com/"
+    math: 1,
+    javascriptEnabled: false,
+    depends: false,
+    color: true,
+    strictUnits: true,
+    lint: true,
+    compress: true,
+    insecure: false,
+    plugins: [],
+    sourceMap: {
+      outputFilename: 'file.map',
+      sourceMapRootpath: 'dist/',
+      sourceMapBasepath: 'less-files/',
+      sourceMapFileInline: false,
+      outputSourceFiles: true
+    }
+  }) {
+  const lessParser = require("less").Parser();
+  return lessParser.parse(str, callback, options);
 }
 
-function stringifyToLess() {
-
+/**
+ *
+ *
+ * @param {*} obj
+ * @param {string} [options={
+ *     env: "production",
+ *     logLevel: 2,
+ *     errorReporting: "console",
+ *     async: false,
+ *     fileAsync: false,
+ *     poll: 1000,
+ *     functions: {},
+ *     dumpLineNumbers: "comments",
+ *     relativeUrls: false,
+ *     useFileCache: true,
+ *     paths: [], // include paths ['PATH1', 'PATH2']
+ *     rewriteUrls: 'all',
+ *     urlArgs: '',
+ *     globalVars: {
+ *       var1: '"quoted value"',
+ *       var2: 'regular value'
+ *     },
+ *     modifyVars: null,
+ *     rootpath: "", // ":/a.com/"
+ *     math: 1,
+ *     javascriptEnabled: false,
+ *     depends: false,
+ *     color: true,
+ *     strictUnits: true,
+ *     lint: true,
+ *     compress: true,
+ *     insecure: false,
+ *     plugins: [],
+ *     sourceMap: {
+ *       outputFilename: 'file.map',
+ *       sourceMapRootpath: 'dist/',
+ *       sourceMapBasepath: 'less-files/',
+ *       sourceMapFileInline: false,
+ *       outputSourceFiles: true
+ *     }
+ *   }]
+ * @param {*} callback
+ * @return {*} 
+ */
+module.exports.stringifyLess = function stringifyLess(obj,
+  options = {
+    env: "production",
+    logLevel: 2,
+    errorReporting: "console",
+    async: false,
+    fileAsync: false,
+    poll: 1000,
+    functions: {},
+    dumpLineNumbers: "comments",
+    relativeUrls: false,
+    useFileCache: true,
+    paths: [], // include paths ['PATH1', 'PATH2']
+    rewriteUrls: 'all',
+    urlArgs: '',
+    globalVars: {
+      var1: '"quoted value"',
+      var2: 'regular value'
+    },
+    modifyVars: null,
+    rootpath: "", // ":/a.com/"
+    math: 1,
+    javascriptEnabled: false,
+    depends: false,
+    color: true,
+    strictUnits: true,
+    lint: true,
+    compress: true,
+    insecure: false,
+    plugins: [],
+    sourceMap: {
+      outputFilename: 'file.map',
+      sourceMapRootpath: 'dist/',
+      sourceMapBasepath: 'less-files/',
+      sourceMapFileInline: false,
+      outputSourceFiles: true
+    }
+  },
+  callback) {
+  const less = require("less");
+  return less.render(obj, options, callback || function (error, output) { });
 }
-
-
