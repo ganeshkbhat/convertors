@@ -16,8 +16,6 @@
 
 'use strict';
 
-
-
 /**
  *
  *
@@ -104,16 +102,30 @@ module.exports.stringifyXML = function stringifyXML(obj, options) {
   return builder.buildObject(obj);
 }
 
-
+/**
+ *
+ *
+ * @param {*} str
+ */
 module.exports.parseHTML = function parseHTML(str) {
 
 }
 
-
+/**
+ *
+ *
+ * @param {*} obj
+ */
 module.exports.stringifyHTML = function stringifyHTML(obj) {
 
 }
 
+/**
+ *
+ *
+ * @param {*} str
+ * @return {*} 
+ */
 module.exports.parseINI = function parseINI(str) {
   if (!typeof lines === "string") throw new Error("lines is not a string object");
 
@@ -132,55 +144,118 @@ module.exports.parseINI = function parseINI(str) {
   return parser.parse(lines);
 }
 
+/**
+ *
+ *
+ * @param {*} obj
+ * @return {*} 
+ */
 module.exports.stringifyINI = function stringifyINI(obj) {
   let ini = require('multi-ini');
   let str = new ini.Serializer(object);
   return str;
 }
 
+/**
+ *
+ *
+ * @param {*} file
+ * @param {*} options
+ * @param {*} readOptions
+ * @return {*} 
+ */
 module.exports.loadINIWithFilters = function loadINIWithFilters(file, options, readOptions) {
   let ini = require("multi-ini");
   let parser = new ini.Class(options || {});
   return parser.read(file, readOptions || { encoding: 'utf8' });
 }
 
+/**
+ *
+ *
+ * @param {*} file
+ * @param {*} object
+ * @param {*} options
+ * @return {*} 
+ */
 module.exports.writeToINIWithFilters = function writeToINIWithFilters(file, object, options) {
   let ini = require('multi-ini');
   ini.write(file, object, options || { encoding: 'utf8' });
   return true;
 }
 
+/**
+ *
+ *
+ * @param {*} str
+ */
 module.exports.parseSASS = function parseSASS(str) {
 
 }
 
+/**
+ *
+ *
+ * @param {*} obj
+ */
 module.exports.stringifySASS = function stringifySASS(obj) {
 
 }
 
+/**
+ *
+ *
+ * @param {*} obj
+ */
 module.exports.sass2less = function SASS2LESS(obj) {
 
 }
 
+/**
+ *
+ *
+ * @param {*} obj
+ */
 module.exports.less2sass = function less2sass(obj) {
 
 }
 
+/**
+ *
+ *
+ * @param {*} str
+ */
 module.exports.parseConf = function parseConf(str) {
 
 }
 
+/**
+ *
+ *
+ * @param {*} obj
+ */
 module.exports.stringifyConf = function stringifyConf(obj) {
 
 }
 
+/**
+ *
+ *
+ * @param {*} str
+ */
 module.exports.parseSCSS = function parseSCSS(str) {
 
 }
 
+/**
+ *
+ *
+ * @param {*} obj
+ */
 module.exports.stringifySCSS = function stringifySCSS(obj) {
 
 }
+
 
 /**
  * parse YAML string: nativeObject 
@@ -211,6 +286,60 @@ module.exports.stringifyYAML = function stringifyYAML(obj) {
 /**
  *
  *
+ * @param {*} str
+ */
+module.exports.parseYml = function parseYml(str) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} obj
+ */
+module.exports.stringifyYml = function stringifyYml(obj) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} str
+ */
+module.exports.parseXml = function parseXml(str) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} obj
+ */
+module.exports.stringifyXml = function stringifyXml(obj) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} str
+ */
+module.exports.parseMd = function parseMd(str) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} obj
+ */
+module.exports.stringifyMd = function stringifyMd(obj) {
+
+}
+
+/**
+ *
+ *
  * @param {*} obj
  * @return {*} 
  */
@@ -228,59 +357,21 @@ module.exports.stringifyJSON = function stringifyJSON(obj) {
   return JSON.stringify(obj);
 }
 
+/**
+ *
+ *
+ * @param {*} str
+ */
 module.exports.parseSys = function parseSys(str) {
 
 }
 
+/**
+ *
+ *
+ * @param {*} obj
+ */
 module.exports.stringifySys = function stringifySys(obj) {
-
-}
-
-module.exports.parseDotenv = function parseDotenv(str) {
-
-}
-
-module.exports.stringifyDotenv = function stringifyDotenv(obj) {
-
-}
-
-module.exports.parseToml = function parseToml(str) {
-
-}
-
-module.exports.stringifyml = function stringifyml(obj) {
-
-}
-
-module.exports.parseTsv = function parseTsv(str) {
-
-}
-
-module.exports.stringifyTsv = function stringifyTsv(obj) {
-
-}
-
-module.exports.parsePdf = function parsePdf(str) {
-
-}
-
-module.exports.stringifyPdf = function stringifyPdf(obj) {
-
-}
-
-module.exports.parseXls = function parseXls(str) {
-
-}
-
-module.exports.stringifyXls = function stringifyXls(obj) {
-
-}
-
-module.exports.parseSASS = function parseSASS(str) {
-
-}
-
-module.exports.stringifySASS = function stringifySASS(obj) {
 
 }
 
@@ -288,8 +379,166 @@ module.exports.stringifySASS = function stringifySASS(obj) {
  *
  *
  * @param {*} str
- * @param {*} callback
- * @param {string} [options={
+ */
+module.exports.parseDotenv = function parseDotenv(str) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} obj
+ */
+module.exports.stringifyDotenv = function stringifyDotenv(obj) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} str
+ */
+module.exports.parseToml = function parseToml(str) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} obj
+ */
+module.exports.stringifyToml = function stringifyToml(obj) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} str
+ * @param {string} [seperator="|"]
+ * @return {*} 
+ */
+module.exports.parseTsv = function parseTsv(str, seperator = "|") {
+  var TSV = require('tsv');
+  var PSV = new TSV.Parser(seperator);
+  return PSV.parse(str);
+}
+
+/**
+ *
+ *
+ * @param {*} obj
+ * @param {string} [seperator="|"]
+ * @return {*} 
+ */
+module.exports.stringifyTsv = function stringifyTsv(obj, seperator = "|") {
+  var TSV = require('tsv');
+  var PSV = new TSV.Parser(seperator);
+  return PSV.stringify(obj);
+}
+
+/**
+ *
+ *
+ * @param {*} str
+ * @param {string} [seperator="|"]
+ * @return {*} 
+ */
+module.exports.parseCsv = function parseCsv(str, seperator = "|") {
+  var TSV = require('tsv');
+
+}
+
+/**
+ *
+ *
+ * @param {*} obj
+ * @param {string} [seperator="|"]
+ * @return {*} 
+ */
+module.exports.stringifyCsv = function stringifyCsv(obj, seperator = "|") {
+  var TSV = require('tsv');
+
+}
+
+/**
+ *
+ *
+ * @param {*} str
+ */
+module.exports.parsePdf = function parsePdf(str) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} obj
+ */
+module.exports.stringifyPdf = function stringifyPdf(obj) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} str
+ */
+module.exports.parsePdfMd = function parsePdfMd(str) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} obj
+ */
+module.exports.stringifyPdfMd = function stringifyPdfMd(obj) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} str
+ */
+module.exports.parseXls = function parseXls(str) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} obj
+ */
+module.exports.stringifyXls = function stringifyXls(obj) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} str
+ */
+module.exports.parseSASS = function parseSASS(str) {
+
+}
+
+/**
+ *
+ *
+ * @param {*} obj
+ */
+module.exports.stringifySASS = function stringifySASS(obj) {
+
+}
+
+/**
+ *
+ *
+ * @param {string} str
+ * @param { function } callback
+ * @param {object | undefined} [options={
  *     env: "production",
  *     logLevel: 2,
  *     errorReporting: "console",
@@ -328,8 +577,8 @@ module.exports.stringifySASS = function stringifySASS(obj) {
  *   }]
  * @return {*} 
  */
-module.exports.parseLess = function parseLess(str, callback,
-  options = {
+module.exports.parseLess = function parseLess(str, callback, options = {}) {
+  options = (!!Object.keys(options).length) ? options : {
     env: "production",
     logLevel: 2,
     errorReporting: "console",
@@ -365,7 +614,7 @@ module.exports.parseLess = function parseLess(str, callback,
       sourceMapFileInline: false,
       outputSourceFiles: true
     }
-  }) {
+  }
   const lessParser = require("less").Parser();
   return lessParser.parse(str, callback, options);
 }
@@ -373,8 +622,8 @@ module.exports.parseLess = function parseLess(str, callback,
 /**
  *
  *
- * @param {*} obj
- * @param {string} [options={
+ * @param {object} obj
+ * @param {object | undefined} [options={
  *     env: "production",
  *     logLevel: 2,
  *     errorReporting: "console",
@@ -411,11 +660,11 @@ module.exports.parseLess = function parseLess(str, callback,
  *       outputSourceFiles: true
  *     }
  *   }]
- * @param {*} callback
+ * @param {function} callback
  * @return {*} 
  */
-module.exports.stringifyLess = function stringifyLess(obj,
-  options = {
+module.exports.stringifyLess = function stringifyLess(obj, options = {}, callback) {
+  options = (!!Object.keys(options).length) ? options : {
     env: "production",
     logLevel: 2,
     errorReporting: "console",
@@ -451,12 +700,15 @@ module.exports.stringifyLess = function stringifyLess(obj,
       sourceMapFileInline: false,
       outputSourceFiles: true
     }
-  },
-  callback) {
+  }
   const less = require("less");
   return less.render(obj, options, callback || function (error, output) { });
 }
 
+/**
+ *
+ *
+ */
 module.exports.Parsers = function ParserFormats() {
 
   this.ini = function (str) {
@@ -487,6 +739,14 @@ module.exports.Parsers = function ParserFormats() {
     return parseXML(str);
   }
 
+  this.conf = function (obj) {
+    return parseConf(obj);
+  }
+
+  this.csv = function (str) {
+    return parseCsv(str);
+  }
+
   this.json = function (str) {
     return parseJSON(str);
   }
@@ -515,12 +775,16 @@ module.exports.Parsers = function ParserFormats() {
     return parseHTML(obj);
   }
 
-  this.conf = function (obj) {
+  this.pdf = function (obj) {
     return parseConf(obj);
   }
 
 }
 
+/**
+ *
+ *
+ */
 module.exports.Convertors = function ConvertorFormats() {
 
   this.ini = function (obj) {
@@ -539,6 +803,10 @@ module.exports.Convertors = function ConvertorFormats() {
     return stringifyDotenv(obj);
   }
 
+  this.conf = function (obj) {
+    return stringifyConf(obj);
+  }
+
   this.yaml = function (obj) {
     return stringifyYAML(obj);
   }
@@ -549,6 +817,10 @@ module.exports.Convertors = function ConvertorFormats() {
 
   this.xml = function (obj) {
     return stringifyXML(obj);
+  }
+
+  this.csv = function (obj) {
+    return stringifyCsv(obj);
   }
 
   this.json = function (obj) {
@@ -579,8 +851,8 @@ module.exports.Convertors = function ConvertorFormats() {
     return stringifyHTML(obj);
   }
 
-  this.conf = function (obj) {
-    return stringifyConf(obj);
+  this.pdf = function (obj) {
+    return parseConf(obj);
   }
 
 }

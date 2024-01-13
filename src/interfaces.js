@@ -160,6 +160,14 @@ function InterfaceJSObjectConvertor(jsObject = "") {
         return new Error("InterfaceJSObjectConvertor: ")
     }
 
+    this.csv = function () {
+        return new Error("InterfaceJSObjectConvertor: ")
+    }
+
+    this.conf = function () {
+        return new Error("InterfaceJSObjectConvertor: ")
+    }
+
     this.json = function () {
         return new Error("InterfaceJSObjectConvertor: ")
     }
@@ -182,6 +190,10 @@ function InterfaceJSObjectConvertorMDHTML(jsObject = "") {
     }
 
     this.html = function () {
+        return new Error("InterfaceJSObjectConvertor: ")
+    }
+        
+    this.pdf = function (obj) {
         return new Error("InterfaceJSObjectConvertor: ")
     }
 
