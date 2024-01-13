@@ -28,7 +28,7 @@ var base = require("./base");
  *
  *
  */
-function Tsv() {
+function TsvParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -59,10 +59,10 @@ function Tsv() {
 }
 
 
-function TsvConvertors(object) {
+function TsvConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Tsv.call(this);
+    TsvParser.call(this);
     
     this.ini = function () {
 
@@ -99,52 +99,22 @@ function TsvConvertors(object) {
     this.json = function () {
 
     }
+
+    this.conf = function () {
+
+    }
+
 }
 
 
-function TsvParsers(object) {
+function Tsv(object) {
     
     interfaces.InterfaceJSObjectParser.call(this, object);
-    Tsv.call(this);
-    
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
+    TsvParser.call(this);
+    TsvConvertor.call(this, object);
 }
 
 
 module.exports.Tsv = Tsv;
-module.exports.TsvConvertors = TsvConvertors;
-module.exports.TsvParsers = TsvParsers;
+module.exports.TsvConvertor = TsvConvertor;
+module.exports.TsvParser = TsvParser;

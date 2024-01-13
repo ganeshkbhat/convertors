@@ -25,7 +25,7 @@ var base = require("./base");
  *
  *
  */
-function Dotenv() {
+function DotenvParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -40,10 +40,10 @@ function Dotenv() {
 }
 
 
-function DotenvConvertors(object) {
+function DotenvConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Dotenv.call(this);
+    DotenvParser.call(this);
 
     this.ini = function () {
 
@@ -78,55 +78,25 @@ function DotenvConvertors(object) {
     }
 
     this.json = function () {
+
+    }
+
+    this.conf = function () {
 
     }
 }
 
 
-function DotenvParsers(object) {
+function Dotenv(object) {
 
     interfaces.InterfaceJSObjectParser.call(this, object);
-    Dotenv.call(this);
+    DotenvParser.call(this);
+    DotenvConvertor.call(this, object);
 
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
 }
 
 
 module.exports.Dotenv = Dotenv;
-module.exports.DotenvConvertors = DotenvConvertors;
+module.exports.DotenvConvertor = DotenvConvertor;
 module.exports.Dotenv = Dotenv;
 

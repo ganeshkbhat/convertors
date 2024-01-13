@@ -25,7 +25,7 @@ var base = require("./base");
  *
  *
  */
-function Scss() {
+function ScssParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -48,65 +48,10 @@ function Scss() {
 }
 
 
-function ScssConvertors() {
+function ScssConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
-    Scss.call(this, object);
-
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
-
-    this.css = function () {
-
-    }
-
-    this.less = function () {
-
-    }
-
-    this.scss = function () {
-
-    }
-
-    this.sass = function () {
-
-    }
-}
-
-
-function ScssParsers() {
-    
-    interfaces.InterfaceJSObjectParserCSS.call(this, object);
-    Scss.call(this, object);
+    ScssParser.call(this);
 
     this.ini = function () {
 
@@ -144,6 +89,10 @@ function ScssParsers() {
 
     }
 
+    this.conf = function () {
+
+    }
+
     this.css = function () {
 
     }
@@ -159,10 +108,18 @@ function ScssParsers() {
     this.sass = function () {
 
     }
+}
+
+
+function Scss(object) {
     
+    interfaces.InterfaceJSObjectParser.call(this, object);
+    ScssParser.call(this);
+    ScssConvertor.call(this, object);
+
 }
 
 
 module.exports.Scss = Scss;
-module.exports.ScssConvertors = ScssConvertors;
-module.exports.ScssParsers = ScssParsers;
+module.exports.ScssConvertor = ScssConvertor;
+module.exports.ScssParser = ScssParser;

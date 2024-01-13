@@ -25,7 +25,7 @@ var base = require("./base");
  *
  *
  */
-function Conf() {
+function ConfParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -46,93 +46,33 @@ function Conf() {
     }
 }
 
-function ConfConvertors() {
-    
+/**
+ *
+ *
+ * @param {*} object
+ */
+function ConfConvertor(object) {
+
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Conf.call(this, object);
-
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
+    ConfParser.call(this);
+    base.Convertors.call(this);
 }
 
-
-function ConfParsers() {
+/**
+ *
+ *
+ * @param {*} object
+ */
+function Conf(object) {
 
     interfaces.InterfaceJSObjectParser.call(this, object);
-    Conf.call(this, object);
+    ConfParser.call(this);
+    ConfConvertor.call(this, object);
 
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
 }
 
 
 module.exports.Conf = Conf;
-module.exports.ConfConvertors = ConfConvertors;
-module.exports.ConfParsers = ConfParsers;
+module.exports.ConfConvertor = ConfConvertor;
+module.exports.ConfParser = ConfParser;
 

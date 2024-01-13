@@ -28,7 +28,7 @@ var base = require("./base");
  *
  *
  */
-function Ini() {
+function IniParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -111,49 +111,10 @@ function Ini() {
 }
 
 
-function IniConvertors(object) {
+function IniConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Ini.call(this);
-    
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
-}
-
-
-function IniParsers(object) {
-    
-    interfaces.InterfaceJSObjectParser.call(this, object);
-    Ini.call(this);
+    IniParser.call(this);
     
     this.ini = function () {
 
@@ -190,9 +151,23 @@ function IniParsers(object) {
     this.json = function () {
 
     }
+
+    this.conf = function () {
+
+    }
+
+}
+
+
+function Ini(object) {
+    
+    interfaces.InterfaceJSObjectParser.call(this, object);
+    IniParser.call(this);
+    IniConvertor.call(this, object);
+
 }
 
 
 module.exports.Ini = Ini;
-module.exports.IniConvertors = IniConvertors;
-module.exports.IniParsers = IniParsers;
+module.exports.IniConvertor = IniConvertor;
+module.exports.IniParser = IniParser;

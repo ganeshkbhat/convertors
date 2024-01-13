@@ -25,7 +25,7 @@ var base = require("./base");
  *
  *
  */
-function Yaml() {
+function YamlParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -53,10 +53,10 @@ function Yaml() {
 }
 
 
-function YamlConvertors() {
+function YamlConvertor(object) {
     
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Yaml.call(this, object);
+    YamlParser.call(this);
     
     this.ini = function () {
 
@@ -93,53 +93,24 @@ function YamlConvertors() {
     this.json = function () {
 
     }
+
+    this.conf = function () {
+
+    }
+
 }
 
 
-function YamlParsers() {
+function Yaml(object) {
 
     interfaces.InterfaceJSObjectParser.call(this, object);
-    Yaml.call(this, object);
+    YamlParser.call(this);
+    YamlConvertor.call(this, object);
 
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
 }
 
 
 module.exports.Yaml = Yaml;
-module.exports.YamlConvertors = YamlConvertors;
-module.exports.YamlParsers = YamlParsers;
+module.exports.YamlConvertor = YamlConvertor;
+module.exports.YamlParser = YamlParser;
 

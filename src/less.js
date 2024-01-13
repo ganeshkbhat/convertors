@@ -25,7 +25,7 @@ var base = require("./base");
  *
  *
  */
-function Less() {
+function LessParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -47,10 +47,10 @@ function Less() {
 }
 
 
-function LessConvertors(object) {
+function LessConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
-    Less.call(this, object);
+    LessParser.call(this);
 
     this.ini = function () {
 
@@ -85,6 +85,10 @@ function LessConvertors(object) {
     }
 
     this.json = function () {
+
+    }
+
+    this.conf = function () {
 
     }
 
@@ -106,65 +110,15 @@ function LessConvertors(object) {
 }
 
 
-function LessParsers() {
+function Less(object) {
 
-    interfaces.InterfaceJSObjectParserCSS.call(this, object);
-    Less.call(this, object);
+    interfaces.InterfaceJSObjectParser.call(this, object);
+    LessParser.call(this);
+    LessConvertor.call(this, object)
     
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
-
-    this.css = function () {
-
-    }
-
-    this.less = function () {
-
-    }
-
-    this.scss = function () {
-
-    }
-
-    this.sass = function () {
-
-    }
 }
 
 
 module.exports.Less = Less;
-module.exports.LessConvertors = LessConvertors;
-module.exports.LessParsers = LessParsers;
+module.exports.LessConvertor = LessConvertor;
+module.exports.LessParser = LessParser;

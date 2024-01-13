@@ -28,7 +28,7 @@ var base = require("./base");
  *
  *
  */
-function Md() {
+function MdParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -42,7 +42,7 @@ function Md() {
      * 
      */
     this.loadWithFilters = function (file, options, readOptions) {
-        
+
     }
 
     /**
@@ -53,7 +53,7 @@ function Md() {
      * 
      */
     this.parse = function (lines) {
-        
+
     }
 
     /**
@@ -64,7 +64,7 @@ function Md() {
      * 
      */
     this.serialize = function (object) {
-        
+
     }
 
     /**
@@ -77,56 +77,17 @@ function Md() {
      * 
      */
     this.writeWithFilters = function (file, object, options) {
-        
+
     }
 
 }
 
 
-function MdConvertors(object) {
+function MdConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Md.call(this);
-    
-    this.ini = function () {
+    MdParser.call(this);
 
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
-}
-
-
-function MdParsers(object) {
-    
-    interfaces.InterfaceJSObjectParser.call(this, object);
-    Md.call(this);
-    
     this.ini = function () {
 
     }
@@ -162,9 +123,38 @@ function MdParsers(object) {
     this.json = function () {
 
     }
+
+    this.conf = function () {
+
+    }
+
+    this.css = function () {
+
+    }
+
+    this.less = function () {
+
+    }
+
+    this.scss = function () {
+
+    }
+
+    this.sass = function () {
+
+    }
+}
+
+
+function Md(object) {
+
+    interfaces.InterfaceJSObjectParser.call(this, object);
+    MdParser.call(this);
+    MdConvertor.call(this, object);
+
 }
 
 
 module.exports.Md = Md;
-module.exports.MdConvertors = MdConvertors;
-module.exports.MdParsers = MdParsers;
+module.exports.MdConvertor = MdConvertor;
+module.exports.MdParser = MdParser;

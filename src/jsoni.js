@@ -25,7 +25,7 @@ var base = require("./base");
  *
  *
  */
-function JSONI() {
+function JSONIParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -47,10 +47,10 @@ function JSONI() {
 }
 
 
-function JSONConvertors(object) {
+function JSONIConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
-    JSONI.call(this, object);
+    JSONIParser.call(this);
 
     this.ini = function () {
 
@@ -85,6 +85,10 @@ function JSONConvertors(object) {
     }
 
     this.json = function () {
+
+    }
+
+    this.conf = function () {
 
     }
 
@@ -106,65 +110,15 @@ function JSONConvertors(object) {
 }
 
 
-function JSONParsers() {
+function JSONI(object) {
 
-    interfaces.InterfaceJSObjectParserCSS.call(this, object);
-    JSONI.call(this, object);
-    
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
-
-    this.css = function () {
-
-    }
-
-    this.less = function () {
-
-    }
-
-    this.scss = function () {
-
-    }
-
-    this.sass = function () {
-
-    }
+    interfaces.InterfaceJSObjectParser.call(this, object);
+    JSONIParser.call(this);
+    JSONIConvertor.call(this, object);
+  
 }
 
 
 module.exports.JSONI = JSONI;
-module.exports.JSONConvertors = JSONConvertors;
-module.exports.JSONParsers = JSONParsers;
+module.exports.JSONIConvertor = JSONConvertor;
+module.exports.JSONIParser = JSONParser;

@@ -25,9 +25,11 @@ var base = require("./base");
  *
  *
  */
-function Css() {
+function CssParser() {
 
     interfaces.InterfaceReader.call(this);
+    var baseParser = base.Parsers().Css;
+    var baseConvertor = base.Convertors().Css;
 
     /**
      *
@@ -44,7 +46,8 @@ function Css() {
      * 
      */
     this.parse = function (str, options) {
-        return require("css").parse(str, options || { silent: false });
+        // return require("css").parse(str, options || { silent: false });
+        return baseParser(str, options);
     }
 
     /**
@@ -65,66 +68,39 @@ function Css() {
      * 
      */
     this.serialize = function (object, options) {
-        return require("css").stringify(object, options || { sourcemap: true });
+        // return require("css").stringify(object, options || { sourcemap: true });
+        return baseConvertor(object, options);
     }
 }
 
+/**
+ *
+ *
+ * @param {*} object
+ */
+function CssConvertor(object) {
 
-function CssConvertors(object) {
-    
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
-    Css.call(this);
-        
-    const dotenv = require("./dotenv");
-    const ini = require("./ini");
-    const less = require("./less");
-    const sass = require("./sass");
-    const scss = require("./scss");
-    const xml = require("./xml");
-    const yaml = require("./yaml");
+    CssParser.call(this);
+    base.Convertors(this);
 
-    this.css = function () {
-
-    }
-
-    this.less = function () {
-
-    }
-
-    this.scss = function () {
-
-    }
-
-    this.sass = function () {
-
-    }
 }
 
+/**
+ *
+ *
+ * @param {*} object
+ */
+function Css(object) {
 
-function CssParsers(object) {
+    interfaces.InterfaceJSObjectParser.call(this, object);
+    CssParser.call(this);
+    CssConvertor.call(this, object);
 
-    interfaces.InterfaceJSObjectParserCSS.call(this, object);
-    Css.call(this);
-
-    this.css = function () {
-
-    }
-
-    this.less = function () {
-
-    }
-
-    this.scss = function () {
-
-    }
-
-    this.sass = function () {
-
-    }
 }
 
 
 module.exports.Css = Css;
-module.exports.CssConvertors = CssConvertors;
-module.exports.CssParsers = CssParsers;
+module.exports.CssConvertor = CssConvertor;
+module.exports.CssParser = CssParser;
 

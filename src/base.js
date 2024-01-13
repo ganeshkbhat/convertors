@@ -456,3 +456,132 @@ module.exports.stringifyLess = function stringifyLess(obj,
   const less = require("less");
   return less.render(obj, options, callback || function (error, output) { });
 }
+
+module.exports.Parsers = function ParserFormats() {
+
+  this.ini = function (str) {
+    return parseINI(str);
+  }
+
+  this.tsv = function (str) {
+    return parseTsv(str);
+  }
+
+  this.toml = function (str) {
+    return parseToml(str);
+  }
+
+  this.dotenv = function (str) {
+    return parseDotenv(str);
+  }
+
+  this.yaml = function (str) {
+    return parseYAML(str);
+  }
+
+  this.yml = function (str) {
+    return parseYAML(str);
+  }
+
+  this.xml = function (str) {
+    return parseXML(str);
+  }
+
+  this.json = function (str) {
+    return parseJSON(str);
+  }
+
+  this.css = function (str) {
+    return parseCss(str);
+  }
+
+  this.less = function (str) {
+    return parseLess(str);
+  }
+
+  this.scss = function (str) {
+    return parseSCSS(str);
+  }
+
+  this.sass = function (str) {
+    return parseSASS(str);
+  }
+
+  this.md = function (obj) {
+    return parseMd(obj);
+  }
+
+  this.html = function (obj) {
+    return parseHTML(obj);
+  }
+
+  this.conf = function (obj) {
+    return parseConf(obj);
+  }
+
+}
+
+module.exports.Convertors = function ConvertorFormats() {
+
+  this.ini = function (obj) {
+    return stringifyINI(obj);
+  }
+
+  this.tsv = function (obj) {
+    return stringifyTsv(obj);
+  }
+
+  this.toml = function (obj) {
+    return stringifyToml(obj);
+  }
+
+  this.dotenv = function (obj) {
+    return stringifyDotenv(obj);
+  }
+
+  this.yaml = function (obj) {
+    return stringifyYAML(obj);
+  }
+
+  this.yml = function (obj) {
+    return stringifyYAML(obj);
+  }
+
+  this.xml = function (obj) {
+    return stringifyXML(obj);
+  }
+
+  this.json = function (obj) {
+    return stringifyJSON(obj);
+  }
+
+  this.css = function (obj) {
+    return stringifyCss(obj);
+  }
+
+  this.less = function (obj) {
+    return stringifyLess(obj);
+  }
+
+  this.scss = function (obj) {
+    return stringifySCSS(obj);
+  }
+
+  this.sass = function (obj) {
+    return stringifySASS(obj);
+  }
+
+  this.md = function (obj) {
+    return stringifyMd(obj);
+  }
+
+  this.html = function (obj) {
+    return stringifyHTML(obj);
+  }
+
+  this.conf = function (obj) {
+    return stringifyConf(obj);
+  }
+
+}
+

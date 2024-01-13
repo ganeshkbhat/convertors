@@ -25,7 +25,7 @@ var base = require("./base");
  *
  *
  */
-function Xml() {
+function XmlParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -46,10 +46,10 @@ function Xml() {
     }
 }
 
-function XmlConvertors() {
+function XmlConvertor(object) {
     
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Xml.call(this, object);
+    XmlParser.call(this);
 
     this.ini = function () {
 
@@ -86,53 +86,24 @@ function XmlConvertors() {
     this.json = function () {
 
     }
+
+    this.conf = function () {
+
+    }
+
 }
 
 
-function XmlParsers() {
+function Xml(object) {
 
     interfaces.InterfaceJSObjectParser.call(this, object);
-    Xml.call(this, object);
+    XmlParser.call(this);
+    XmlConvertor.call(this, object);
 
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
 }
 
 
 module.exports.Xml = Xml;
-module.exports.XmlConvertors = XmlConvertors;
-module.exports.XmlParsers = XmlParsers;
+module.exports.XmlConvertor = XmlConvertor;
+module.exports.XmlParser = XmlParser;
 

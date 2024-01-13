@@ -25,7 +25,7 @@ var base = require("./base");
  *
  *
  */
-function HTML() {
+function HTMLIParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -46,93 +46,24 @@ function HTML() {
     }
 }
 
-function HTMLConvertors() {
+function HTMLIConvertor(object) {
     
-    interfaces.InterfaceJSObjectConvertor.call(this, object);
-    HTML.call(this, object);
-
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
+    interfaces.InterfaceJSObjectConvertorMDHTML.call(this, object);
+    HTMLIParser.call(this);
+    base.Convertors.call(this);
 }
 
 
-function HTMLParsers() {
+function HTMLI(object) {
 
     interfaces.InterfaceJSObjectParser.call(this, object);
-    HTML.call(this, object);
+    HTMLIParser.call(this);
+    HTMLIConvertor.call(this, object);
 
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
 }
 
 
-module.exports.HTML = HTML;
-module.exports.HTMLConvertors = HTMLConvertors;
-module.exports.HTMLParsers = HTMLParsers;
+module.exports.HTMLI = HTMLI;
+module.exports.HTMLIConvertor = HTMLIConvertor;
+module.exports.HTMLIParser = HTMLIParser;
 

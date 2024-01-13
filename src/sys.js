@@ -28,7 +28,7 @@ var base = require("./base");
  *
  *
  */
-function Sys() {
+function SysParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -59,10 +59,10 @@ function Sys() {
 }
 
 
-function SysConvertors(object) {
+function SysConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Sys.call(this);
+    SysParser.call(this);
     
     this.ini = function () {
 
@@ -97,54 +97,24 @@ function SysConvertors(object) {
     }
 
     this.json = function () {
+
+    }
+
+    this.conf = function () {
 
     }
 }
 
 
-function SysParsers(object) {
+function Sys(object) {
     
     interfaces.InterfaceJSObjectParser.call(this, object);
-    Sys.call(this);
+    SysParser.call(this);
+    SysConvertor.call(this, object);
     
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
 }
 
 
 module.exports.Sys = Sys;
-module.exports.SysConvertors = SysConvertors;
-module.exports.SysParsers = SysParsers;
+module.exports.SysConvertor = SysConvertor;
+module.exports.SysParser = SysParser;

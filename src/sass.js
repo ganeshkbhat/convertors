@@ -25,7 +25,7 @@ var base = require("./base");
  *
  *
  */
-function Sass() {
+function SassParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -47,10 +47,10 @@ function Sass() {
 }
 
 
-function SassConvertors() {
+function SassConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertorCSS.call(this, object);
-    Sass.call(this, object);
+    SassParser.call(this);
 
     this.ini = function () {
 
@@ -85,6 +85,10 @@ function SassConvertors() {
     }
 
     this.json = function () {
+
+    }
+
+    this.conf = function () {
 
     }
 
@@ -107,66 +111,16 @@ function SassConvertors() {
 }
 
 
-function SassParsers() {
+function Sass(object) {
     
-    interfaces.InterfaceJSObjectParserCSS.call(this, object);
-    Sass.call(this, object);
+    interfaces.InterfaceJSObjectParser.call(this, object);
+    SassParser.call(this);
+    SassConvertor.call(this, object);
 
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
-
-    this.css = function () {
-
-    }
-
-    this.less = function () {
-
-    }
-
-    this.scss = function () {
-
-    }
-
-    this.sass = function () {
-
-    }
 }
 
 
 module.exports.Sass = Sass;
-module.exports.SassConvertors = SassConvertors;
-module.exports.SassParsers = SassParsers;
+module.exports.SassConvertor = SassConvertor;
+module.exports.SassParser = SassParser;
 

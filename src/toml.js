@@ -28,7 +28,7 @@ var base = require("./base");
  *
  *
  */
-function Toml() {
+function TomlParser() {
 
     interfaces.InterfaceReader.call(this);
 
@@ -60,10 +60,10 @@ function Toml() {
 }
 
 
-function TomlConvertors(object) {
+function TomlConvertor(object) {
 
     interfaces.InterfaceJSObjectConvertor.call(this, object);
-    Toml.call(this);
+    TomlParser.call(this);
     
     this.ini = function () {
 
@@ -100,52 +100,23 @@ function TomlConvertors(object) {
     this.json = function () {
 
     }
+
+    this.conf = function () {
+
+    }
+
 }
 
 
-function TomlParsers(object) {
+function Toml(object) {
     
     interfaces.InterfaceJSObjectParser.call(this, object);
-    Toml.call(this);
+    TomlParser.call(this);
+    TomlConvertor.call(this, object);
     
-    this.ini = function () {
-
-    }
-
-    this.tsv = function () {
-
-    }
-
-    this.toml = function () {
-
-    }
-
-    this.sys = function () {
-
-    }
-
-    this.dotenv = function () {
-
-    }
-
-    this.yaml = function () {
-
-    }
-
-    this.yml = function () {
-
-    }
-
-    this.xml = function () {
-
-    }
-
-    this.json = function () {
-
-    }
 }
 
 
 module.exports.Toml = Toml;
-module.exports.TomlConvertors = TomlConvertors;
-module.exports.TomlParsers = TomlParsers;
+module.exports.TomlConvertor = TomlConvertor;
+module.exports.TomlParser = TomlParser;
