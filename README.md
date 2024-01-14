@@ -431,4 +431,28 @@ const jsonObject = {
 - parseXml
 - parseCss
 - parseSass
-- parseLess -->
+- parseLess 
+-->
+
+<!-- 
+"alasql": "^4.2.3",
+"isomorphic-dompurify": "^2.2.0",
+"json-sql": "^0.5.0",
+"json-sql-builder": "^1.0.26",
+"json-sql-builder2": "^1.0.24",
+"js-sql-from-json": "^1.0.12",
+"pdf_neutralize": "^1.0.0",
+"pdf-node": "^0.0.2",
+"pdf2html": "^3.1.0",
+"pdfjs-dist": "^4.0.379",
+"pdfkit": "^0.14.0",
+"marked-renderer-pdf": "^0.0.5",
+"sql-ddl-to-json-schema": "^4.1.0",
+"v8": "^0.1.0",
+"canvas": "^2.11.2",
+"@stevemao/pdf-extraction": "^1.0.3",
+"knex": "^3.1.0",
+"markdown-pdf": "^11.0.0",
+"ghostscript-node": "^1.5.0",
+"tough-cookie": "^4.1.3"
+-->
