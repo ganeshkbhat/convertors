@@ -11,6 +11,7 @@ const resourceLoader = new jsdom.ResourceLoader({
   strictSSL: false,
   userAgent: "Mellblomenator/9000",
 });
+
 const virtualConsole = new jsdom.VirtualConsole();
 // https://github.com/jsdom/jsdom/tree/main?tab=readme-ov-file#virtual-consoles
 // sends messages or console messages to nodejs console
@@ -23,7 +24,15 @@ const virtualConsole = new jsdom.VirtualConsole();
 // https://github.com/jsdom/jsdom/tree/main?tab=readme-ov-file#cookie-jars
 
 const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p><div id="content"></div>
-<script>document.getElementById("content").append(document.createElement("hr"));</script>`, { 
+<script>document.getElementById("content").append(document.createElement("hr"));</script>`, {
+  contentType: "text/html",
+  // second is XML, "text/xml" or "application/xml"
+  // An XML MIME type is any MIME type 
+  //    whose subtype ends in "+xml" or whose essence 
+  //    is "text/xml" or "application/xml". [RFC7303]
+  // contentType: "text/xml",
+  includeNodeLocations: true,
+  storageQuota: 10000000,
   runScripts: "outside-only",
   // runScripts: "dangerously"  
   // runScripts: "outside-only" , 
@@ -53,31 +62,9 @@ const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p><div id="content"></div>
 // console.assert(dom.window.ran === 3);
 // https://github.com/jsdom/jsdom/tree/main?tab=readme-ov-file#interfacing-with-the-nodejs-vm-module-using-getinternalvmcontext
 
-
+// // Getting the string format of the DOM [XML/ HTML]
 // dom.serialize() === "<!DOCTYPE html><html><head></head><body>hello</body></html>";
 // // Contrast with:
 // dom.window.document.documentElement.outerHTML === "<html><head></head><body>hello</body></html>";
 
-
 console.log(dom);
-
-
-// https://www.npmjs.com/package/canvas
-
-
-// const { createCanvas, loadImage } = require('canvas')
-// const canvas = createCanvas(200, 200)
-// const ctx = canvas.getContext('2d')
-
-// // Write "Awesome!"
-// ctx.font = '30px Impact'
-// ctx.rotate(0.1)
-// ctx.fillText('Awesome!', 50, 100)
-
-// // Draw line under text
-// var text = ctx.measureText('Awesome!')
-// ctx.strokeStyle = 'rgba(0,0,0,0.5)'
-// ctx.beginPath()
-// ctx.lineTo(50, 102)
-// ctx.lineTo(50 + text.width, 102)
-// ctx.stroke()
