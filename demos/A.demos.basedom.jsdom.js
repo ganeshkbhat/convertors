@@ -18,6 +18,11 @@ const virtualConsole = new jsdom.VirtualConsole();
 // virtualConsole.sendTo(console);
 // virtualConsole.sendTo(c, { omitJSDOMErrors: true });
 
+/** 
+ * CookieJar
+ * tough-cookie
+ * 
+ */
 // const cookieJar = new jsdom.CookieJar(store, options);
 // const cookieJar = new jsdom.CookieJar(store, {});
 // https://www.npmjs.com/package/tough-cookie
@@ -31,6 +36,7 @@ const dom = new JSDOM(`<!DOCTYPE html><p>Hello world</p><div id="content"></div>
   //    whose subtype ends in "+xml" or whose essence 
   //    is "text/xml" or "application/xml". [RFC7303]
   // contentType: "text/xml",
+  // https://mimesniff.spec.whatwg.org/#xml-mime-type
   includeNodeLocations: true,
   storageQuota: 10000000,
   runScripts: "outside-only",
