@@ -1,3 +1,6 @@
+/** 
+ * 
+ */
 
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
@@ -5,6 +8,9 @@ const { Script } = require("vm");
 
 const frag = JSDOM.fragment(`<p>Hello</p><p><strong>Hi!</strong>`);
 console.log(frag);
+
+// Many more examples 
+// https://snyk.io/advisor/npm-package/jsdom/example
 
 const resourceLoader = new jsdom.ResourceLoader({
   proxy: "http://127.0.0.1:9001",
