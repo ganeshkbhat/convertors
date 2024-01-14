@@ -136,15 +136,11 @@ function InterfaceJSObjectConvertor(jsObject = "") {
         return new Error("InterfaceJSObjectConvertor: ")
     }
 
-    this.tsv = function () {
-        return new Error("InterfaceJSObjectConvertor: ")
-    }
-
-    this.toml = function () {
-        return new Error("InterfaceJSObjectConvertor: ")
-    }
-
     this.sys = function () {
+        return new Error("InterfaceJSObjectConvertor: ")
+    }
+
+    this.cnf = function () {
         return new Error("InterfaceJSObjectConvertor: ")
     }
 
@@ -160,7 +156,7 @@ function InterfaceJSObjectConvertor(jsObject = "") {
         return new Error("InterfaceJSObjectConvertor: ")
     }
 
-    this.csv = function () {
+    this.toml = function () {
         return new Error("InterfaceJSObjectConvertor: ")
     }
 
@@ -192,11 +188,40 @@ function InterfaceJSObjectConvertorMDHTML(jsObject = "") {
     this.html = function () {
         return new Error("InterfaceJSObjectConvertor: ")
     }
-        
+
     this.pdf = function (obj) {
         return new Error("InterfaceJSObjectConvertor: ")
     }
 
+}
+
+
+function InterfaceJSObjectConvertorCSV(jsObject = "") {
+
+    var jsobject = jsObject;
+
+    InterfaceReader.call(this);
+    InterfaceJSObjectConvertor.call(this, this, jsObject);
+
+    this.csv = function () {
+        return new Error("InterfaceJSObjectConvertorCSV: ")
+    }
+
+    this.tsv = function () {
+        return new Error("InterfaceJSObjectConvertorCSV: ")
+    }
+
+    this.xls = function () {
+        return new Error("InterfaceJSObjectConvertorCSV: ")
+    }
+
+    this.xml = function (obj) {
+        return new Error("InterfaceJSObjectConvertorCSV: ")
+    }
+
+    this.pdf = function (obj) {
+        return new Error("InterfaceJSObjectConvertorCSV: ")
+    }
 }
 
 
