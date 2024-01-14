@@ -2,20 +2,25 @@
 - [Parsers] 
   - [ini] 
   - [csv]
-  - [yaml] [yml]
+  - [yaml] 
+  - [yml]
   - [json]
   - [ini]
   - [XML] Picks https://github.com/dolanmiu/docx
   - [DOCX] Picks https://github.com/dolanmiu/docx
-  - [html]
+  - [html] Check package jsdom
   - [css] 
-  - [less]
-  - [sass] [scss]
+  - [less] less2scss, less(to css), https://less2scss.awk5.com/
+  - [sass] 
+  - [scss] less-plugin-sass2less, scss (scss to css)
   - [sys] - https://en.wikipedia.org/wiki/Configuration_file
-  - [toml]
+  - [toml] 
+  - [sql] - https://www.npmjs.com/package/json-sql?activeTab=readme
+  - [toml] 
+  - [csv] 
   - [tsv] https://www.npmjs.com/package/tabulatore
 - [Convertors]
 - Adding your own implementations of all parsers
 - Adding PDF, XLS, PPTX, HTML convertors
 - Initial HTML - XML interchangers
-
+- Consider writing a converter for css to scss file https://www.codecademy.com/article/kyrathompson/how-to-convert-css-to-scss

@@ -9,7 +9,7 @@
  * File: src/conf.js
  * File Description: 
  * 
- * 
+ * +Add https://github.com/ZachPerkitny/configparser
 */
 
 /* eslint no-console: 0 */
