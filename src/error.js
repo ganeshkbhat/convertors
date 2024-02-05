@@ -1,3 +1,20 @@
+/**
+ * 
+ * Package: jsparsers
+ * Author: Ganesh B
+ * Description: 
+ * Install: npm i jsparsers --save
+ * Github: https://github.com/ganeshkbhat/
+ * npmjs Link: https://www.npmjs.com/package/jsparsers
+ * File: src/error.js
+ * File Description: 
+ * 
+ * 
+*/
+
+/* eslint no-console: 0 */
+
+'use strict';
 
 
 // Snippet from 
@@ -98,25 +115,25 @@ export function getBigIntRpcId(entropy = 6) {
 //     return error;
 // }
 
-export function isServerErrorCode(code) {
-    return code <= SERVER_ERROR_CODE_RANGE[0] && code >= SERVER_ERROR_CODE_RANGE[1];
-}
-export function isReservedErrorCode(code) {
-    return RESERVED_ERROR_CODES.includes(code);
-}
-export function isValidErrorCode(code) {
-    return typeof code === "number";
-}
-export function getError(type) {
-    if (!Object.keys(STANDARD_ERROR_MAP).includes(type)) {
-        return STANDARD_ERROR_MAP[DEFAULT_ERROR];
-    }
-    return STANDARD_ERROR_MAP[type];
-}
-export function getErrorByCode(code) {
-    const match = Object.values(STANDARD_ERROR_MAP).find(e => e.code === code);
-    if (!match) {
-        return STANDARD_ERROR_MAP[DEFAULT_ERROR];
-    }
-    return match;
-}
+// export function isServerErrorCode(code) {
+//     return code <= SERVER_ERROR_CODE_RANGE[0] && code >= SERVER_ERROR_CODE_RANGE[1];
+// }
+// export function isReservedErrorCode(code) {
+//     return RESERVED_ERROR_CODES.includes(code);
+// }
+// export function isValidErrorCode(code) {
+//     return typeof code === "number";
+// }
+// export function getError(type) {
+//     if (!Object.keys(STANDARD_ERROR_MAP).includes(type)) {
+//         return STANDARD_ERROR_MAP[DEFAULT_ERROR];
+//     }
+//     return STANDARD_ERROR_MAP[type];
+// }
+// export function getErrorByCode(code) {
+//     const match = Object.values(STANDARD_ERROR_MAP).find(e => e.code === code);
+//     if (!match) {
+//         return STANDARD_ERROR_MAP[DEFAULT_ERROR];
+//     }
+//     return match;
+// }
