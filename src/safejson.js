@@ -1,4 +1,22 @@
 /**
+ * 
+ * Package: jsparsers
+ * Author: Ganesh B
+ * Description: 
+ * Install: npm i jsparsers --save
+ * Github: https://github.com/ganeshkbhat/
+ * npmjs Link: https://www.npmjs.com/package/jsparsers
+ * File: src/less.js
+ * File Description: 
+ * 
+ * 
+*/
+
+/* eslint no-console: 0 */
+
+'use strict';
+
+/**
  * JSONStringify & JSONParse inspired by json-with-bigint
  * source: https://github.com/Ivan-Korolenko/json-with-bigint
  */
@@ -6,6 +24,17 @@
   Function to serialize data to JSON string.
   Converts all BigInt values to strings with "n" character at the end.
 */
+
+// // https://github.com/serde-rs/json
+// enum Value {
+//   Null,
+//   Bool(bool),
+//   Number(Number),
+//   String(String),
+//   Array(Vec<Value>),
+//   Object(Map<String, Value>),
+// }
+
 /** 
  * 
  * https://github.com/WalletConnect/walletconnect-utils/blob/7c6656163001584e898d741bb9173cca4499ae43/misc/safe-json/src/index.ts
